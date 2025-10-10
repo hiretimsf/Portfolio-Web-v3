@@ -22,7 +22,14 @@ export default function HomePage() {
         <Contents>
           <Label label="HELLO" />
           <Title title="I'm Tim" />
-          <Description description="I'm an Android Developer based in the San Francisco Bay Area. I help people solve real-world problems by building Android apps." />
+          <Description>
+            I'm an{" "}
+            <span className="text-panda-text-on-highlight-green bg-panda-text-highlight">
+              Android Developer
+            </span>{" "}
+            based in the San Francisco Bay Area. I help people solve real-world
+            problems by building Android apps.
+          </Description>
           <Features features={skills} />
           <MoreButton href="/about" label="Learn More" />
         </Contents>

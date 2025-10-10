@@ -178,7 +178,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <body
         className={cn(
-          "bg-white antialiased selection:bg-blue-500 selection:text-white",
+          "selection:bg-panda-text-highlight selection:text-panda-text-on-highlight-green bg-white antialiased",
           fontSans.variable,
         )}
         suppressHydrationWarning={true}

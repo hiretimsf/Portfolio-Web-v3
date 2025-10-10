@@ -1,9 +1,9 @@
 interface DescriptionProps {
-  description: string;
+  children: React.ReactNode;
 }
 
-const Description = ({ description }: DescriptionProps) => {
-  return <p className="text-panda-muted mt-6 text-lg/8">{description}</p>;
+const Description = ({ children }: DescriptionProps) => {
+  return <p className="text-panda-text mt-6 text-lg/8">{children}</p>;
 };
 
 export default Description;
