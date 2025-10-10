@@ -4,3 +4,8 @@ export type HeadType = {
   slug: string;
   description: string;
 };
+
+export interface Feature {
+  name: string;
+  description: string;
+}

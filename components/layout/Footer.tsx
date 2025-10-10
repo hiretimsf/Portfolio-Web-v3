@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-b bg-white">
+    <footer className="border-y bg-white">
       {/* Back to top */}
       <Link href="#top" className="group block">
         <div className="bg-panda-blue mx-auto max-w-5xl border-x px-4 py-4 text-center transition-colors group-hover:bg-[#485769] sm:px-6 lg:px-8">
@@ -21,7 +21,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-md gap-2 px-3 py-2 font-semibold text-white transition-colors hover:text-gray-300"
+              className="text-md gap-2 px-3 py-2 font-semibold text-white transition-colors hover:underline"
               aria-label={link.label}
             >
               {link.label}

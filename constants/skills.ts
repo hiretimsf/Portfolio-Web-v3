@@ -7,7 +7,7 @@ export const skills: Skill[] = [
   {
     name: "I love working with",
     description:
-      "Kotlin, Java, XML and Jetpack Compose, Android Studio, and Gradle",
+      "Kotlin and Jetpack Compose, Modern Architecture (MVVM + Hilt + Retrofit + Room)",
   },
   {
     name: "I have a Computer Science degree",

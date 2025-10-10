@@ -7,6 +7,9 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Roboto as FontSans } from "next/font/google";
 import "@/styles/tailwind.css";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import Main from "@/components/layout/Main";
 
 // ============================================================================
 // SEO CONFIGURATION VALIDATION
@@ -180,10 +183,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
         suppressHydrationWarning={true}
       >
-        {/* Main content */}
-        {children}
-
-        {/* Analytics and utilities */}
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
         <Analytics />
         <TailwindIndicator />
         <Toaster />

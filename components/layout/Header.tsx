@@ -1,5 +1,6 @@
 "use client";
 
+// UI component imports
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,6 +22,7 @@ import { MailIcon, Menu, MusicIcon, PlusIcon, X } from "lucide-react";
 import Link from "next/link";
 import { memo, useState } from "react";
 
+// Component prop types
 interface HeaderProps {
   className?: string;
 }
@@ -35,6 +37,7 @@ interface NavigationItem {
   icon?: string;
 }
 
+// Logo component with avatar and site name
 const Logo = memo(({ className }: LogoProps) => (
   <Link
     className={cn(
@@ -58,6 +61,7 @@ const Logo = memo(({ className }: LogoProps) => (
 
 Logo.displayName = "Logo";
 
+// Mobile menu toggle button with slide-out navigation
 const MobileMenuButton = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -112,6 +116,7 @@ const MobileMenuButton = memo(() => {
 
 MobileMenuButton.displayName = "MobileMenuButton";
 
+// Desktop horizontal navigation menu
 const DesktopNavigationMenu = memo(() => (
   <NavigationMenu className="hidden md:block">
     <NavigationMenuList className="flex gap-8">
@@ -132,6 +137,7 @@ const DesktopNavigationMenu = memo(() => (
 
 DesktopNavigationMenu.displayName = "DesktopNavigationMenu";
 
+// Contact button for desktop view with icon and text
 const ContactButtonDesktop = memo(() => (
   <Button
     className="hover:text-panda-dark-blue hidden rounded-none border border-white bg-transparent font-semibold text-white transition-all hover:bg-white md:flex"
@@ -144,6 +150,7 @@ const ContactButtonDesktop = memo(() => (
 
 ContactButtonDesktop.displayName = "ContactButtonDesktop";
 
+// Contact button for mobile view with icon only
 const ContactButtonMobile = memo(() => (
   <Button
     size="icon"
@@ -156,6 +163,7 @@ const ContactButtonMobile = memo(() => (
 
 ContactButtonMobile.displayName = "ContactButtonMobile";
 
+// Main header component with sticky navigation
 const Header = memo(({ className }: HeaderProps) => {
   return (
     <header
