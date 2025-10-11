@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-interface ImageOneProps {
+interface ImageVerticalProps {
   imageUrl: string;
   description: string;
 }
 
-const ImageOne = ({ imageUrl, description }: ImageOneProps) => {
+const ImageVertical = ({ imageUrl, description }: ImageVerticalProps) => {
   return (
     <Image
       alt={description}
@@ -17,4 +17,4 @@ const ImageOne = ({ imageUrl, description }: ImageOneProps) => {
   );
 };
 
-export default ImageOne;
+export default ImageVertical;
