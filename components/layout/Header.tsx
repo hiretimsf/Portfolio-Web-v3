@@ -15,30 +15,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import navigationLinks from "@/constants/navigations";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { MailIcon, Menu, MusicIcon, PlusIcon, X } from "lucide-react";
+import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
 import Link from "next/link";
 import { memo, useState } from "react";
 
-// Component prop types
-interface HeaderProps {
-  className?: string;
-}
-
-interface LogoProps {
-  className?: string;
-}
-
-interface NavigationItem {
-  href: string;
-  label: string;
-  icon?: string;
-}
-
-// Logo component with avatar and site name
-const Logo = memo(({ className }: LogoProps) => (
+// Navigation links configuration
+const navigationLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/apps", label: "Apps" },
+];
+// Logo component with avatar and brand name
+const Logo = memo(({ className }: { className?: string }) => (
   <Link
     className={cn(
       "group flex items-center gap-2 transition-opacity hover:opacity-80",
@@ -59,9 +49,7 @@ const Logo = memo(({ className }: LogoProps) => (
   </Link>
 ));
 
-Logo.displayName = "Logo";
-
-// Mobile menu toggle button with slide-out navigation
+// Mobile menu toggle with slide-out navigation
 const MobileMenuButton = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -91,7 +79,7 @@ const MobileMenuButton = memo(() => {
           <ScrollArea className="h-[calc(100vh-10rem)]">
             <nav aria-label="Mobile navigation">
               <ul className="divide-border divide-y">
-                {navigationLinks.map((menuItem: NavigationItem) => (
+                {navigationLinks.map((menuItem) => (
                   <li key={menuItem.href} className="list-none">
                     <Link
                       href={menuItem.href}
@@ -114,13 +102,11 @@ const MobileMenuButton = memo(() => {
   );
 });
 
-MobileMenuButton.displayName = "MobileMenuButton";
-
-// Desktop horizontal navigation menu
+// Desktop navigation menu component
 const DesktopNavigationMenu = memo(() => (
   <NavigationMenu className="hidden md:block">
     <NavigationMenuList className="flex gap-8">
-      {navigationLinks.map((item: NavigationItem) => (
+      {navigationLinks.map((item) => (
         <NavigationMenuItem key={item.href}>
           <Link
             href={item.href}
@@ -137,7 +123,7 @@ const DesktopNavigationMenu = memo(() => (
 
 DesktopNavigationMenu.displayName = "DesktopNavigationMenu";
 
-// Contact button for desktop view with icon and text
+// Desktop contact button with mail icon
 const ContactButtonDesktop = memo(() => (
   <Button
     className="hover:text-panda-dark-blue hidden rounded-none border border-white bg-transparent font-semibold text-white transition-all hover:bg-white md:flex"
@@ -150,7 +136,7 @@ const ContactButtonDesktop = memo(() => (
 
 ContactButtonDesktop.displayName = "ContactButtonDesktop";
 
-// Contact button for mobile view with icon only
+// Mobile contact button with mail icon
 const ContactButtonMobile = memo(() => (
   <Button
     size="icon"
@@ -163,8 +149,8 @@ const ContactButtonMobile = memo(() => (
 
 ContactButtonMobile.displayName = "ContactButtonMobile";
 
-// Main header component with sticky navigation
-const Header = memo(({ className }: HeaderProps) => {
+// Main header component with responsive layout
+const Header = memo(({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
@@ -186,7 +172,7 @@ const Header = memo(({ className }: HeaderProps) => {
             <Logo className="flex md:hidden" />
           </div>
 
-          {/* Right section - Add button */}
+          {/* Right section - Contact buttons */}
           <div className="flex flex-1 justify-end gap-2">
             <ContactButtonDesktop />
             <ContactButtonMobile />
@@ -196,7 +182,5 @@ const Header = memo(({ className }: HeaderProps) => {
     </header>
   );
 });
-
-Header.displayName = "Header";
 
 export default Header;

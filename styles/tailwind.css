@@ -50,6 +50,8 @@
   --color-panda-text: var(--panda-text);
   --color-panda-yellow: var(--panda-yellow);
   --color-panda-yellow-dark: var(--panda-yellow-dark);
+  --color-panda-green: var(--panda-green);
+  --color-panda-dark-green: var(--panda-dark-green);
   --color-panda-light-green: var(--panda-light-green);
   --color-panda-text-highlight: var(--panda-text-highlight);
   --color-panda-highlight-green: var(--panda-highlight-green);
@@ -100,6 +102,8 @@
   --panda-text: oklch(0.3011 0.0319 254.3);
   --panda-yellow: oklch(0.8227 0.1486 72.73);
   --panda-yellow-dark: oklch(0.8029 0.1607 70.43);
+  --panda-green: oklch(0.5499 0.0918 193.85);
+  --panda-dark-green: oklch(0.4786 0.0794 193.67);
   --panda-light-green: oklch(0.7343 0.1344 178);
   --panda-text-highlight: oklch(0.9253 0.1801 116.8);
   --panda-highlight-green: oklch(0.8063 0.1725 139.9);

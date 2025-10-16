@@ -1,5 +1,10 @@
-import navigationLinks from "@/constants/navigations";
 import Link from "next/link";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/apps", label: "Apps" },
+];
 
 export default function Footer() {
   return (
@@ -17,7 +22,7 @@ export default function Footer() {
           aria-label="Bottom navigation"
           className="flex justify-center gap-8"
         >
-          {navigationLinks.map((link) => (
+          {navLinks.map((link: { href: string; label: string }) => (
             <Link
               key={link.href}
               href={link.href}
