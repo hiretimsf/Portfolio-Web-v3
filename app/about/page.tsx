@@ -132,7 +132,7 @@ const AboutPage = () => {
             </Link>
             {" and "}
             <Link
-              href="https://www.youtube.com/playlist?list=PLvq-6H2J_41Nc8R570iD1r3_9JquqUe7s"
+              href="https://on.soundcloud.com/4d5e621n0BwRDJ1kjV"
               className="text-accent-foreground hover:text-accent-foreground/80 decoration-panda-orange font-medium underline underline-offset-4"
               target="_blank"
             >
