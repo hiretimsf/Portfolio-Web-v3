@@ -1,9 +1,23 @@
+import { FacebookIcon } from "lucide-react";
 import Link from "next/link";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/apps", label: "Apps" },
+const socialLinks = [
+  {
+    href: "mailto:hiretimsf@gmail.com",
+    label: "Email",
+  },
+  {
+    href: "https://www.linkedin.com/in/timtbdev/",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/timtbdev",
+    label: "GitHub",
+  },
+  {
+    href: "https://x.com/hiretimsf",
+    label: "X (Twitter)",
+  },
 ];
 
 export default function Footer() {
@@ -22,11 +36,11 @@ export default function Footer() {
           aria-label="Bottom navigation"
           className="flex justify-center gap-8"
         >
-          {navLinks.map((link: { href: string; label: string }) => (
+          {socialLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-md decoration-panda-orange gap-2 px-3 py-2 font-semibold text-white underline-offset-6 hover:underline"
+              className="text-md gap-2 px-3 py-2 font-semibold text-white underline-offset-6 hover:underline"
               aria-label={link.label}
             >
               {link.label}

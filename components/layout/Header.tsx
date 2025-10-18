@@ -139,11 +139,14 @@ DesktopNavigationMenu.displayName = "DesktopNavigationMenu";
 // Desktop contact button with mail icon
 const ContactButtonDesktop = memo(() => (
   <Button
+    asChild
     className="hover:text-panda-dark-blue hidden rounded-none border border-white bg-transparent font-semibold text-white transition-all hover:bg-white md:flex"
     aria-label="Contact Tim"
   >
-    <MailIcon className="size-4" />
-    Contact Tim
+    <Link href="mailto:hiretimsf@gmail.com">
+      <MailIcon className="size-4" />
+      Contact Tim
+    </Link>
   </Button>
 ));
 
@@ -152,11 +155,14 @@ ContactButtonDesktop.displayName = "ContactButtonDesktop";
 // Mobile contact button with mail icon
 const ContactButtonMobile = memo(() => (
   <Button
+    asChild
     size="icon"
     className="hover:text-panda-dark-blue rounded-none bg-transparent text-white hover:bg-white md:hidden"
     aria-label="Contact Tim"
   >
-    <MailIcon className="size-6" />
+    <Link href="mailto:hiretimsf@gmail.com">
+      <MailIcon className="size-6" />
+    </Link>
   </Button>
 ));
 
@@ -208,8 +214,11 @@ const Header = memo(({ className }: { className?: string }) => {
       </div>
 
       {/* Banner */}
-      <div className="bg-panda-blue mx-auto max-w-5xl px-4 py-2 text-center text-base text-white/90">
-        Seeking Android Developer Role (In-person or Remote)
+      <div className="bg-panda-blue mx-auto flex max-w-5xl items-center justify-center gap-2 px-4 py-2 text-center text-base text-white/90">
+        <span className="bg-panda-light-green text-panda-dark-blue rounded-md px-1 py-0.5 text-sm font-semibold whitespace-nowrap">
+          New:
+        </span>
+        <span>Seeking Android Developer Role (In-person or Remote)</span>
       </div>
     </header>
   );
