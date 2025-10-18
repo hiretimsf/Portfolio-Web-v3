@@ -26,7 +26,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-md gap-2 px-3 py-2 font-semibold text-white transition-colors hover:underline"
+              className="text-md decoration-panda-orange gap-2 px-3 py-2 font-semibold text-white underline-offset-6 hover:underline"
               aria-label={link.label}
             >
               {link.label}

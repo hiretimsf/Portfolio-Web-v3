@@ -7,13 +7,13 @@ export default function HomePage() {
     <>
       <Heading />
       {/* Separator */}
-      <div className="bg-panda-light-blue mx-auto w-full px-4 py-2 text-center">
-        <h2 className="text-xl font-medium text-white">Featured Projects</h2>
+      <div className="bg-panda-light-blue mx-auto w-full px-4 py-2 text-center text-2xl font-medium text-white capitalize">
+        FEATURED APPS
       </div>
       <Projects />
       {/* Separator */}
-      <div className="bg-panda-light-green mx-auto w-full px-4 py-2 text-center">
-        <h2 className="text-xl font-medium text-white">What people say</h2>
+      <div className="bg-panda-light-green mx-auto w-full px-4 py-2 text-center text-2xl font-medium text-white capitalize">
+        WHAT PEOPLE SAY
       </div>
       <Shoutouts />
     </>

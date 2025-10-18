@@ -18,7 +18,8 @@ import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
 import Link from "next/link";
-import { memo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { memo, useCallback, useState } from "react";
 
 // Navigation links
 const navigationLinks = [
@@ -103,23 +104,35 @@ const MobileMenuButton = memo(() => {
 });
 
 // Desktop navigation menu component
-const DesktopNavigationMenu = memo(() => (
-  <NavigationMenu className="hidden md:block">
-    <NavigationMenuList className="flex gap-8">
-      {navigationLinks.map((item) => (
-        <NavigationMenuItem key={item.href}>
-          <Link
-            href={item.href}
-            className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-white transition-colors hover:underline"
-            aria-label={`Navigate to ${item.label}`}
-          >
-            <span className="font-medium">{item.label}</span>
-          </Link>
-        </NavigationMenuItem>
-      ))}
-    </NavigationMenuList>
-  </NavigationMenu>
-));
+const DesktopNavigationMenu = memo(
+  ({
+    activePath,
+    isActive,
+  }: {
+    activePath?: string;
+    isActive: (path: string) => boolean;
+  }) => (
+    <NavigationMenu className="hidden md:block">
+      <NavigationMenuList className="flex gap-8">
+        {navigationLinks.map((item) => (
+          <NavigationMenuItem key={item.href}>
+            <Link
+              href={item.href}
+              className={cn(
+                isActive(item.href)
+                  ? "text-md decoration-panda-orange gap-2 px-3 py-2 font-semibold text-white underline underline-offset-6"
+                  : "text-md hover:decoration-panda-orange gap-2 px-3 py-2 font-semibold text-white hover:underline hover:underline-offset-6",
+              )}
+              aria-label={`Navigate to ${item.label}`}
+            >
+              <span className="font-medium">{item.label}</span>
+            </Link>
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
+  ),
+);
 
 DesktopNavigationMenu.displayName = "DesktopNavigationMenu";
 
@@ -151,6 +164,17 @@ ContactButtonMobile.displayName = "ContactButtonMobile";
 
 // Main header component with responsive layout
 const Header = memo(({ className }: { className?: string }) => {
+  const activePath = usePathname();
+
+  const isActive = useCallback(
+    (path: string) => {
+      if (path === "/") return activePath === "/";
+      if (path === "/blog") return activePath.startsWith("/blog");
+      return activePath === path;
+    },
+    [activePath],
+  );
+
   return (
     <header
       className={cn(
@@ -168,7 +192,10 @@ const Header = memo(({ className }: { className?: string }) => {
 
           {/* Center section - Desktop navigation and Logo (mobile) */}
           <div className="flex items-center">
-            <DesktopNavigationMenu />
+            <DesktopNavigationMenu
+              activePath={activePath}
+              isActive={isActive}
+            />
             <Logo className="flex md:hidden" />
           </div>
 
@@ -181,10 +208,8 @@ const Header = memo(({ className }: { className?: string }) => {
       </div>
 
       {/* Banner */}
-      <div className="bg-panda-blue mx-auto max-w-5xl px-4 py-2 text-center">
-        <h2 className="text-base text-white/90">
-          Seeking Android Developer Role (In-person or Remote)
-        </h2>
+      <div className="bg-panda-blue mx-auto max-w-5xl px-4 py-2 text-center text-base text-white/90">
+        Seeking Android Developer Role (In-person or Remote)
       </div>
     </header>
   );

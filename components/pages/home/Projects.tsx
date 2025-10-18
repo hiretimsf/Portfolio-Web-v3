@@ -16,15 +16,15 @@ const projects = [
     id: 1,
     title: "Mongolian Sign Language",
     href: "/projects/mongolian-sign-language",
-    description: "Mobile app for learning Mongolian sign language.",
+    description: "Android app for learning Mongolian sign language.",
     imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
     imageUrlVertical: "/images/vertical-app-placeholder.jpg",
   },
   {
     id: 2,
-    title: "EasyRun",
-    href: "/projects/easyrun",
-    description: "Android app for tracking running progress and goals.",
+    title: "Don't Run Fast",
+    href: "/projects/dont-run-fast",
+    description: "Android app to find and share zone2 running tracks.",
     imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
     imageUrlVertical: "/images/vertical-app-placeholder.jpg",
   },
@@ -68,7 +68,7 @@ export default function Projects() {
                   className="block w-full rounded-none lg:hidden"
                 />
               </div>
-              <CardHeader>
+              <CardHeader className="mt-4">
                 <CardTitle className="text-panda-text text-lg/6">
                   {project.title}
                 </CardTitle>
@@ -81,14 +81,14 @@ export default function Projects() {
               <CardFooter className="mt-4 flex-col gap-2">
                 <Button
                   type="submit"
-                  className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text w-full"
+                  className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full"
                   asChild
                 >
                   <Link href={project.href}>Github</Link>
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
+                  className="bg-panda-green hover:bg-panda-dark-green text-md w-full text-white"
                   asChild
                 >
                   <Link href={project.href}>Download</Link>

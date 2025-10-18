@@ -58,6 +58,7 @@
   --color-panda-text-on-highlight-green: var(--panda-text-on-highlight-green);
   --color-panda-red: var(--panda-red);
   --color-panda-sega-green: var(--panda-sega-green);
+  --color-panda-orange: var(--panda-orange);
 }
 
 :root {
@@ -110,6 +111,7 @@
   --panda-text-on-highlight-green: oklch(0.3022 0.029 256.84);
   --panda-red: oklch(0.5386 0.2112 19.14);
   --panda-sega-green: oklch(0.9745 0.0066 160.08);
+  --panda-orange: oklch(0.6908 0.207357 42.2823);
 }
 
 .dark {
