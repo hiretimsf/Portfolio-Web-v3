@@ -17,21 +17,24 @@ const projects = [
     title: "Mongolian Sign Language",
     href: "/projects/mongolian-sign-language",
     description: "Mobile app for learning Mongolian sign language.",
-    imageUrl: "/images/vertical-app-placeholder.jpg",
+    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
+    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
   },
   {
     id: 2,
     title: "EasyRun",
     href: "/projects/easyrun",
     description: "Android app for tracking running progress and goals.",
-    imageUrl: "/images/vertical-app-placeholder.jpg",
+    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
+    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
   },
   {
     id: 3,
     title: "Digital Nomad Advisory",
     href: "/projects/digital-nomad-advisory",
     description: "Platform providing resources for digital nomads.",
-    imageUrl: "/images/vertical-app-placeholder.jpg",
+    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
+    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
   },
 ];
 
@@ -47,15 +50,22 @@ export default function Projects() {
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="h-full gap-2 rounded-none border border-gray-200 transition-shadow duration-200 hover:shadow-lg"
+              className="h-full gap-2 rounded-none border border-gray-200"
             >
               <div className="relative w-full">
                 <Image
                   width={500}
                   height={500}
                   alt={project.title}
-                  src={project.imageUrl}
-                  className="w-full rounded-none"
+                  src={project.imageUrlVertical}
+                  className="hidden w-full rounded-none lg:block"
+                />
+                <Image
+                  alt={project.title}
+                  src={project.imageUrlHorizontal}
+                  width={1000}
+                  height={500}
+                  className="block w-full rounded-none lg:hidden"
                 />
               </div>
               <CardHeader>

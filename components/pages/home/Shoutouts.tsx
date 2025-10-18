@@ -21,12 +21,9 @@ const items = [
 
 export default function Shoutouts() {
   return (
-    <MasonryGrid>
+    <MasonryGrid className="mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
       {items.map((item, index) => (
-        <div
-          key={`${item.type}-${index}`}
-          className="rounded-xl bg-white p-2 shadow-sm dark:bg-neutral-900"
-        >
+        <div key={`${item.type}-${index}`} className="rounded-xl">
           {item.type === "tweet" ? (
             <Suspense fallback={<TweetSkeleton />}>
               <Tweet id={item.id!} />

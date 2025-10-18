@@ -13,7 +13,7 @@ export default function HomePage() {
       <Projects />
       {/* Separator */}
       <div className="bg-panda-light-green mx-auto w-full px-4 py-2 text-center">
-        <h2 className="text-xl font-medium text-white">Shoutouts</h2>
+        <h2 className="text-xl font-medium text-white">What people say</h2>
       </div>
       <Shoutouts />
     </>

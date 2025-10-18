@@ -1,6 +1,5 @@
 "use client";
 
-// UI component imports
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,12 +20,13 @@ import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
 import Link from "next/link";
 import { memo, useState } from "react";
 
-// Navigation links configuration
+// Navigation links
 const navigationLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/apps", label: "Apps" },
 ];
+
 // Logo component with avatar and brand name
 const Logo = memo(({ className }: { className?: string }) => (
   <Link
@@ -178,6 +178,13 @@ const Header = memo(({ className }: { className?: string }) => {
             <ContactButtonMobile />
           </div>
         </div>
+      </div>
+
+      {/* Banner */}
+      <div className="bg-panda-blue mx-auto max-w-5xl px-4 py-2 text-center">
+        <h2 className="text-base text-white/90">
+          Seeking Android Developer Role (In-person or Remote)
+        </h2>
       </div>
     </header>
   );
