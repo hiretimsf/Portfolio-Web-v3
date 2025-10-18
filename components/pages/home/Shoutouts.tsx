@@ -1,59 +1,46 @@
-import { unstable_cache } from "next/cache";
+import MasonryGrid from "@/components/pages/home/MasonryGrid";
 import { Suspense } from "react";
-import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "react-tweet";
-import { getTweet as _getTweet } from "react-tweet/api";
+import { Tweet, TweetSkeleton } from "react-tweet";
 
-// Optimize tweet caching with better error handling and revalidation
-const getTweet = unstable_cache(
-  async (id: string) => {
-    try {
-      const tweet = await _getTweet(id);
-      if (!tweet) {
-        console.warn(`Tweet ${id} not found`);
-        return null;
-      }
-      return tweet;
-    } catch (error) {
-      console.error(`Failed to fetch tweet ${id}:`, error);
-      return null;
-    }
+const items = [
+  {
+    type: "youtube",
+    url: "https://www.youtube.com/embed/OHo64fiWx2k?si=SXXvnFihiE2I8l-V&start=811",
   },
-  ["tweet"],
-  { revalidate: 3600 * 24 }, // Cache for 24 hours
-);
+  {
+    type: "youtube",
+    url: "https://www.youtube.com/embed/wfL5arWfeOw?si=DtkvYb_HV8HAXLbx&start=2866",
+  },
+  { type: "tweet", id: "1930094628885471387" },
+  { type: "tweet", id: "1916331166984245599" },
+  { type: "tweet", id: "1932667733964886198" },
+  { type: "tweet", id: "1937084213175456041" },
+  { type: "tweet", id: "1949919177437003788" },
+  { type: "tweet", id: "1930622440578732190" },
+];
 
-// Separate tweet component for better organization
-const TweetPage = async ({ id }: { id: string }) => {
-  const tweet = await getTweet(id);
-  if (!tweet) {
-    return <TweetNotFound />;
-  }
-  return <EmbeddedTweet tweet={tweet} />;
-};
-
-// Predefined tweet IDs for better maintainability
-const TWEET_IDS = [
-  "1930094628885471387",
-  "1916331166984245599",
-
-  "1949919177437003788",
-  "1932667733964886198",
-] as const;
-const Shoutouts = () => {
+export default function Shoutouts() {
   return (
-    <div className="mx-auto mt-4 grid grid-cols-1 gap-4 px-4 md:grid-cols-2">
-      {TWEET_IDS.map((id, index) => (
+    <MasonryGrid>
+      {items.map((item, index) => (
         <div
-          key={id}
-          className="flex w-full flex-col items-center justify-center"
+          key={`${item.type}-${index}`}
+          className="rounded-xl bg-white p-2 shadow-sm dark:bg-neutral-900"
         >
-          <Suspense fallback={<TweetSkeleton />}>
-            <TweetPage id={id} />
-          </Suspense>
+          {item.type === "tweet" ? (
+            <Suspense fallback={<TweetSkeleton />}>
+              <Tweet id={item.id!} />
+            </Suspense>
+          ) : (
+            <iframe
+              src={item.url}
+              className="aspect-video w-full rounded-xl"
+              allowFullScreen
+              title="YouTube video"
+            />
+          )}
         </div>
       ))}
-    </div>
+    </MasonryGrid>
   );
-};
-
-export default Shoutouts;
+}

@@ -76,14 +76,12 @@ const Content = ({ className }: { className?: string }) => {
       <div className="text-panda-text mt-10 space-y-6">
         {SKILLS.map((skill) => (
           <div key={skill.name} className="relative pl-9">
-            <div className="flex items-center gap-2 align-middle">
-              <CheckmarkIcon
-                aria-hidden={true}
-                className="absolute left-1 size-5"
-              />
-              <span className="font-semibold">{skill.name}</span>{" "}
-              <span>{skill.description}</span>
-            </div>
+            <CheckmarkIcon
+              aria-hidden={true}
+              className="absolute left-1 size-5"
+            />
+            <span className="font-semibold">{skill.name}</span>{" "}
+            <span>{skill.description}</span>
           </div>
         ))}
       </div>
