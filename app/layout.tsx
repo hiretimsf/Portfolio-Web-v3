@@ -1,124 +1,34 @@
-import { Toaster } from "@/components/ui/sonner";
-import TailwindIndicator from "@/components/ui/tailwind-indicator";
-import {
-  cn,
-  getBaseUrl,
-  truncateDescription,
-  truncateTitle,
-} from "@/lib/utils";
-import { Analytics } from "@vercel/analytics/next";
-import type { Metadata, Viewport } from "next";
-import { Roboto as FontSans } from "next/font/google";
-import "@/styles/tailwind.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
+import { Toaster } from "@/components/ui/sonner";
+import TailwindIndicator from "@/components/ui/tailwind-indicator";
+// Constants and utilities
+import { AUTHOR, FAVICONS, HEAD, KEYWORDS, OPEN_GRAPH } from "@/constants/seo";
+import { cn, getBaseUrl } from "@/lib/utils";
+import { HeadType } from "@/types";
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata, Viewport } from "next";
+import { Roboto as FontSans } from "next/font/google";
+// Global styles
+import "@/styles/tailwind.css";
 
+// Type definitions
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-// Author configuration
+// Constants
+const CURRENT_PAGE = "Home"; // Define the current page for SEO configuration
 
-export const AUTHOR = {
-  name: "Tim Baz",
-  twitterUrl: "https://x.com/hiretimsf",
-  twitterAddress: "@hiretimsf",
-  email: "hiretimsf@gmail.com",
-};
+// SEO configuration
+const currentPageSEO = HEAD.find(
+  (page: HeadType) => page.page === CURRENT_PAGE,
+) as HeadType; // Get SEO configuration for the current page from the HEAD array
 
-// Favicon configuration
-
-const BASE_URL = "/favicons";
-
-export const FAVICONS = {
-  icon: [
-    { url: `${BASE_URL}/favicon.ico`, type: "image/x-icon" },
-    { url: `${BASE_URL}/favicon-32x32.png`, sizes: "32x32", type: "image/png" },
-    {
-      url: `${BASE_URL}/android-icon-192x192.png`,
-      sizes: "192x192",
-      type: "image/png",
-    },
-  ],
-  apple: [
-    { url: `${BASE_URL}/apple-icon.png` },
-    {
-      url: `${BASE_URL}/apple-icon-180x180.png`,
-      sizes: "180x180",
-      type: "image/png",
-    },
-  ],
-  other: [
-    {
-      rel: "apple-touch-icon-precomposed",
-      url: `${BASE_URL}/apple-icon-precomposed.png`,
-    },
-  ],
-};
-
-// SEO configuration - Page head configurations
-export const HEAD: {
-  page: string;
-  title: string;
-  slug: string;
-  description: string;
-}[] = [
-  {
-    page: "Home",
-    title: truncateTitle("Looking for an Android Developer? | Hire Tim"),
-    description: truncateDescription(
-      "Tim is an Android Developer based in San Francisco Bay Area. He is a skilled Android Developer with a passion for building high-performance Android applications.",
-    ),
-    slug: "/",
-  },
-];
-
-// SEO keywords
-export const KEYWORDS = [
-  "hire tim",
-  "Tim Baz",
-  "Android Developer in San Francisco Bay Area",
-  "Android Developer in San Francisco",
-  "Android Development",
-  "Kotlin",
-  "Kotlin Flows",
-  "Kotlin Coroutines",
-  "Java",
-  "RxJava",
-  "XML",
-  "JSON",
-  "REST",
-  "Retrofit2",
-  "Ktor",
-  "OkHttp3",
-  "Coil",
-  "Glide",
-  "Picasso",
-  "Dagger",
-  "Dagger Hilt",
-  "Koin",
-  "Room",
-  "Datastore",
-  "DataStore Preferences",
-  "Firebase",
-  "Jetpack Compose",
-  "MVVM",
-  "MVI",
-  "MVC",
-];
-
-// Open Graph and social media images
-const OPENGRAPH_IMAGE = "/images/opengraph-image.png";
-const TWITTER_IMAGE = "/images/twitter-image.png";
-
-export const OPEN_GRAPH = {
-  image: OPENGRAPH_IMAGE,
-  twitterImage: TWITTER_IMAGE,
-};
-
-// Utility functions - Validates SEO configuration to ensure all required fields are present
+// Utility functions
 const validateSEOConfig = () => {
+  // Validates SEO configuration to ensure all required fields are present
   if (!HEAD || HEAD.length === 0) {
     console.error("⚠️ HEAD configuration is missing or empty");
   }
@@ -139,23 +49,16 @@ const validateSEOConfig = () => {
 };
 
 // Font configuration
-
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-// Page configuration
-
-const PAGE = "Home";
-const page = HEAD.find((headItem) => headItem.page === PAGE);
-
-// Run SEO validation
+// Initialize SEO validation
 validateSEOConfig();
 
 // Viewport configuration
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -163,13 +66,12 @@ export const viewport: Viewport = {
 };
 
 // Metadata configuration
-
 export const metadata: Metadata = {
   // Basic metadata
-  title: page?.title,
+  title: currentPageSEO?.title,
   generator: AUTHOR.name,
-  applicationName: page?.title,
-  description: page?.description,
+  applicationName: currentPageSEO?.title,
+  description: currentPageSEO?.description,
   referrer: "origin-when-cross-origin",
   keywords: (KEYWORDS ?? []).join(", "),
 
@@ -198,7 +100,7 @@ export const metadata: Metadata = {
 
   // Apple web app configuration
   appleWebApp: {
-    title: page?.title ?? "",
+    title: currentPageSEO?.title ?? "",
     statusBarStyle: "default",
     capable: true,
   },
@@ -217,15 +119,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en",
     url: getBaseUrl(),
-    title: page?.title,
-    description: page?.description,
-    siteName: page?.title,
+    title: currentPageSEO?.title,
+    description: currentPageSEO?.description,
+    siteName: currentPageSEO?.title,
     images: [
       {
         url: OPEN_GRAPH.image,
         width: 1200,
         height: 630,
-        alt: page?.title ?? "",
+        alt: currentPageSEO?.title ?? "",
         type: "image/png",
       },
     ],
@@ -234,15 +136,15 @@ export const metadata: Metadata = {
   // Twitter card metadata
   twitter: {
     card: "summary_large_image",
-    title: page?.title,
-    description: page?.description,
+    title: currentPageSEO?.title,
+    description: currentPageSEO?.description,
     site: AUTHOR.twitterAddress,
     images: [
       {
         url: OPEN_GRAPH.twitterImage,
         width: 1200,
         height: 675,
-        alt: page?.title,
+        alt: currentPageSEO?.title,
         type: "image/png",
       },
     ],
@@ -251,7 +153,6 @@ export const metadata: Metadata = {
 };
 
 // Root layout component
-
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html

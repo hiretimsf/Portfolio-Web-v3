@@ -1,5 +1,8 @@
 "use client";
 
+import BulletList from "@/components/shared/bullet-list";
+import ContactMe from "@/components/shared/contact-me";
+import YellowButton from "@/components/shared/yellow-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,68 +13,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckmarkIcon } from "@/icons/checkmark-icon";
+import projects from "@/constants/projects";
+import { shoutouts } from "@/constants/shoutouts";
+import { skills } from "@/constants/skills";
 import { cn } from "@/lib/utils";
+import { Project, Shoutout } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import Masonry from "react-masonry-css";
 import { Tweet, TweetSkeleton } from "react-tweet";
-
-// Constants
-const SKILLS = [
-  { name: "Fully Authorized", description: "to work in the United States" },
-  { name: "Based", description: "in the San Francisco Bay Area" },
-  { name: "Love", description: "working with Kotlin and Jetpack Compose" },
-  { name: "Have", description: "a Computer Science degree" },
-  { name: "Speak", description: "English, German, and Mongolian" },
-] as const;
-
-// Featured projects data
-const projects = [
-  {
-    id: 1,
-    title: "Mongolian Sign Language",
-    href: "/projects/mongolian-sign-language",
-    description: "Android app for learning Mongolian sign language.",
-    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
-    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
-  },
-  {
-    id: 2,
-    title: "Don't Run Fast",
-    href: "/projects/dont-run-fast",
-    description: "Android app to find and share zone2 running tracks.",
-    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
-    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
-  },
-  {
-    id: 3,
-    title: "Digital Nomad Advisory",
-    href: "/projects/digital-nomad-advisory",
-    description: "Platform providing resources for digital nomads.",
-    imageUrlHorizontal: "/images/horizontal-app-placeholder.jpg",
-    imageUrlVertical: "/images/vertical-app-placeholder.jpg",
-  },
-];
-
-// Shoutouts data
-const items = [
-  {
-    type: "youtube",
-    url: "https://www.youtube.com/embed/OHo64fiWx2k?si=SXXvnFihiE2I8l-V&start=811",
-  },
-  {
-    type: "youtube",
-    url: "https://www.youtube.com/embed/wfL5arWfeOw?si=DtkvYb_HV8HAXLbx&start=2866",
-  },
-  { type: "tweet", id: "1930094628885471387" },
-  { type: "tweet", id: "1916331166984245599" },
-  { type: "tweet", id: "1932667733964886198" },
-  { type: "tweet", id: "1937084213175456041" },
-  { type: "tweet", id: "1949919177437003788" },
-  { type: "tweet", id: "1930622440578732190" },
-];
 
 // MasonryGrid component
 interface MasonryGridProps {
@@ -111,25 +62,12 @@ const Content = ({ className }: { className?: string }) => {
         people solve real-world problems by building Android apps.
       </p>
 
-      <div className="text-panda-text mt-10 space-y-6">
-        {SKILLS.map((skill) => (
-          <div key={skill.name} className="relative pl-9">
-            <CheckmarkIcon
-              aria-hidden={true}
-              className="absolute left-1 size-5"
-            />
-            <span className="font-semibold">{skill.name}</span>{" "}
-            <span>{skill.description}</span>
-          </div>
-        ))}
-      </div>
-
-      <Button
-        className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text mt-10 rounded-md px-10 py-6 text-lg"
-        asChild
-      >
-        <Link href="/about">Learn More</Link>
-      </Button>
+      <BulletList
+        list={skills}
+        aria-label="Skills and qualifications"
+        className="mt-10"
+      />
+      <YellowButton href="/about" title="Learn More" textSize="lg" />
     </div>
   );
 };
@@ -138,7 +76,7 @@ export default function HomePage() {
   return (
     <>
       {/* Main hero section with personal introduction and skills */}
-      <div className="hidden grid-cols-2 items-start gap-x-8 p-8 lg:grid">
+      <div className="hidden grid-cols-2 items-start gap-x-8 border-b border-gray-200 p-8 lg:grid">
         <Image
           alt="Headshot of Tim"
           src="/images/vertical-profile.jpg"
@@ -150,7 +88,7 @@ export default function HomePage() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="mx-auto flex flex-col gap-y-5 pb-8 lg:hidden">
+      <div className="mx-auto flex flex-col gap-y-5 border-b border-gray-200 pb-8 lg:hidden">
         <Image
           alt="Headshot of Tim"
           src="/images/horizontal-profile.jpg"
@@ -161,16 +99,14 @@ export default function HomePage() {
         <Content className="px-6" />
       </div>
 
-      {/* Featured apps section separator */}
-      <div className="bg-panda-light-blue mx-auto w-full px-4 py-2 text-center text-2xl font-medium text-white capitalize">
-        FEATURED APPS
-      </div>
-
       {/* Portfolio showcase with project cards */}
-      <div className="bg-white py-8 md:py-10">
+      <div className="border-b border-gray-200 bg-white py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline decoration-wavy underline-offset-6 sm:text-4xl">
+            FEATURED APPS
+          </h2>
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {projects.map((project) => (
+            {projects.map((project: Project) => (
               <Card
                 key={project.id}
                 className="h-full gap-2 rounded-none border border-gray-200"
@@ -223,14 +159,14 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Testimonials section separator */}
-      <div className="bg-panda-light-green mx-auto w-full px-4 py-2 text-center text-2xl font-medium text-white capitalize">
-        WHAT PEOPLE SAY
+      <div className="mx-auto max-w-5xl">
+        <h2 className="text-panda-text decoration-panda-orange mt-6 mb-4 text-center text-3xl font-bold tracking-tight underline decoration-wavy underline-offset-6 sm:text-4xl">
+          WHAT PEOPLE ARE SAYING
+        </h2>
       </div>
-
       {/* Social proof with tweets and videos in masonry layout */}
-      <MasonryGrid className="mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
-        {items.map((item, index) => (
+      <MasonryGrid className="mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 lg:px-8">
+        {shoutouts.map((item: Shoutout, index: number) => (
           <div key={`${item.type}-${index}`} className="rounded-xl">
             {item.type === "tweet" ? (
               <Suspense fallback={<TweetSkeleton />}>
@@ -248,19 +184,7 @@ export default function HomePage() {
         ))}
       </MasonryGrid>
 
-      {/* Testimonials section separator */}
-      <div className="bg-panda-light-green mx-auto w-full px-4 py-2 text-center text-2xl font-medium text-white capitalize">
-        LOOKING FOR AN ANDROID DEVELOPER?
-      </div>
-
-      <div className="mx-auto max-w-2xl p-6">
-        <Button
-          className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text mx-auto mb-6 w-full max-w-2xl rounded-md px-10 py-12 text-4xl"
-          asChild
-        >
-          <Link href="mailto:hiretimsf@gmail.com">Contact Tim</Link>
-        </Button>
-      </div>
+      <ContactMe />
     </>
   );
 }

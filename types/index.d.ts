@@ -1,0 +1,44 @@
+export interface HeadType {
+  page: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
+export interface NavigationLink {
+  href: string;
+  label: string;
+}
+
+export interface SocialLink {
+  href: string;
+  label: string;
+}
+export interface Project {
+  id: number;
+  type: string;
+  subType: string;
+  title: string;
+  features: Feature[];
+  description: string;
+  imageUrlHorizontal: string;
+  imageUrlVertical: string;
+  href: string;
+}
+
+export interface Feature {
+  name: string;
+  description: string;
+}
+
+export interface BulletListItem {
+  name: string;
+  description: string;
+  href?: string;
+}
+
+export interface Shoutout {
+  type: string;
+  url?: string;
+  id?: string;
+}

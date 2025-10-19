@@ -14,19 +14,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+// Constants
+import { navigationLinks } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
+import { NavigationLink } from "@/types";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo, useCallback, useState } from "react";
-
-// Navigation links
-const navigationLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/apps", label: "Apps" },
-];
 
 // Logo component with avatar and brand name
 const Logo = memo(({ className }: { className?: string }) => (
@@ -80,7 +76,7 @@ const MobileMenuButton = memo(() => {
           <ScrollArea className="h-[calc(100vh-10rem)]">
             <nav aria-label="Mobile navigation">
               <ul className="divide-border divide-y">
-                {navigationLinks.map((menuItem) => (
+                {navigationLinks.map((menuItem: NavigationLink) => (
                   <li key={menuItem.href} className="list-none">
                     <Link
                       href={menuItem.href}
@@ -114,7 +110,7 @@ const DesktopNavigationMenu = memo(
   }) => (
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList className="flex gap-8">
-        {navigationLinks.map((item) => (
+        {navigationLinks.map((item: NavigationLink) => (
           <NavigationMenuItem key={item.href}>
             <Link
               href={item.href}

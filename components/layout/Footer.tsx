@@ -1,24 +1,6 @@
-import { FacebookIcon } from "lucide-react";
+import { socialLinks } from "@/constants/social";
+import { SocialLink } from "@/types";
 import Link from "next/link";
-
-const socialLinks = [
-  {
-    href: "mailto:hiretimsf@gmail.com",
-    label: "Email",
-  },
-  {
-    href: "https://www.linkedin.com/in/timtbdev/",
-    label: "LinkedIn",
-  },
-  {
-    href: "https://github.com/timtbdev",
-    label: "GitHub",
-  },
-  {
-    href: "https://x.com/hiretimsf",
-    label: "X (Twitter)",
-  },
-];
 
 export default function Footer() {
   return (
@@ -36,7 +18,7 @@ export default function Footer() {
           aria-label="Bottom navigation"
           className="flex justify-center gap-8"
         >
-          {socialLinks.map((link) => (
+          {socialLinks.map((link: SocialLink) => (
             <Link
               key={link.href}
               href={link.href}
