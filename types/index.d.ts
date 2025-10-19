@@ -42,3 +42,10 @@ export interface Shoutout {
   url?: string;
   id?: string;
 }
+
+export interface CheckoutItem {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+}

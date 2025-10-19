@@ -59,6 +59,7 @@
   --color-panda-red: var(--panda-red);
   --color-panda-sega-green: var(--panda-sega-green);
   --color-panda-orange: var(--panda-orange);
+  --color-panda-prune: var(--panda-prune);
 }
 
 :root {
@@ -112,6 +113,7 @@
   --panda-red: oklch(0.5386 0.2112 19.14);
   --panda-sega-green: oklch(0.9745 0.0066 160.08);
   --panda-orange: oklch(0.6908 0.207357 42.2823);
+  --panda-prune: oklch(0.9384 0.015 164.72);
 }
 
 .dark {
