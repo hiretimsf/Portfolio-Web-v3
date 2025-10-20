@@ -25,7 +25,7 @@ const Content = ({
         {project.type}
       </Badge>
 
-      <p className="text-panda-text mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
+      <p className="text-panda-text mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
         {project.title}
       </p>
 
@@ -33,13 +33,12 @@ const Content = ({
 
       <div className="text-panda-text mt-10 space-y-6">
         {project.features.map((feature) => (
-          <div key={feature.name} className="relative pl-9">
+          <div key={feature.feature} className="relative pl-9">
             <CheckmarkIcon
               aria-hidden={true}
               className="absolute left-1 size-5"
             />
-            <span className="font-semibold">{feature.name}</span>{" "}
-            <span>{feature.description}</span>
+            {feature.feature}
           </div>
         ))}
       </div>

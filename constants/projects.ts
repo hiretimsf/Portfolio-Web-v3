@@ -13,16 +13,13 @@ const projects: Project[] = [
     imageUrlVertical: "/images/vertical-app-placeholder.jpg",
     features: [
       {
-        name: "Sign Language Learning",
-        description: "Interactive lessons for Mongolian sign language.",
+        feature: "Interactive lessons for Mongolian sign language.",
       },
       {
-        name: "Video Tutorials",
-        description: "Step-by-step video guides for each sign.",
+        feature: "Step-by-step video guides for each sign.",
       },
       {
-        name: "Progress Tracking",
-        description: "Track your learning progress and achievements.",
+        feature: "Track your learning progress and achievements.",
       },
     ],
   },
@@ -37,16 +34,13 @@ const projects: Project[] = [
     imageUrlVertical: "/images/vertical-app-placeholder.jpg",
     features: [
       {
-        name: "Zone2 Running",
-        description: "Find and share optimal zone2 running tracks.",
+        feature: "Find and share optimal zone2 running tracks.",
       },
       {
-        name: "Route Discovery",
-        description: "Discover new running routes in your area.",
+        feature: "Discover new running routes in your area.",
       },
       {
-        name: "Community Sharing",
-        description: "Share your favorite running tracks with others.",
+        feature: "Share your favorite running tracks with others.",
       },
     ],
   },
@@ -61,16 +55,13 @@ const projects: Project[] = [
     imageUrlVertical: "/images/vertical-app-placeholder.jpg",
     features: [
       {
-        name: "Nomad Resources",
-        description: "Comprehensive guides for digital nomads.",
+        feature: "Comprehensive guides for digital nomads.",
       },
       {
-        name: "Location Insights",
-        description: "Detailed information about nomad-friendly locations.",
+        feature: "Detailed information about nomad-friendly locations.",
       },
       {
-        name: "Community Network",
-        description: "Connect with other digital nomads worldwide.",
+        feature: "Connect with other digital nomads worldwide.",
       },
     ],
   },

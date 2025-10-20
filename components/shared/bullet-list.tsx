@@ -30,30 +30,45 @@ const BulletList = ({
   };
 
   const renderItem = (item: BulletListItem) => {
-    if (item.href) {
+    // Handle items with only description (no name)
+    if (!item.name) {
       return (
-        <span className="flex flex-col items-baseline gap-x-2 text-left sm:flex-row">
-          <Link
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="decoration-panda-orange hover:decoration-panda-orange/80 hover:text-panda-text/80 font-semibold underline underline-offset-4 transition-colors duration-200"
-            aria-label={`${item.name}: ${item.description} (opens in new tab)`}
-          >
-            <span className="font-semibold">{item.name}</span>
-          </Link>
-          <span className="text-panda-text">{item.description}</span>
+        <span className="text-panda-text" aria-label={item.description}>
+          {item.description}
         </span>
       );
     }
 
+    // Handle items with links
+    if (item.href) {
+      return (
+        <div className="flex flex-col gap-1 text-left sm:flex-row sm:items-baseline sm:gap-x-2">
+          <Link
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="decoration-panda-orange hover:decoration-panda-orange/80 hover:text-panda-text/80 focus:ring-panda-orange rounded-sm font-semibold underline underline-offset-4 transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+            aria-label={`${item.name}: ${item.description} (opens in new tab)`}
+          >
+            {item.name}
+          </Link>
+          <span className="text-panda-text">{item.description}</span>
+        </div>
+      );
+    }
+
+    // Handle items with name but no link
     return (
-      <span className="flex flex-row items-baseline gap-x-2">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-x-2">
         <span className="text-panda-text font-semibold">{item.name}</span>
         <span className="text-panda-text">{item.description}</span>
-      </span>
+      </div>
     );
   };
+
+  if (!list || list.length === 0) {
+    return null;
+  }
 
   return (
     <ul
@@ -61,18 +76,22 @@ const BulletList = ({
       role="list"
       aria-label={ariaLabel}
     >
-      {list.map((item: BulletListItem, index: number) => (
-        <li key={`${item.name}-${index}`} className="relative pl-9 last:mb-0">
-          <CheckmarkIcon
-            aria-hidden="true"
-            className={cn(
-              "text-panda-orange absolute left-1 size-5",
-              getTopOffsetClass(topOffset),
-            )}
-          />
-          {renderItem(item)}
-        </li>
-      ))}
+      {list.map((item: BulletListItem, index: number) => {
+        const itemId = item.name ? `${item.name}-${index}` : `item-${index}`;
+
+        return (
+          <li key={itemId} className="relative pl-9 last:mb-0" role="listitem">
+            <CheckmarkIcon
+              aria-hidden="true"
+              className={cn(
+                "text-panda-orange absolute left-1 size-5",
+                getTopOffsetClass(topOffset),
+              )}
+            />
+            {renderItem(item)}
+          </li>
+        );
+      })}
     </ul>
   );
 };

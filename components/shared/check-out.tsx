@@ -9,7 +9,7 @@ const CheckOut = () => {
   return (
     <div className="bg-panda-prune mx-auto w-full max-w-7xl border-t border-gray-200 py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline decoration-wavy underline-offset-6 sm:text-4xl">
+        <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-8 sm:text-4xl">
           Check out my
         </h2>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">

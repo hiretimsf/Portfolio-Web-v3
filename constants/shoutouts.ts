@@ -14,5 +14,9 @@ export const shoutouts: Shoutout[] = [
   { type: "tweet", id: "1932667733964886198" },
   { type: "tweet", id: "1937084213175456041" },
   { type: "tweet", id: "1949919177437003788" },
+  { type: "tweet", id: "1928166756519903609" },
+  { type: "tweet", id: "1930088043383533621" },
   { type: "tweet", id: "1930622440578732190" },
+  { type: "tweet", id: "1930036126787743950" },
+  { type: "tweet", id: "1949172588791345559" },
 ];

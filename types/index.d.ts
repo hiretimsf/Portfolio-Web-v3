@@ -27,12 +27,11 @@ export interface Project {
 }
 
 export interface Feature {
-  name: string;
-  description: string;
+  feature: string;
 }
 
 export interface BulletListItem {
-  name: string;
+  name?: string;
   description: string;
   href?: string;
 }

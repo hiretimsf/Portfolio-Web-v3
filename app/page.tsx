@@ -102,33 +102,26 @@ export default function HomePage() {
       {/* Portfolio showcase with project cards */}
       <div className="bg-panda-prune border-b border-gray-200 py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline decoration-wavy underline-offset-6 sm:text-4xl">
+          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
             FEATURED APPS
           </h2>
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {projects.map((project: Project) => (
               <Card
                 key={project.id}
-                className="h-full gap-2 rounded-none border border-gray-200"
+                className="h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0"
               >
                 <div className="relative w-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    alt={project.title}
-                    src={project.imageUrlVertical}
-                    className="hidden w-full rounded-none lg:block"
-                  />
                   <Image
                     alt={project.title}
                     src={project.imageUrlHorizontal}
                     width={1000}
                     height={500}
-                    className="block w-full rounded-none lg:hidden"
+                    className="w-full rounded-none"
                   />
                 </div>
-                <CardHeader className="mt-4">
-                  <CardTitle className="text-panda-text text-lg/6">
+                <CardHeader>
+                  <CardTitle className="text-panda-text mt-4 text-lg/6">
                     {project.title}
                   </CardTitle>
                 </CardHeader>
@@ -137,7 +130,7 @@ export default function HomePage() {
                     {project.description}
                   </CardDescription>
                 </CardContent>
-                <CardFooter className="mt-4 flex-col gap-2">
+                <CardFooter className="mt-6 mb-4 flex-col gap-2">
                   <Button
                     type="submit"
                     className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full"
@@ -160,7 +153,7 @@ export default function HomePage() {
       </div>
 
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-panda-text decoration-panda-orange mt-6 mb-4 text-center text-3xl font-bold tracking-tight underline decoration-wavy underline-offset-6 sm:text-4xl">
+        <h2 className="text-panda-text decoration-panda-orange mt-6 mb-4 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
           WHAT PEOPLE ARE SAYING
         </h2>
       </div>
