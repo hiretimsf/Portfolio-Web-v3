@@ -95,6 +95,8 @@ export default function HomePage() {
           width={1000}
           height={500}
           className="w-full"
+          priority={true}
+          unoptimized={true}
         />
         <Content className="px-6" />
       </div>
@@ -152,13 +154,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-panda-text decoration-panda-orange mt-6 mb-4 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
+      <div className="mx-auto max-w-5xl bg-white">
+        <h2 className="text-panda-text decoration-panda-orange py-6 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
           WHAT PEOPLE ARE SAYING
         </h2>
       </div>
       {/* Social proof with tweets and videos in masonry layout */}
-      <MasonryGrid className="mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 lg:px-8">
+      <MasonryGrid className="mx-auto max-w-7xl border-b border-gray-200 bg-white px-6 py-8 lg:px-8">
         {shoutouts.map((item: Shoutout, index: number) => (
           <div key={`${item.type}-${index}`} className="rounded-xl">
             {item.type === "tweet" ? (

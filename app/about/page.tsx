@@ -103,12 +103,6 @@ export default function AboutPage() {
               I started my Android Development journey in 2018. I started with
               Java and then Kotlin, and published two apps in the Google Play
               Store.
-              <BulletList
-                list={currentlyWorkingOn}
-                topOffset="top"
-                className="mt-4 text-left"
-                aria-label="Currently working on projects"
-              />
             </div>
 
             <div className="">

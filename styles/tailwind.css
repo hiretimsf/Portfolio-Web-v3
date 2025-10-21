@@ -60,6 +60,10 @@
   --color-panda-sega-green: var(--panda-sega-green);
   --color-panda-orange: var(--panda-orange);
   --color-panda-prune: var(--panda-prune);
+  --color-panda-sky-blue: var(--panda-sky-blue);
+  --color-panda-light-purple: var(--panda-light-purple);
+  --color-panda-light-orange: var(--panda-light-orange);
+  --color-panda-background: var(--panda-background);
 }
 
 :root {
@@ -114,6 +118,10 @@
   --panda-sega-green: oklch(0.9745 0.0066 160.08);
   --panda-orange: oklch(0.6908 0.207357 42.2823);
   --panda-prune: oklch(0.9384 0.015 164.72);
+  --panda-sky-blue: oklch(0.967 0.0197 212.54);
+  --panda-light-purple: oklch(0.9343 0.0144 329.13);
+  --panda-light-orange: oklch(0.9769 0.011 63.36);
+  --panda-background: oklch(0.9745 0.0066 160.08);
 }
 
 .dark {

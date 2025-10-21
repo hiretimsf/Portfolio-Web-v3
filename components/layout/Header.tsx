@@ -179,10 +179,7 @@ const Header = memo(({ className }: { className?: string }) => {
 
   return (
     <header
-      className={cn(
-        "bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur",
-        className,
-      )}
+      className={cn("sticky top-0 z-50 border-b backdrop-blur", className)}
     >
       <div className="bg-panda-dark-blue mx-auto max-w-5xl px-4">
         <div className="flex h-16 items-center justify-between">

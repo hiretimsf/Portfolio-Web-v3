@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const CheckOut = () => {
   return (
-    <div className="bg-panda-prune mx-auto w-full max-w-7xl border-t border-gray-200 py-8 md:py-10">
+    <div className="bg-panda-light-purple mx-auto w-full max-w-7xl border-t border-gray-200 py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-8 sm:text-4xl">
           Check out my
