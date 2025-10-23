@@ -78,7 +78,7 @@ function HeroContent({ className }: { className?: string }) {
       </p>
 
       <ul
-        className={cn("text-panda-text mt-6 space-y-6", className)}
+        className={cn("text-panda-text mt-6 mb-8 space-y-6", className)}
         role="list"
         aria-label="Skills and qualifications"
       >
