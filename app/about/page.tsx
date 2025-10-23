@@ -284,7 +284,7 @@ export default function AboutPage() {
                 number="4"
                 title="Android Development Today (2025-Present)"
                 id="android-today-heading"
-                color="orange"
+                color="light-blue"
               />
               <p className="text-panda-text text-lg">
                 After learning web development, I began exploring modern Android
@@ -349,20 +349,6 @@ export default function AboutPage() {
                   </Card>
                 ))}
               </div>
-            </section>
-
-            <section className="space-y-6" aria-labelledby="hobby-heading">
-              <SectionHeader
-                number="★"
-                title="Hobby"
-                id="hobby-heading"
-                color="light-blue"
-              />
-              <p className="text-panda-text text-lg">
-                When I'm not coding, I'm out for a run or playing with my
-                daughter.
-              </p>
-              <PhotoGallery photos={hobbyPhotos} />
             </section>
           </div>
         </div>
