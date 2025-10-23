@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import projects from "@/constants/projects";
+import projects from "@/constants/projects/current-projects";
 import { CheckmarkIcon } from "@/icons/checkmark-icon";
 import { Project } from "@/types";
 import Image from "next/image";
