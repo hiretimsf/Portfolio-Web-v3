@@ -74,7 +74,8 @@ export interface ModernProject {
   video: string;
   videoAlt: string;
   github: string;
-  download: string;
+  download?: string;
+  liveDemo: string;
   features: Feature[];
 }
 

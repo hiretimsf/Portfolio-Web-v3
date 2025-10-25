@@ -57,8 +57,8 @@ export default function AboutPage() {
             <p className="text-panda-text text-lg leading-8 text-pretty">
               I'm an Android Developer with 5 years of experience in Kotlin,
               Java, and Jetpack Compose. I help people solve real-world problems
-              by building Android apps. I live in the San Francisco Bay Area
-              with my wife and daughter.
+              by building Android apps. I live in Walnut Creek, California with
+              my wife and daughter.
             </p>
             <p className="text-panda-text text-lg leading-8 text-pretty">
               I was born and grew up in Mongolia. I studied Computer Science at
@@ -139,7 +139,17 @@ export default function AboutPage() {
               <p className="text-panda-text text-lg">
                 In 2018, I learned Kotlin, Jetpack components, and MVVM
                 architecture, along with Coroutines, Navigation, Material Design
-                2, Room, and WorkManager. I published two more apps in 2019.
+                2, Room, and WorkManager. I published two more apps in 2019. One
+                of them was featured by a famous Android Youtuber{" "}
+                <Link
+                  href="https://www.youtube.com/watch?si=Tu1ztcsj5iaNtdho&t=811&v=OHo64fiWx2k&feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-panda-text hover:text-panda-text/80 decoration-panda-orange font-medium underline underline-offset-4 transition-colors duration-200"
+                >
+                  on his channel
+                </Link>
+                .
               </p>
               <div className="grid gap-6 sm:grid-cols-2">
                 {modernProjects.map((project: ModernProject) => (
@@ -187,11 +197,11 @@ export default function AboutPage() {
                         asChild
                       >
                         <Link
-                          href={project.download}
+                          href={project.liveDemo}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Download
+                          Live Demo
                         </Link>
                       </Button>
                     </CardFooter>
@@ -211,10 +221,36 @@ export default function AboutPage() {
                 id="web-expansion-heading"
               />
               <p className="text-panda-text text-lg">
-                To support my Android apps with backends and landing pages, I
-                learned Next.js, React, and TailwindCSS. Along the way, I built
-                and published two full-stack Next.js apps, earning over 450
-                GitHub stars and Vercel swag for my open-source contributions.
+                To support my Android apps with modern backends and landing
+                pages, I learned Next.js, React, and TailwindCSS. I built and
+                published two full-stack Next.js apps that earned over{" "}
+                <Link
+                  href="https://github.com/timtbdev/Next.js-Blog-App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-panda-text hover:text-panda-text/80 decoration-panda-orange font-medium underline underline-offset-4 transition-colors duration-200"
+                >
+                  450 GitHub stars
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="https://x.com/hiretimsf/status/1799500139662651526"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-panda-text hover:text-panda-text/80 decoration-panda-orange font-medium underline underline-offset-4 transition-colors duration-200"
+                >
+                  Vercel swag
+                </Link>
+                , with my portfolio featured on{" "}
+                <Link
+                  href="https://www.wearedevelopers.com/en/magazine/561/web-developer-portfolio-inspiration-and-examples-march-2025-561"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-panda-text hover:text-panda-text/80 decoration-panda-orange font-medium underline underline-offset-4 transition-colors duration-200"
+                >
+                  WeAreDevelopers.com
+                </Link>
+                .
               </p>
               <div className="grid gap-6 sm:grid-cols-2">
                 {webProjects.map((project: WebProject) => (
