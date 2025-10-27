@@ -4,7 +4,7 @@ import { CurrentProject } from "@/types";
 const currentProjects: CurrentProject[] = [
   {
     id: 1,
-    title: "Sign Language Dictionary",
+    title: "Sign Language (Kotlin)",
     description: "Learn Mongolian sign language with interactive lessons.",
     href: "/apps/sign-language-dictionary",
     imageUrl: "/images/app-placeholder.jpg",
@@ -15,14 +15,14 @@ const currentProjects: CurrentProject[] = [
   },
   {
     id: 2,
-    title: "RunningSux",
-    description: "Find and share battle tested running tracks.",
-    href: "/apps/runningsux",
+    title: "RunMusic (Kotlin)",
+    description: "Find and share battle tested running music and playlists.",
+    href: "/apps/runmusic",
     imageUrl: "/images/app-placeholder.jpg",
-    imageAlt: "RunningSux",
-    githubLink: "https://github.com/timtbdev/runningsux",
+    imageAlt: "RunMusic",
+    githubLink: "https://github.com/timtbdev/runmusic",
     downloadLink:
-      "https://play.google.com/store/apps/details?id=com.timtb.runningsux",
+      "https://play.google.com/store/apps/details?id=com.timtb.runmusic",
   },
   {
     id: 3,

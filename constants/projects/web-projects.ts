@@ -3,7 +3,7 @@ import { WebProject } from "@/types";
 const webProjects: WebProject[] = [
   {
     id: 1,
-    title: "Full-Stack Next.js Blog App",
+    title: "Full-Stack Blog App (Next.js)",
     description:
       "A fully responsive full-stack blog app built with Next.js, React, TailwindCSS, and Supabase as backend. Based on Shadcn UI components.",
     href: "/web-development/blog-app",
@@ -22,14 +22,14 @@ const webProjects: WebProject[] = [
   },
   {
     id: 2,
-    title: "Next.js Portfolio Website",
+    title: "Portfolio Website v3 (Next.js)",
     description:
       "A modern, fast, fully responsive portfolio website with SEO optimization, MDX blog system, and custom react motion animations.",
     href: "/web-development/portfolio-website",
     imageUrl: "/images/apps/web/portfolio-app.jpg",
     imageAlt: "Portfolio Website",
     github: "https://github.com/timtbdev/Next.js-Portfolio-App",
-    liveDemo: "https://projects-two-nu.vercel.app",
+    liveDemo: "https://tim-portfolio-web-v2.vercel.app/",
     features: [
       {
         feature: "Next.js, React, TailwindCSS, Supabase",

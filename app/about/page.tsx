@@ -25,7 +25,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import "react-photo-view/dist/react-photo-view.css";
-import hobbyPhotos from "@/constants/hobby";
+import Marathon from "@/components/shared/marathon";
 import currentProjects from "@/constants/projects/current-projects";
 import modernProjects from "@/constants/projects/modern-projects";
 
@@ -320,7 +320,6 @@ export default function AboutPage() {
                 number="4"
                 title="Android Development Today (2025-Present)"
                 id="android-today-heading"
-                color="light-blue"
               />
               <p className="text-panda-text text-lg">
                 After learning web development, I began exploring modern Android
@@ -385,6 +384,23 @@ export default function AboutPage() {
                   </Card>
                 ))}
               </div>
+            </section>
+
+            {/* Hobby */}
+            <section
+              className="space-y-6"
+              aria-labelledby="android-today-heading"
+            >
+              <SectionHeader
+                number="5"
+                title="Running"
+                id="hobbies-heading"
+                color="light-blue"
+              />
+              <p className="text-panda-text text-lg">
+                When I'm not coding, I'm out for a run.
+              </p>
+              <Marathon />
             </section>
           </div>
         </div>

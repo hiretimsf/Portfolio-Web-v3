@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import Image from "next/image";
 
 const PhotoProvider = dynamic(
   () => import("react-photo-view").then((mod) => mod.PhotoProvider),
@@ -32,14 +31,10 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
               className={`animate-fade-in-up aspect-2/3 w-28 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:w-[200px] ${photo.className || ""}`}
             >
               <PhotoView src={photo.src}>
-                <Image
+                <img
                   src={photo.src}
                   alt={photo.alt}
                   className="h-full w-full cursor-pointer rounded-xl object-cover transition-transform duration-300 hover:scale-105"
-                  width={200}
-                  height={300}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 112px, 200px"
                 />
               </PhotoView>
             </div>

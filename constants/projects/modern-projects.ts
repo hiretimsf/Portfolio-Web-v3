@@ -8,7 +8,7 @@ const modernProjects: ModernProject[] = [
     section: "modern",
     type: "Java",
     subType: "Android",
-    title: "Portfolio App Java",
+    title: "Portfolio App (Java)",
     description:
       "A Java-based Android portfolio app showcasing my development skills, built with standard SDK APIs and MVC architecture.",
     video: "https://www.youtube.com/embed/j56fSGqF7Ho?si=KQSgguWxD5nPjAKv",
@@ -34,7 +34,7 @@ const modernProjects: ModernProject[] = [
     section: "modern",
     type: "Kotlin",
     subType: "Android",
-    title: "Portfolio App Kotlin",
+    title: "Portfolio App (Kotlin)",
     description:
       "A Kotlin-based portfolio app using Jetpack Components, MVVM, Room, and Coroutines for seamless offline/online syncing.",
     video: "https://www.youtube.com/embed/YjVJyqcv5I8?si=rLGU5MlcojDpsigP",
