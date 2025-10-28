@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import personalPhotos from "@/constants/personal-photos";
 import earlyProjects from "@/constants/projects/early-projects";
-import webProjects from "@/constants/projects/web-projects";
+import webApps from "@/constants/projects/web-apps";
 import {
   CurrentProject,
   EarlyProject,
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 .
               </p>
               <div className="grid gap-6 sm:grid-cols-2">
-                {webProjects.map((project: WebProject) => (
+                {webApps.slice(0, 2).map((project: WebProject) => (
                   <Card
                     key={project.title}
                     className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"

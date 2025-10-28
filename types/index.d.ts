@@ -54,12 +54,10 @@ export interface WebProject {
   id: number;
   title: string;
   description: string;
-  href: string;
   imageUrl: string;
   imageAlt: string;
-  github: string;
-  liveDemo: string;
-  features: Feature[];
+  github?: string;
+  liveDemo?: string;
 }
 
 export interface ModernProject {
@@ -100,4 +98,14 @@ export interface CheckoutItem {
   description: string;
   image: string;
   link: string;
+}
+
+export interface AndroidApp {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+  liveDemo?: string;
+  github?: string;
+  download?: string;
 }

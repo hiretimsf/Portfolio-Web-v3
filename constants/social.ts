@@ -6,11 +6,11 @@ export const socialLinks: SocialLink[] = [
     label: "Email",
   },
   {
-    href: "https://www.linkedin.com/in/timtbdev/",
+    href: "https://www.linkedin.com/in/hiretimsf/",
     label: "LinkedIn",
   },
   {
-    href: "https://github.com/timtbdev",
+    href: "https://github.com/hiretimsf",
     label: "GitHub",
   },
   {
