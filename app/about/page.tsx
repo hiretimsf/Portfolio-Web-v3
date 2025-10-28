@@ -45,10 +45,10 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="mx-auto max-w-3xl px-6 text-center sm:mt-2 md:px-4 lg:px-6">
+        <div className="mx-auto max-w-3xl px-6 text-center md:px-4 lg:px-6">
           <h1
             id="about-heading"
-            className="text-panda-text mb-6 text-center text-4xl font-semibold tracking-tight lg:text-5xl"
+            className="text-panda-text mb-2 text-center text-4xl font-semibold tracking-tight md:mb-6 md:text-5xl"
           >
             Hello, I'm Tim
           </h1>

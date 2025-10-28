@@ -17,7 +17,7 @@ const YellowButton = ({
   return (
     <Button
       className={cn(
-        "bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text rounded-md px-10 py-6",
+        "bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text w-full rounded-md px-10 py-6 sm:w-fit",
         `mt-${mt}`,
         textSize === "sm" && "text-sm",
         textSize === "md" && "text-md",

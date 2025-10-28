@@ -67,12 +67,12 @@ function HeroContent({ className }: { className?: string }) {
         HELLO
       </Badge>
 
-      <h1 className="text-panda-text mx-auto mt-2 text-center text-4xl font-semibold tracking-tight sm:text-left sm:text-5xl">
+      <h1 className="text-panda-text mx-auto mt-0 text-center text-4xl font-semibold tracking-tight sm:mt-2 sm:text-left sm:text-5xl">
         <span className="sm:hidden">Hello, </span>
         I'm Tim
       </h1>
 
-      <p className="text-panda-text mt-6 text-lg/8">
+      <p className="text-panda-text mt-2 text-center text-lg/8 sm:mt-6 sm:text-left">
         I'm an Android Developer based in the San Francisco Bay Area. I help
         people solve real-world problems by building Android apps.
       </p>

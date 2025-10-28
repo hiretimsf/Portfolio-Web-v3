@@ -211,7 +211,10 @@ const Header = memo(({ className }: { className?: string }) => {
         <span className="bg-panda-light-green text-panda-dark-blue rounded-md px-1 py-0.5 text-sm font-semibold whitespace-nowrap">
           New:
         </span>
-        <span>Seeking Android Developer Role (In-person or Remote)</span>
+        <span className="hidden md:block">
+          Seeking Android Developer Role (In-person or Remote)
+        </span>
+        <span className="block md:hidden">Seeking Android Developer Role</span>
       </div>
     </header>
   );

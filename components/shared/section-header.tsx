@@ -18,9 +18,9 @@ const SectionHeader = ({
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col items-center gap-4 sm:flex-row">
       <div
-        className={`${colorClasses[color]} flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-white`}
+        className={`${colorClasses[color]} flex h-10 w-10 items-center justify-center rounded-full text-lg font-semibold text-white sm:h-8 sm:w-8 sm:text-sm`}
       >
         {number}
       </div>
