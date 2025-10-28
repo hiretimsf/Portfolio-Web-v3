@@ -144,7 +144,7 @@ export default function AppsPage() {
             return (
               <Card
                 key={`${item.title}-${index}`}
-                className="h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 transition-shadow duration-300 hover:shadow-lg"
                 role="article"
                 aria-labelledby={`project-title-${index}`}
               >

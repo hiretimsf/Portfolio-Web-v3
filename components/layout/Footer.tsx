@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="bg-panda-dark-blue mx-auto max-w-5xl border-x px-4 py-6 sm:px-6 lg:px-8">
         <nav
           aria-label="Bottom navigation"
-          className="flex justify-center gap-8"
+          className="flex flex-col items-center justify-center gap-8 sm:flex-row"
         >
           {socialLinks.map((link: SocialLink) => (
             <Link
