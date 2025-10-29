@@ -1,17 +1,10 @@
 "use client";
 
 import ContactMe from "@/components/shared/contact-me";
+import { FaqSection } from "@/components/shared/faq";
+import ProjectCard from "@/components/shared/project-card";
 import YellowButton from "@/components/shared/yellow-button";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import currentProjects from "@/constants/projects/current-projects";
 import { shoutouts } from "@/constants/shoutouts";
 import { skills } from "@/constants/skills";
@@ -19,7 +12,6 @@ import { CheckmarkIcon } from "@/icons/checkmark-icon";
 import { cn } from "@/lib/utils";
 import { CurrentProject, Shoutout } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 import { memo, useMemo, useState } from "react";
 import Masonry from "react-masonry-css";
 import { Tweet } from "react-tweet";
@@ -112,55 +104,6 @@ function HeroContent({ className }: { className?: string }) {
     </div>
   );
 }
-// Project Card Component
-const ProjectCard = memo(function ProjectCard({
-  project,
-}: {
-  project: CurrentProject;
-}) {
-  return (
-    <Card className="h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 transition-shadow duration-300 hover:shadow-lg">
-      <div className="relative w-full">
-        <Image
-          alt={project.imageAlt}
-          src={project.imageUrl}
-          width={1000}
-          height={500}
-          className="w-full rounded-none"
-          loading="lazy"
-        />
-      </div>
-      <CardHeader>
-        <CardTitle className="text-panda-text mt-4 text-lg/6">
-          {project.title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-panda-text line-clamp-3 text-sm/6">
-          {project.description}
-        </CardDescription>
-      </CardContent>
-      <CardFooter className="mt-6 mb-4 flex-col gap-2">
-        {project.githubLink && (
-          <Button
-            className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full"
-            asChild
-          >
-            <Link href={project.githubLink}>Github</Link>
-          </Button>
-        )}
-        {project.downloadLink && (
-          <Button
-            className="bg-panda-green hover:bg-panda-dark-green text-md w-full text-white"
-            asChild
-          >
-            <Link href={project.downloadLink}>Download</Link>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
-  );
-});
 
 // Shoutout Item Component
 const ShoutoutItem = memo(function ShoutoutItem({
@@ -237,8 +180,8 @@ export default function HomePage() {
             FEATURED APPS
           </h2>
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {memoizedProjects.map((project: CurrentProject) => (
-              <ProjectCard key={project.id} project={project} />
+            {memoizedProjects.map((project: CurrentProject, index: number) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>
@@ -267,6 +210,16 @@ export default function HomePage() {
           />
         ))}
       </MasonryGrid>
+
+      {/* FAQ Section */}
+      <div className="bg-panda-prune border-b border-gray-200 py-8 md:py-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
+            FAQ
+          </h2>
+          <FaqSection />
+        </div>
+      </div>
 
       <ContactMe />
     </>
