@@ -23,6 +23,10 @@ const hobbyPhotos = [
     src: "/images/hobby/running-06.jpg",
     alt: "Tim running, showing his active lifestyle and fitness",
   },
+  {
+    src: "/images/hobby/running-07.jpg",
+    alt: "Tim running, showing his active lifestyle and fitness",
+  },
 ];
 
 export default hobbyPhotos;
