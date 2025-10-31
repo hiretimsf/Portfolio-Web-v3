@@ -24,6 +24,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "react-photo-view/dist/react-photo-view.css";
 import Marathon from "@/components/shared/marathon";
+import Playlist from "@/components/shared/playlist";
 import currentProjects from "@/constants/projects/current-projects";
 import modernProjects from "@/constants/projects/modern-projects";
 import HEAD from "@/constants/seo/head";
@@ -431,6 +432,12 @@ export default function AboutPage() {
                 When I'm not coding, I'm out for a run.
               </p>
               <Marathon />
+              <p className="text-panda-text text-lg">
+                Check out my running playlist on SoundCloud. I’ve picked these
+                songs over 10 years of daily runs. Perfect for easy or recovery
+                runs.
+              </p>
+              <Playlist />
             </section>
           </div>
         </div>
