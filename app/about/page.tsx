@@ -84,10 +84,10 @@ export default function AboutPage() {
 
           <div className="space-y-6 text-center text-lg leading-relaxed sm:space-y-6 sm:text-left">
             <p className="text-panda-text text-lg leading-8 text-pretty">
-              I'm an Android Developer with 5 years of experience in Kotlin,
-              Java, and Jetpack Compose. I help people solve real-world problems
-              by building Android apps. I live in Walnut Creek, California with
-              my wife and daughter.
+              I'm an Android Developer with 5 years of experience in Kotlin and
+              Jetpack Compose. I help people solve real-world problems by
+              building Android apps. I live in Walnut Creek, California with my
+              wife and daughter.
             </p>
             <p className="text-panda-text text-lg leading-8 text-pretty">
               I was born and grew up in Mongolia. I studied Computer Science at
@@ -101,7 +101,8 @@ export default function AboutPage() {
               >
                 University of Mittweida
               </Link>{" "}
-              in Germany. I speak English, German, and Mongolian.
+              in Germany. I speak English, German, and Mongolian fluently, and a
+              little Russian.
             </p>
             <PhotoGallery photos={personalPhotos} />
 
