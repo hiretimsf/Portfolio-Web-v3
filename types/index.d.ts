@@ -1,3 +1,7 @@
+import type { flag } from "country-flag-icons";
+import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
+
 export interface HeadType {
   page: string;
   title: string;
@@ -115,3 +119,27 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export type ExperiencePositionItemType = {
+  id: string;
+  title: string;
+  employmentPeriod: string;
+  employmentDuration?: string;
+  employmentType?: string;
+  description?: string;
+  icon?: LucideIcon | IconType | React.ReactNode;
+  skills?: string[];
+  isExpanded?: boolean;
+};
+
+export type ExperienceItemType = {
+  id: string;
+  companyName: string;
+  companyWebsite?: string;
+  companyLogo?: string;
+  companyLogoAlt?: string;
+  companyLocation?: string;
+  country?: flag;
+  positions: ExperiencePositionItemType[];
+  isCurrentEmployer?: boolean;
+};

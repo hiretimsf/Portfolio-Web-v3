@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-y bg-white">
+    <footer className="bg-panda-background border-y">
       {/* Back to top */}
       <Link href="#top" className="group block">
         <div className="bg-panda-blue mx-auto max-w-5xl border-x px-4 py-4 text-center transition-colors group-hover:bg-[#485769] sm:px-6 lg:px-8">
