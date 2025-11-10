@@ -42,6 +42,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         >
           {project.title}
         </CardTitle>
+        <CardDescription className="text-panda-text/80 text-sm/6">
+          {"date" in project && project.date ? project.date : null}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <CardDescription className="text-panda-text line-clamp-3 text-sm/6">

@@ -50,6 +50,7 @@ export default function AppsPage() {
               project={{
                 id: project.id,
                 title: project.title,
+                date: project.date,
                 description: project.description,
                 imageUrl: project.image,
                 imageAlt: project.title,

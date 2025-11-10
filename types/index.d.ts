@@ -33,6 +33,7 @@ export interface Project {
 export interface CurrentProject {
   id: number;
   title: string;
+  date?: string;
   description: string;
   imageUrl: string;
   imageAlt: string;
@@ -57,6 +58,7 @@ export interface EarlyProject {
 export interface WebProject {
   id: number;
   title: string;
+  date?: string;
   description: string;
   imageUrl: string;
   imageAlt: string;
@@ -107,6 +109,7 @@ export interface CheckoutItem {
 export interface AndroidApp {
   id: number;
   title: string;
+  date?: string;
   image: string;
   description: string;
   liveDemo?: string;
@@ -142,4 +145,14 @@ export type ExperienceItemType = {
   country?: flag;
   positions: ExperiencePositionItemType[];
   isCurrentEmployer?: boolean;
+  projects?: ExperienceProjectItemType[];
+};
+
+export type ExperienceProjectItemType = {
+  title: string;
+  date?: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  demoLink?: string;
 };

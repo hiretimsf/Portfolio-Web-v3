@@ -1,17 +1,14 @@
+import AndroidIcon from "@/icons/android-icon";
+import DriverIcon from "@/icons/driver-icon";
+import FrontendIcon from "@/icons/frontend-icon";
+import GraduateIcon from "@/icons/graduate-icon";
+import MarketingIcon from "@/icons/marketing-icon";
+import ServerIcon from "@/icons/server-icon";
+import WorkerIcon from "@/icons/worker-icon";
 import type { ExperienceItemType } from "@/types";
 import { DE, MN, US } from "country-flag-icons/react/3x2";
-import {
-  FaAndroid as AndroidIcon,
-  FaBriefcase as BusinessIcon,
-  FaCode as CodeIcon,
-  FaRunning as RunningIcon,
-} from "react-icons/fa";
-import { GiGraduateCap as StudentIcon } from "react-icons/gi";
-import { IoFastFood as FoodIcon } from "react-icons/io5";
-import { MdFactory as FactoryIcon } from "react-icons/md";
-import { PiPackageFill as PackageIcon } from "react-icons/pi";
 
-export const WORK_EXPERIENCE: ExperienceItemType[] = [
+export const EXPERIENCE: ExperienceItemType[] = [
   {
     id: "self-employed-android",
     companyName: "Personal Projects",
@@ -28,7 +25,8 @@ export const WORK_EXPERIENCE: ExperienceItemType[] = [
         employmentDuration: "2 months",
         employmentType: "Self-employed",
         icon: AndroidIcon,
-        description: `Developed the Mongolian Sign Language (MSL) Dictionary app with interactive lessons and the EasyRunMusic app to find and share running tracks, featuring AI that recommends similar tracks based on a runner's favorite music. Built with Jetpack Compose, Hilt, Coroutines, Flow, Room, Ktor, and Material 3.`,
+        description: `- Built the Mongolian Sign Language (MSL) Dictionary app to make learning sign language easy and accessible for everyone. It features interactive lessons and a clean, modern design powered by Jetpack Compose, Hilt, Coroutines, Flow, Room, Ktor, and Material 3.
+- Earned 100+ GitHub stars and 100+ Play Store downloads.`,
         skills: [
           "Android Development",
           "Jetpack Compose",
@@ -48,6 +46,17 @@ export const WORK_EXPERIENCE: ExperienceItemType[] = [
       },
     ],
     isCurrentEmployer: true,
+    projects: [
+      {
+        title: "Sign Language (Kotlin)",
+        date: "October 2025 - Present",
+        description: "Learn Mongolian sign language with interactive lessons.",
+        imageUrl: "/images/app-placeholder.jpg",
+        imageAlt: "Sign Language Dictionary",
+        demoLink:
+          "https://play.google.com/store/apps/details?id=com.timtb.signlanguagedictionary",
+      },
+    ],
   },
   {
     id: "self-employed-frontend",
@@ -64,7 +73,7 @@ export const WORK_EXPERIENCE: ExperienceItemType[] = [
         employmentPeriod: "January 2025 — October 2025",
         employmentDuration: "10 months",
         employmentType: "Self-employed",
-        icon: CodeIcon,
+        icon: FrontendIcon,
         description: `Built an open-source, full-stack blog app using Next.js, TypeScript, Tailwind CSS, and Supabase, featuring an admin panel, WYSIWYG editor, image uploads, login, search, paging, and commenting system.
 
 - [Earned 450+ GitHub stars](http://bit.ly/4njcFMh)
@@ -92,6 +101,44 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
       },
     ],
     isCurrentEmployer: false,
+    projects: [
+      {
+        title: "Full-Stack Blog App",
+        date: "June 2024 - Present",
+        description:
+          "A fully responsive full-stack blog app built with Next.js, React, TailwindCSS, and Supabase as backend. Based on Shadcn UI components.",
+        imageUrl: "/images/apps/web/blog-app.jpg",
+        imageAlt: "Blog App",
+        demoLink: "https://ubdotcafe.vercel.app",
+      },
+      {
+        title: "Portfolio Website v3",
+        date: "October 2025 - Present",
+        description:
+          "Built with Next.js 16 and TailwindCSS. Designed and developed from the ground up, inspired by my own headshot. Features a modern, clean, and responsive design, with a focus on performance and SEO optimization.",
+        imageUrl: "/images/apps/web/portfolio-app-v3.jpg",
+        imageAlt: "Portfolio Website",
+        demoLink: "https://hiretimsf.com",
+      },
+      {
+        title: "Portfolio Website v2",
+        date: "January 2025 - June 2025",
+        description:
+          "Built with Next.js 15 and TailwindCSS. A modern, fast, fully responsive portfolio website with SEO optimization, MDX blog system, and custom react motion animations.",
+        imageUrl: "/images/apps/web/portfolio-app-v2.jpg",
+        imageAlt: "Portfolio Website",
+        demoLink: "https://tim-portfolio-web-v2.vercel.app/",
+      },
+      {
+        title: "Portfolio Website v1",
+        date: "January 2025 - June 2025",
+        description:
+          "Built with Next.js 13 and TailwindCSS. This is the first version of my portfolio website.",
+        imageUrl: "/images/apps/web/portfolio-app-v1.jpg",
+        imageAlt: "Portfolio Website",
+        demoLink: "https://tim-portfolio-web-v1.vercel.app/",
+      },
+    ],
   },
   {
     id: "tesla",
@@ -108,7 +155,7 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
         employmentPeriod: "October 2020 — January 2025",
         employmentDuration: "4 years 4 months",
         employmentType: "Full-time",
-        icon: FactoryIcon,
+        icon: WorkerIcon,
         description: `- Monitored and performed functional testing for Model S and X vehicles at the end of the production line.
 - Conducted drive tests for Model 3 and Y to ensure vehicle performance and quality.
 - Assembled and installed body-side components for Model S.
@@ -183,6 +230,35 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
       },
     ],
     isCurrentEmployer: false,
+    projects: [
+      {
+        title: "Portfolio App (Kotlin)",
+        date: "April 2017 - July 2020",
+        imageUrl: "/images/apps/android/portfolio-app-kotlin.jpg",
+        imageAlt: "Portfolio App (Kotlin)",
+        description:
+          "A Kotlin-based portfolio app using Jetpack Components, MVVM, Room, and Coroutines for seamless offline/online syncing.",
+        demoLink: "https://github.com/timtbdev/Android-Portfolio-App-Kotlin",
+      },
+      {
+        title: "Portfolio App (Java)",
+        date: "April 2017 - July 2020",
+        imageUrl: "/images/apps/android/portfolio-app-java.jpg",
+        imageAlt: "Portfolio App (Java)",
+        description:
+          "A Java-based Android portfolio app showcasing my development skills, built with standard SDK APIs and MVC architecture.",
+        demoLink: "https://github.com/timtbdev/Android-Portfolio-App-Java",
+      },
+      {
+        title: "Portfolio Website v0",
+        date: "January 2023 - June 2023",
+        description:
+          "This is the first version of my portfolio site, built with HTML, CSS, and jQuery.",
+        imageUrl: "/images/apps/web/portfolio-app-v0.jpg",
+        imageAlt: "Portfolio Website v0",
+        demoLink: "https://personal-website-76368.web.app/index.html",
+      },
+    ],
   },
   {
     id: "morningstar",
@@ -199,13 +275,14 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
         employmentPeriod: "October 2019 — January 2020",
         employmentDuration: "4 months",
         employmentType: "Full-time",
-        icon: RunningIcon,
+        icon: ServerIcon,
         description: `- Served meals and drinks to residents.
 - Kept dining room clean and organized.`,
         skills: [
           "Meal Service",
-          "Dining Room Cleaning",
-          "Dining Room Management",
+          "Customer Service",
+          "Communication",
+          "Teamwork",
         ],
         isExpanded: false,
       },
@@ -227,10 +304,15 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
         employmentPeriod: "April 2017 — July 2019",
         employmentDuration: "2 years 4 months",
         employmentType: "Part-time",
-        icon: PackageIcon,
+        icon: DriverIcon,
         description: `- Rideshare and delivery driver (Uber, Lyft, DoorDash)
 - Part-time roles at UPS and Amazon warehouses`,
-        skills: [],
+        skills: [
+          "Customer Service",
+          "Time Management",
+          "Multi-tasking",
+          "Communication",
+        ],
         isExpanded: false,
       },
     ],
@@ -247,11 +329,11 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
     positions: [
       {
         id: "web-developer-2013",
-        title: "Web Developer",
+        title: "Frontend Developer",
         employmentPeriod: "November 2013 — February 2016",
         employmentDuration: "2 years 4 months",
         employmentType: "Full-time",
-        icon: CodeIcon,
+        icon: FrontendIcon,
         description: `- Designed and developed a responsive project website using HTML, CSS, and JavaScript.
 - Created digital marketing materials, improving project visibility and engagement.`,
         skills: [
@@ -267,6 +349,27 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
       },
     ],
     isCurrentEmployer: false,
+    projects: [
+      {
+        title: "Renewable Energy Project",
+        date: "September 2012 - November 2013",
+        description:
+          "Designed and developed from the ground up with HTML, CSS, and JavaScript to highlight the key advantages of a renewable energy initiative.",
+        imageUrl: "/images/apps/web/renewable-energy-app.jpg",
+        imageAlt: "Renewable Energy Project",
+        demoLink: "https://ioco-5c746.web.app/eg/index.html",
+      },
+      {
+        title: "Project Marketing Materials",
+        date: "September 2012 - November 2013",
+        description:
+          "Marketing materials and visuals were created in Photoshop, along with videos in After Effects. A lot of effort went into highlighting the project’s benefits and making the content engaging.",
+        imageUrl: "/images/apps/web/renewable-energy-marketing-materials.jpg",
+        imageAlt: "Renewable Energy Marketing Materials",
+        demoLink:
+          "https://drive.google.com/file/d/1TJTkNLywZL3Z_MaKLHGfsu5q_NJ-Bjo_/view?usp=sharing",
+      },
+    ],
   },
   {
     id: "self-employed-android-early-2012",
@@ -298,6 +401,26 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
       },
     ],
     isCurrentEmployer: false,
+    projects: [
+      {
+        title: "T-shirt Design App",
+        date: "September 2012 - November 2013",
+        imageUrl: "/images/apps/android/tshirt-app.jpg",
+        imageAlt: "T-shirt Design App",
+        description:
+          "Developed a custom T-shirt design app featuring exclusive collections by renowned Mongolian designer @ido.dsnr, blending modern aesthetics with cultural inspiration.",
+        demoLink: "https://www.youtube.com/watch?v=my5CPizUXEg",
+      },
+      {
+        title: "Local Marketplace App",
+        date: "September 2012 - November 2013",
+        imageUrl: "/images/apps/android/local-market-place-app.jpg",
+        imageAlt: "Local Marketplace App",
+        description:
+          "A local marketplace app for buying and selling items in your neighborhood.",
+        demoLink: "https://www.youtube.com/watch?v=2TeqDGT7ATk",
+      },
+    ],
   },
   {
     id: "unitel",
@@ -314,7 +437,7 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
         employmentPeriod: "November 2009 — August 2012",
         employmentDuration: "2 years 10 months",
         employmentType: "Full-time",
-        icon: BusinessIcon,
+        icon: MarketingIcon,
         description: `- Launched BlackBerry services in Mongolia, selling over 6,000 devices.
 - Developed a product landing page with HTML & CSS that boosted user engagement by 10%.`,
         skills: [
@@ -343,7 +466,7 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
         employmentPeriod: "March 2007 — August 2007",
         employmentDuration: "6 months",
         employmentType: "Full-time",
-        icon: StudentIcon,
+        icon: GraduateIcon,
         description: `- Migrated over 100 logistics reports to a new Cognos BI system.
 - Assisted Data Warehouse users by creating custom data reports using SQL.`,
         skills: [
