@@ -26,7 +26,7 @@ export const EXPERIENCE: ExperienceItemType[] = [
         employmentDuration: "2 months",
         employmentType: "Self-employed",
         icon: AndroidIcon,
-        description: `Built an open-source Mongolian Sign Language (MSL) Dictionary app with Jetpack Compose, Hilt, Coroutines, Flow, Room, Ktor, and Material 3, featuring interactive lessons, user authentication, bookmarking, and offline support.
+        description: `Built an open-source Mongolian Sign Language (MSL) Dictionary app using Jetpack Compose, Hilt, Coroutines, Flow, Room, Ktor, and Material 3, featuring interactive lessons, user authentication, bookmarks, and offline access.
 - [Earned 100+ GitHub stars](https://github.com/hiretimsf)
 - [Earned 100+ Play Store downloads](https://github.com/hiretimsf)`,
       },
@@ -269,11 +269,11 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
         icon: AndroidIcon,
         description: `Developed and published two Android portfolio apps demonstrating modern architecture, testing, and best development practices.
 
-[Portfolio App (Kotlin)](https://github.com/timtbdev/Android-Portfolio-App-Kotlin): Rebuilt the app in Kotlin (MVVM, Navigation, LiveData/DataBinding, Material Design, Coroutines, Retrofit, Room, Koin) with improved data flow and image handling.
-- [Earned 450+ GitHub stars](http://bit.ly/4njcFMh)
+- [Portfolio App (Kotlin)](https://github.com/timtbdev/Android-Portfolio-App-Kotlin): Rebuilt the app in Kotlin using MVVM, Navigation, LiveData, DataBinding, Material Design, Coroutines, Retrofit, Room, and Koin, improving data flow and image handling. Earned 50+ stars on GitHub.
 
-[Portfolio App (Java)](https://github.com/timtbdev/Android-Portfolio-App-Java): Developed the initial version in Java and XML using MVC architecture with the Android SDK and Retrofit for API integration. 
-- [Earned 250+ GitHub stars](http://bit.ly/4njcFMh)`,
+- [Portfolio App (Java)](https://github.com/timtbdev/Android-Portfolio-App-Java): Developed the initial version in Java and XML using MVC architecture with the Android SDK and Retrofit for API integration, earning 10+ stars on GitHub.
+
+- [Portfolio Website](https://personal-website-76368.web.app/index.html):Built the initial version of my portfolio website using HTML, CSS, and JavaScript, with Firebase as the backend.`,
         isExpanded: false,
       },
     ],
@@ -327,7 +327,7 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
       },
       {
         title: "Portfolio Website v0",
-        date: "January 2023 - June 2023",
+        date: "April 2017 - June 2020",
         description:
           "This is the first version of my portfolio site, built with HTML, CSS, and jQuery.",
         imageUrl: "/images/apps/web/portfolio-app-v0.jpg",
@@ -463,8 +463,8 @@ Maintained a 5-star customer service rating and excellent communication skills.`
         employmentType: "Self-employed",
         icon: AndroidIcon,
 
-        description: `- Developed and launched two Android applications, including a full-stack, location-based marketplace app for buying and selling items within local neighborhoods, built on the Ushahidi open-source platform using Java, XML, and Eclipse IDE.
-- Created a custom T-shirt design app featuring exclusive collections by Mongolian designer @ido.dsnr, blending modern aesthetics with cultural inspiration.`,
+        description: `- Developed and launched a full-stack, location-based marketplace app for buying and selling items within local neighborhoods, built on the Ushahidi open-source platform using Java, XML, and Eclipse IDE.
+- Created a custom T-shirt design app featuring exclusive collections by Mongolian designer [@ido.dsnr](https://www.behance.net/ido_dsnr?locale=en_US), combining modern aesthetics with cultural inspiration.`,
 
         isExpanded: false,
       },
@@ -522,14 +522,21 @@ Maintained a 5-star customer service rating and excellent communication skills.`
         employmentType: "Full-time",
         icon: MarketingIcon,
         description: `- Launched BlackBerry services in Mongolia, selling over 6,000 devices.
-- Developed a product landing page with HTML & CSS that boosted user engagement by 10%.`,
-        skills: [
-          "HTML",
-          "Cascading Style Sheets (CSS)",
-          "JavaScript",
-          "Photo Impact",
-        ],
+- Developed a product landing page with HTML & CSS, boosting user engagement by 10%.`,
         isExpanded: false,
+      },
+    ],
+    projects: [
+      {
+        title: "Product Landing Page",
+        date: "November 2009 - August 2012",
+        description:
+          "A product landing page built with HTML and CSS that boosted user engagement by 10%.",
+        imageUrl: "/images/apps/web/product-landing-page-blackberry.jpg",
+        imageAlt: "Product Landing Page",
+        demoLink:
+          "https://web.archive.org/web/20100907212810/http:/www.unitel.mn/blackberry/serv.html",
+        skills: ["HTML", "CSS", "JavaScript", "Photo Impact"],
       },
     ],
     isCurrentEmployer: false,
