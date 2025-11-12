@@ -51,8 +51,12 @@ export default function ExperienceItem({
       )}
 
       {hasProjects &&
-        projects.map((project) => (
-          <ProjectMain key={project.title} project={project} />
+        projects.map((project, index) => (
+          <ProjectMain
+            key={project.title}
+            project={project}
+            hasBorderTop={index !== 0}
+          />
         ))}
     </article>
   );

@@ -1,17 +1,28 @@
+import { cn } from "@/lib/utils";
 import type { ExperienceProjectItemType } from "@/types";
 import { ProjectDate } from "./project-date";
 import { ProjectDescription } from "./project-description";
 import { ProjectImage } from "./project-image";
+import ProjectSkills from "./project-skills";
 import { ProjectTitle } from "./project-title";
 
 type ProjectMainProps = {
   project: ExperienceProjectItemType;
+  hasBorderTop?: boolean;
 };
 
-export function ProjectMain({ project }: ProjectMainProps) {
+export function ProjectMain({
+  project,
+  hasBorderTop = false,
+}: ProjectMainProps) {
   return (
     <div className="px-6 md:flex-row md:px-8">
-      <div className="flex w-full flex-row gap-4 border-r border-l border-gray-200 px-4 md:gap-4">
+      <div
+        className={cn(
+          "flex w-full flex-row gap-4 border-x border-b border-gray-200 px-4 md:gap-4",
+          hasBorderTop && "border-t",
+        )}
+      >
         <div className="flex-shrink-0 border-r border-gray-200 py-4 pr-4">
           <ProjectImage
             imageUrl={project.imageUrl}
@@ -24,6 +35,7 @@ export function ProjectMain({ project }: ProjectMainProps) {
           <ProjectDescription description={project.description} />
         </div>
       </div>
+      <ProjectSkills skills={project.skills ?? []} />
     </div>
   );
 }

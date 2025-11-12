@@ -12,7 +12,7 @@ export function ProjectTitle({ title, demoLink }: ProjectTitleProps) {
       href={demoLink ?? ""}
       target={demoLink ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className="group text-panda-text decoration-panda-orange hover:decoration-panda-text inline-flex items-center gap-1 text-lg font-semibold tracking-tight underline underline-offset-6"
+      className="group text-panda-text hover:decoration-panda-text/60 inline-flex items-center gap-1 text-lg font-semibold tracking-tight hover:underline hover:underline-offset-4"
     >
       {title}
       <ArrowUpRight

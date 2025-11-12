@@ -16,7 +16,7 @@ export default function CompanyName({
   return (
     <h3
       className={cn(
-        "text-panda-text inline-block align-middle text-lg leading-snug font-medium",
+        "text-panda-text inline-block text-center align-middle text-2xl leading-snug font-semibold md:text-left md:text-xl",
         className,
       )}
     >

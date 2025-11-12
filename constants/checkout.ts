@@ -9,7 +9,7 @@ const checkout = [
     name: "Resume",
     description: "Check out my resume",
     image: "/images/checkout/checkout-resume.jpg",
-    link: "/files/resume.pdf",
+    link: "/resume",
   },
   {
     name: "Running playlist",

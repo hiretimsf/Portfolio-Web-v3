@@ -22,6 +22,8 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-md gap-2 px-3 py-2 font-semibold text-white underline-offset-6 hover:underline"
               aria-label={link.label}
             >

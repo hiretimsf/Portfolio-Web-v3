@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import type { ExperiencePositionItemType } from "@/types";
 import PositionDescription from "./position-description";
-import PositionHeader from "./position-header";
+import PositionMeta from "./position-meta";
+import PositionPosition from "./position-position";
 import PositionSkills from "./position-skills";
 
 type PositionMainProps = {
@@ -15,15 +15,14 @@ export default function PositionMain({
 }: PositionMainProps) {
   return (
     <div className="flex flex-col px-6 md:px-8">
-      <PositionHeader
-        icon={position.icon}
-        title={position.title}
+      <PositionPosition icon={position.icon} title={position.title} />
+      <PositionMeta
         employmentType={position.employmentType ?? ""}
         employmentPeriod={position.employmentPeriod}
         employmentDuration={position.employmentDuration ?? ""}
       />
       <PositionDescription description={position.description} />
-      <PositionSkills skills={position.skills} hasProjects={hasProjects} />
+      <PositionSkills skills={position.skills} />
     </div>
   );
 }

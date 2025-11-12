@@ -6,6 +6,6 @@ interface ProjectDescriptionProps {
 
 export function ProjectDescription({ description }: ProjectDescriptionProps) {
   return (
-    <p className="text-panda-text/80 line-clamp-2 text-sm">{description}</p>
+    <p className="text-panda-text/80 text-md/6 line-clamp-2">{description}</p>
   );
 }

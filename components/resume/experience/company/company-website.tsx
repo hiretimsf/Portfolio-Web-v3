@@ -24,19 +24,24 @@ export default function CompanyWebsite({
   }
 
   return (
-    <dl className={cn("flex items-center gap-1.5", className)}>
+    <dl
+      className={cn(
+        "text-panda-text/80 flex items-center justify-center gap-1.5 text-base",
+        className,
+      )}
+    >
       <dt className="sr-only">Website</dt>
-      <dd className="flex items-center gap-1.5">
-        <GlobeIcon className="size-4" aria-hidden="true" />
+      <dd className="flex items-center justify-center gap-1.5 align-middle">
+        <GlobeIcon className="size-4 align-middle" aria-hidden="true" />
         <a
           href={companyWebsite}
           target="_blank"
           rel="noopener noreferrer"
-          className="group decoration-panda-orange hover:decoration-panda-text inline-flex items-center gap-1 underline underline-offset-4"
+          className="group text-panda-text/80 inline-flex items-center gap-1 hover:underline hover:underline-offset-4"
         >
-          {formattedWebsite}
+          Website
           <ArrowUpRight
-            className="text-panda-text/70 group-hover:text-panda-orange size-3.5"
+            className="text-panda-text/70 group-hover:text-panda-orange size-4"
             aria-hidden="true"
           />
         </a>

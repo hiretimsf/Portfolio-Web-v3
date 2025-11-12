@@ -3,5 +3,5 @@ interface ProjectDateProps {
 }
 
 export function ProjectDate({ date }: ProjectDateProps) {
-  return <span className="text-muted-foreground text-xs">{date}</span>;
+  return <span className="text-muted-foreground text-sm">{date}</span>;
 }

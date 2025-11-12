@@ -20,10 +20,15 @@ export default function CompanyLocation({
   }
 
   return (
-    <div className={cn("flex items-center gap-1.5", className)}>
+    <div
+      className={cn(
+        "text-panda-text/80 flex items-center gap-1.5 text-base",
+        className,
+      )}
+    >
       {CountryFlag && (
         <span className="flex items-center">
-          <CountryFlag className="size-3.5" aria-hidden="true" />
+          <CountryFlag className="size-4" aria-hidden="true" />
         </span>
       )}
       {companyLocation && <span>{companyLocation}</span>}

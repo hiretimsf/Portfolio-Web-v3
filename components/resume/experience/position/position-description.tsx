@@ -44,7 +44,7 @@ export default function PositionDescription({
                   rel="noopener noreferrer"
                   className={cn(
                     className,
-                    "group hover:decoration-panda-text decoration-panda-orange inline-flex items-center gap-1 underline underline-offset-4",
+                    "group text-panda-text/80 inline-flex items-center gap-1 hover:underline hover:underline-offset-4",
                   )}
                 >
                   {content}
@@ -73,7 +73,7 @@ function Prose({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "prose prose-sm text-panda-text prose-invert max-w-none font-mono",
+        "prose prose-md text-panda-text prose-invert max-w-none font-mono",
         "prose-a:font-medium prose-a:wrap-break-word prose-a:text-panda-text prose-a:underline prose-a:underline-offset-4",
         "prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
         className,

@@ -155,4 +155,5 @@ export type ExperienceProjectItemType = {
   imageUrl: string;
   imageAlt: string;
   demoLink?: string;
+  skills?: string[];
 };
