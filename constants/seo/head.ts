@@ -26,6 +26,14 @@ const HEAD: HeadType[] = [
     ),
     slug: "/apps",
   },
+  {
+    page: "Resume",
+    title: truncateTitle("Resume | Tim's Resume | Tim"),
+    description: truncateDescription(
+      "Tim's resume showcasing his work experience and education.",
+    ),
+    slug: "/resume",
+  },
 ];
 
 export default HEAD;

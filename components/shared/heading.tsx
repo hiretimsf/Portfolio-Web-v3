@@ -7,6 +7,7 @@ interface HeadingProps {
   backgroundStyleClassName?: string;
   gridStyleClassName?: string;
   gridColorClassName?: string;
+  gridId?: string;
 }
 export default function Heading({
   title,
@@ -14,6 +15,7 @@ export default function Heading({
   borderStyleClassName = "border-gray-200",
   backgroundStyleClassName = "bg-panda-background",
   gridStyleClassName = "text-gray-200",
+  gridId = "grid-default",
 }: HeadingProps) {
   return (
     <div
@@ -24,22 +26,14 @@ export default function Heading({
         backgroundStyleClassName,
       )}
     >
-      <h2
-        className={cn(
-          "text-panda-text decoration-panda-orange z-10 mx-auto text-center tracking-tight underline underline-offset-8",
-          textStyleClassName,
-        )}
-      >
-        {title}
-      </h2>
       <svg
-        className="absolute inset-0 h-30 [mask-image:radial-gradient(circle_at_100%_0,black,transparent_65%)]"
+        className="absolute inset-0 z-0 h-full [mask-image:radial-gradient(circle_at_100%_0,black,transparent_80%)]"
         width="100%"
         height="100%"
       >
         <defs>
           <pattern
-            id="grid"
+            id={gridId}
             x="0"
             y="0"
             width="40"
@@ -50,12 +44,20 @@ export default function Heading({
               d="M 40 0 L 0 0 0 40"
               stroke="currentColor"
               fill="transparent"
-              strokeWidth="1"
+              strokeWidth="2"
             ></path>
           </pattern>
         </defs>
-        <rect fill="url(#grid)" width="100%" height="100%"></rect>
+        <rect fill={`url(#${gridId})`} width="100%" height="100%"></rect>
       </svg>
+      <h2
+        className={cn(
+          "text-panda-text decoration-panda-orange relative z-10 mx-auto text-center tracking-tight underline underline-offset-8",
+          textStyleClassName,
+        )}
+      >
+        {title}
+      </h2>
     </div>
   );
 }
