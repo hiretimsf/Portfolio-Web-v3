@@ -5,7 +5,7 @@ import { FaqSection } from "@/components/shared/faq";
 import ProjectCard from "@/components/shared/project-card";
 import YellowButton from "@/components/shared/yellow-button";
 import { Badge } from "@/components/ui/badge";
-import currentProjects from "@/constants/projects/current-projects";
+import { PROJECTS } from "@/constants/projects";
 import { shoutouts } from "@/constants/shoutouts";
 import { skills } from "@/constants/skills";
 import { CheckmarkIcon } from "@/icons/checkmark-icon";
@@ -142,7 +142,20 @@ const ShoutoutItem = memo(function ShoutoutItem({
 
 export default function HomePage() {
   // Memoize expensive computations
-  const memoizedProjects = useMemo(() => currentProjects, []);
+  const memoizedProjects = useMemo(() => {
+    return PROJECTS.filter((project) => [1, 6, 7].includes(project.id)).map(
+      (project) => ({
+        id: project.id,
+        title: project.title,
+        date: project.date,
+        description: project.description,
+        imageUrl: project.imageUrl,
+        imageAlt: project.imageAlt,
+        href: project.liveDemo || "#",
+        githubLink: project.github,
+      }),
+    );
+  }, []);
   const memoizedShoutouts = useMemo(() => shoutouts, []);
 
   return (

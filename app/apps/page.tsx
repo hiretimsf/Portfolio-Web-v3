@@ -1,9 +1,8 @@
 import ProjectCard from "@/components/shared/project-card";
-import androidApps from "@/constants/projects/android-apps";
-import webApps from "@/constants/projects/web-apps";
+import { PROJECTS } from "@/constants/projects";
 import HEAD from "@/constants/seo/head";
 import { getBaseUrl } from "@/lib/utils";
-import { AndroidApp, HeadType, WebProject } from "@/types";
+import { AndroidApp, HeadType, ProjectItemType, WebProject } from "@/types";
 import type { Metadata } from "next";
 
 // Validate SEO configuration to ensure all required fields are present
@@ -44,7 +43,9 @@ export default function AppsPage() {
           ANDROID APPS
         </h1>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {androidApps.map((project: AndroidApp, index: number) => (
+          {PROJECTS.filter(
+            (project: ProjectItemType) => project.category === "Android",
+          ).map((project: ProjectItemType, index: number) => (
             <ProjectCard
               key={`${project.title}-${index}`}
               project={{
@@ -52,7 +53,7 @@ export default function AppsPage() {
                 title: project.title,
                 date: project.date,
                 description: project.description,
-                imageUrl: project.image,
+                imageUrl: project.imageUrl,
                 imageAlt: project.title,
                 github: project.github || "",
                 liveDemo: project.liveDemo || "",
@@ -70,10 +71,21 @@ export default function AppsPage() {
           WEB APPS
         </h1>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {webApps.map((project: WebProject, index: number) => (
+          {PROJECTS.filter(
+            (project: ProjectItemType) => project.category === "Web",
+          ).map((project: ProjectItemType, index: number) => (
             <ProjectCard
               key={`${project.title}-${index}`}
-              project={project}
+              project={{
+                id: project.id,
+                title: project.title,
+                date: project.date,
+                description: project.description,
+                imageUrl: project.imageUrl,
+                imageAlt: project.title,
+                github: project.github || "",
+                liveDemo: project.liveDemo || "",
+              }}
               index={index}
             />
           ))}

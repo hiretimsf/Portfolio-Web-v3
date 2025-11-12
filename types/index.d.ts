@@ -145,15 +145,18 @@ export type ExperienceItemType = {
   country?: flag;
   positions: ExperiencePositionItemType[];
   isCurrentEmployer?: boolean;
-  projects?: ExperienceProjectItemType[];
+  projects?: ProjectItemType[];
 };
 
-export type ExperienceProjectItemType = {
+export type ProjectItemType = {
+  id: number;
   title: string;
   date?: string;
   description: string;
   imageUrl: string;
   imageAlt: string;
-  demoLink?: string;
+  github?: string;
+  liveDemo?: string;
   skills?: string[];
+  category?: string;
 };

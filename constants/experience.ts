@@ -8,6 +8,7 @@ import ServerIcon from "@/icons/server-icon";
 import WorkerIcon from "@/icons/worker-icon";
 import type { ExperienceItemType } from "@/types";
 import { DE, MN, US } from "country-flag-icons/react/3x2";
+import { PROJECTS } from "./projects";
 
 export const EXPERIENCE: ExperienceItemType[] = [
   {
@@ -32,31 +33,10 @@ export const EXPERIENCE: ExperienceItemType[] = [
       },
     ],
     isCurrentEmployer: true,
-    projects: [
-      {
-        title: "Sign Language (Kotlin)",
-        date: "October 2025 - Present",
-        description: "Learn Mongolian sign language with interactive lessons.",
-        imageUrl: "/images/app-placeholder.jpg",
-        imageAlt: "Sign Language Dictionary",
-        demoLink: "https://github.com/hiretimsf",
-        skills: [
-          "Android Development",
-          "Jetpack Compose",
-          "Navigation 3",
-          "DataStore",
-          "Kotlin Coroutines",
-          "Kotlin Flow",
-          "Ktor",
-          "Retrofit",
-          "OkHttp",
-          "Dagger Hilt",
-          "Hilt",
-          "Room DB",
-          "Material Design 3",
-        ],
-      },
-    ],
+    projects: (() => {
+      const project = PROJECTS.find((p) => p.id === 1);
+      return project ? [project] : [];
+    })(),
   },
   {
     id: "self-employed-frontend",
@@ -77,47 +57,16 @@ export const EXPERIENCE: ExperienceItemType[] = [
         description: `
 
 Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shadcn UI, TanStack Query, and Framer Motion. Features advanced SEO, built-in live search, a mobile-first design, and a blog with MDX support powered by FumaDocs.
-- Featured on [WeAreDevelopers (March 2025)](https://bit.ly/4lE6TVI)
+- Featured on [WeAreDevelopers (March 2025)](https://www.wearedevelopers.com/en/magazine/561/web-developer-portfolio-inspiration-and-examples-march-2025-561)
 - Reviewed by [Danny Thompson](https://x.com/DThompsonDev) on his [Youtube channel](https://www.youtube.com/watch?v=wfL5arWfeOw&t=2866s)`,
 
         isExpanded: false,
       },
     ],
     isCurrentEmployer: false,
-    projects: [
-      {
-        title: "Portfolio Website v3",
-        date: "October 2025 - Present",
-        description:
-          "Built with Next.js 16 and TailwindCSS. Designed and developed from the ground up, inspired by my own headshot. Features a modern, clean, and responsive design, with a focus on performance and SEO optimization.",
-        imageUrl: "/images/apps/web/portfolio-app-v3.jpg",
-        imageAlt: "Portfolio Website",
-        demoLink: "https://hiretimsf.com",
-        skills: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-      },
-      {
-        title: "Portfolio Website v2",
-        date: "January 2025 - March 2025",
-        description:
-          "Built with Next.js 15 and TailwindCSS. A modern, fast, fully responsive portfolio website with SEO optimization, MDX blog system, and custom react motion animations.",
-        imageUrl: "/images/apps/web/portfolio-app-v2.jpg",
-        imageAlt: "Portfolio Website",
-        demoLink: "https://tim-portfolio-web-v2.vercel.app/",
-        skills: [
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "Shadcn Ui",
-          "TanStack Query",
-          "FumaDocs",
-          "Content Collection",
-          "MDX",
-          "Nuqs",
-          "Framer Motion",
-          "Resend",
-        ],
-      },
-    ],
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 2 || p.id === 3);
+    })(),
   },
   {
     id: "tesla-production-associate",
@@ -182,43 +131,9 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
         isExpanded: false,
       },
     ],
-    projects: [
-      {
-        title: "Full-Stack Blog App",
-        date: "June 2023 - October 2023",
-        description:
-          "A fully responsive full-stack blog app built with Next.js 13, TypeScript, TailwindCSS, and Supabase as backend. Based on Shadcn UI components.",
-        imageUrl: "/images/apps/web/blog-app.jpg",
-        imageAlt: "Blog App",
-        demoLink: "https://ubdotcafe.vercel.app",
-        skills: [
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "Shadcn UI",
-          "Supabase",
-          "Drizzle",
-          "Zustand",
-          "FumaDocs",
-          "Nuqs",
-          "MDX",
-          "SEO",
-          "Responsive Design",
-          "Accessibility",
-          "Framer Motion",
-        ],
-      },
-      {
-        title: "Portfolio Website v1",
-        date: "January 2023 - June 2023",
-        description:
-          "Built with Next.js 13 and TailwindCSS. This is the first version of my portfolio website.",
-        imageUrl: "/images/apps/web/portfolio-app-v1.jpg",
-        imageAlt: "Portfolio Website",
-        demoLink: "https://tim-portfolio-web-v1.vercel.app/",
-        skills: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-      },
-    ],
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 4 || p.id === 5);
+    })(),
   },
   {
     id: "tesla-material-handler",
@@ -278,64 +193,10 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
       },
     ],
     isCurrentEmployer: false,
-    projects: [
-      {
-        title: "Portfolio App (Kotlin)",
-        date: "April 2017 - July 2020",
-        imageUrl: "/images/apps/android/portfolio-app-kotlin.jpg",
-        imageAlt: "Portfolio App (Kotlin)",
-        description:
-          "A Kotlin-based portfolio app using Jetpack Components, MVVM, Room, and Coroutines for seamless offline/online syncing.",
-        demoLink: "https://github.com/timtbdev/Android-Portfolio-App-Kotlin",
-        skills: [
-          "Kotlin",
-          "MVVM",
-          "Jetpack Components",
-          "Material Design 2",
-          "Navigation",
-          "Room DB",
-          "Retrofit",
-          "OkHttp",
-          "Koin",
-          "ViewModel",
-          "LiveData",
-          "DataBinding",
-          "Leak Canary",
-          "Unit Testing",
-          "Shape Shifter",
-          "SVG Animation",
-          "Firebase",
-          "Dark Theme",
-        ],
-      },
-      {
-        title: "Portfolio App (Java)",
-        date: "April 2017 - July 2020",
-        imageUrl: "/images/apps/android/portfolio-app-java.jpg",
-        imageAlt: "Portfolio App (Java)",
-        description:
-          "A Java-based Android portfolio app showcasing my development skills, built with standard SDK APIs and MVC architecture.",
-        demoLink: "https://github.com/timtbdev/Android-Portfolio-App-Java",
-        skills: [
-          "Java",
-          "XML",
-          "MVC",
-          "Material Design 2",
-          "Retrofit",
-          "OkHttp",
-        ],
-      },
-      {
-        title: "Portfolio Website v0",
-        date: "April 2017 - June 2020",
-        description:
-          "This is the first version of my portfolio site, built with HTML, CSS, and jQuery.",
-        imageUrl: "/images/apps/web/portfolio-app-v0.jpg",
-        imageAlt: "Portfolio Website v0",
-        demoLink: "https://personal-website-76368.web.app/index.html",
-        skills: ["HTML", "CSS", "JavaScript", "Firebase"],
-      },
-    ],
+
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 6 || p.id === 7 || p.id === 8);
+    })(),
   },
   {
     id: "morningstar",
@@ -383,7 +244,7 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
         employmentType: "Part-time",
         icon: DriverIcon,
         description: `- Completed 2,000+ safe rides and deliveries across multiple platforms.
-Maintained a 5-star customer service rating and excellent communication skills.`,
+- Maintained a 5-star customer service rating and excellent communication skills.`,
         skills: [
           "Customer Service",
           "Time Management",
@@ -417,34 +278,9 @@ Maintained a 5-star customer service rating and excellent communication skills.`
       },
     ],
     isCurrentEmployer: false,
-    projects: [
-      {
-        title: "Renewable Energy Project",
-        date: "September 2012 - November 2013",
-        description:
-          "Designed and developed from the ground up with HTML, CSS, and JavaScript to highlight the key advantages of a renewable energy initiative.",
-        imageUrl: "/images/apps/web/renewable-energy-app.jpg",
-        imageAlt: "Renewable Energy Project",
-        demoLink: "https://ioco-5c746.web.app/eg/index.html",
-        skills: [
-          "HTML",
-          "Cascading Style Sheets (CSS)",
-          "JavaScript",
-          "jQuery",
-        ],
-      },
-      {
-        title: "Project Marketing Materials",
-        date: "September 2012 - November 2013",
-        description:
-          "Marketing materials and visuals were created in Photoshop, along with videos in After Effects. A lot of effort went into highlighting the project’s benefits and making the content engaging.",
-        imageUrl: "/images/apps/web/renewable-energy-marketing-materials.jpg",
-        imageAlt: "Renewable Energy Marketing Materials",
-        demoLink:
-          "https://drive.google.com/file/d/1TJTkNLywZL3Z_MaKLHGfsu5q_NJ-Bjo_/view?usp=sharing",
-        skills: ["Adobe Photoshop", "Adobe Illustrator"],
-      },
-    ],
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 9 || p.id === 10);
+    })(),
   },
   {
     id: "self-employed-android-early-2012",
@@ -470,40 +306,10 @@ Maintained a 5-star customer service rating and excellent communication skills.`
       },
     ],
     isCurrentEmployer: false,
-    projects: [
-      {
-        title: "T-shirt Design App",
-        date: "September 2012 - November 2013",
-        imageUrl: "/images/apps/android/tshirt-app.jpg",
-        imageAlt: "T-shirt Design App",
-        description:
-          "Developed a custom T-shirt design app featuring exclusive collections by renowned Mongolian designer @ido.dsnr, blending modern aesthetics with cultural inspiration.",
-        demoLink: "https://www.youtube.com/watch?v=my5CPizUXEg",
-        skills: [
-          "Java",
-          "XML",
-          "Android SDK",
-          "Eclipse IDE",
-          "Android SDK Plugin",
-        ],
-      },
-      {
-        title: "Local Marketplace App",
-        date: "September 2012 - November 2013",
-        imageUrl: "/images/apps/android/local-market-place-app.jpg",
-        imageAlt: "Local Marketplace App",
-        description:
-          "A local marketplace app for buying and selling items in your neighborhood.",
-        demoLink: "https://www.youtube.com/watch?v=2TeqDGT7ATk",
-        skills: [
-          "Java",
-          "XML",
-          "Android SDK",
-          "Eclipse IDE",
-          "Android SDK Plugin",
-        ],
-      },
-    ],
+
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 11 || p.id === 12);
+    })(),
   },
   {
     id: "unitel",
@@ -526,19 +332,9 @@ Maintained a 5-star customer service rating and excellent communication skills.`
         isExpanded: false,
       },
     ],
-    projects: [
-      {
-        title: "Product Landing Page",
-        date: "November 2009 - August 2012",
-        description:
-          "A product landing page built with HTML and CSS that boosted user engagement by 10%.",
-        imageUrl: "/images/apps/web/product-landing-page-blackberry.jpg",
-        imageAlt: "Product Landing Page",
-        demoLink:
-          "https://web.archive.org/web/20100907212810/http:/www.unitel.mn/blackberry/serv.html",
-        skills: ["HTML", "CSS", "JavaScript", "Photo Impact"],
-      },
-    ],
+    projects: (() => {
+      return PROJECTS.filter((p) => p.id === 13);
+    })(),
     isCurrentEmployer: false,
   },
   {
