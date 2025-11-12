@@ -1,8 +1,6 @@
-import type { ExperienceProjectItemType } from "@/types";
-
-interface ProjectDescriptionProps {
+type ProjectDescriptionProps = {
   description: string;
-}
+};
 
 export function ProjectDescription({ description }: ProjectDescriptionProps) {
   return (

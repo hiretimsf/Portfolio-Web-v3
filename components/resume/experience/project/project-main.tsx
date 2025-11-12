@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { ExperienceProjectItemType } from "@/types";
+import type { ProjectItemType } from "@/types";
 import { ProjectDate } from "./project-date";
 import { ProjectDescription } from "./project-description";
 import { ProjectImage } from "./project-image";
@@ -7,7 +7,7 @@ import ProjectSkills from "./project-skills";
 import { ProjectTitle } from "./project-title";
 
 type ProjectMainProps = {
-  project: ExperienceProjectItemType;
+  project: ProjectItemType;
   hasBorderTop?: boolean;
 };
 
@@ -30,7 +30,10 @@ export function ProjectMain({
           />
         </div>
         <div className="flex flex-col gap-1 border-gray-200 py-4">
-          <ProjectTitle title={project.title} demoLink={project.demoLink} />
+          <ProjectTitle
+            title={project.title}
+            demoLink={project.liveDemo ?? project.github ?? ""}
+          />
           <ProjectDate date={project.date ?? "Unknown date"} />
           <ProjectDescription description={project.description} />
         </div>
