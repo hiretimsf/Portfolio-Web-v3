@@ -2,21 +2,38 @@ import { cn } from "@/lib/utils";
 
 interface HeadingProps {
   title: string;
-  className?: string;
+  textStyleClassName?: string;
+  borderStyleClassName?: string;
+  backgroundStyleClassName?: string;
+  gridStyleClassName?: string;
+  gridColorClassName?: string;
 }
-export default function Heading({ title, className = "" }: HeadingProps) {
+export default function Heading({
+  title,
+  textStyleClassName = "text-3xl sm:text-4xl font-bold",
+  borderStyleClassName = "border-gray-200",
+  backgroundStyleClassName = "bg-panda-background",
+  gridStyleClassName = "text-gray-200",
+}: HeadingProps) {
   return (
     <div
       className={cn(
-        "border-b border-gray-200 px-6 py-8 md:py-10 lg:px-8",
-        className,
+        "relative mx-auto flex w-full justify-center border-b px-6 py-8 md:py-10 lg:px-8",
+        gridStyleClassName,
+        borderStyleClassName,
+        backgroundStyleClassName,
       )}
     >
-      <h2 className="text-panda-text decoration-panda-orange z-10 mx-auto text-center text-3xl font-bold tracking-tight underline underline-offset-8 sm:text-4xl">
+      <h2
+        className={cn(
+          "text-panda-text decoration-panda-orange z-10 mx-auto text-center tracking-tight underline underline-offset-8",
+          textStyleClassName,
+        )}
+      >
         {title}
       </h2>
       <svg
-        className="absolute inset-0 z-[-1] h-30 [mask-image:radial-gradient(circle_at_100%_0,black,transparent_65%)]"
+        className="absolute inset-0 h-30 [mask-image:radial-gradient(circle_at_100%_0,black,transparent_65%)]"
         width="100%"
         height="100%"
       >
@@ -31,7 +48,7 @@ export default function Heading({ title, className = "" }: HeadingProps) {
           >
             <path
               d="M 40 0 L 0 0 0 40"
-              stroke="#e5e7eb"
+              stroke="currentColor"
               fill="transparent"
               strokeWidth="1"
             ></path>

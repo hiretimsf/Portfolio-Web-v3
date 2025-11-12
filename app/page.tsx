@@ -2,6 +2,7 @@
 
 import ContactMe from "@/components/shared/contact-me";
 import { FaqSection } from "@/components/shared/faq";
+import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
 import YellowButton from "@/components/shared/yellow-button";
 import { Badge } from "@/components/ui/badge";
@@ -187,34 +188,28 @@ export default function HomePage() {
       </div>
 
       {/* Featured Apps Section */}
-      <div className="bg-panda-prune border-b border-gray-200 py-8 md:py-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
-            FEATURED APPS
-          </h2>
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {memoizedProjects.map((project: CurrentProject, index: number) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
+      <Heading
+        title="FEATURED APPS"
+        textStyleClassName="text-3xl font-bold sm:text-4xl"
+        backgroundStyleClassName="bg-panda-prune"
+        borderStyleClassName="border-b border-panda-text/10"
+        gridStyleClassName="text-panda-text/10"
+      />
+      <div className="bg-panda-prune mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {memoizedProjects.map((project: CurrentProject, index: number) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
         </div>
       </div>
 
-      {/* Testimonials Section */}
-      <div
-        className="mx-auto max-w-5xl bg-white"
-        role="region"
-        aria-labelledby="testimonials-heading"
-      >
-        <h2
-          id="testimonials-heading"
-          className="text-panda-text decoration-panda-orange py-6 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl"
-        >
-          WHAT PEOPLE ARE SAYING
-        </h2>
-      </div>
+      <Heading
+        title="WHAT PEOPLE ARE SAYING"
+        textStyleClassName="text-3xl font-bold sm:text-4xl"
+        borderStyleClassName="border-gray-200"
+      />
 
-      <MasonryGrid className="mx-auto max-w-7xl border-b border-gray-200 bg-white px-6 py-8 lg:px-8">
+      <MasonryGrid className="bg-panda-background mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 lg:px-8">
         {memoizedShoutouts.map((item: Shoutout, index: number) => (
           <ShoutoutItem
             key={`${item.type}-${index}`}
@@ -225,14 +220,14 @@ export default function HomePage() {
       </MasonryGrid>
 
       {/* FAQ Section */}
-      <div className="bg-panda-prune border-b border-gray-200 py-8 md:py-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-6 sm:text-4xl">
-            FAQ
-          </h2>
-          <FaqSection />
-        </div>
-      </div>
+      <Heading
+        title="FAQ"
+        textStyleClassName="text-3xl font-bold sm:text-4xl"
+        backgroundStyleClassName="bg-panda-prune"
+        borderStyleClassName="border-b border-panda-text/10"
+        gridStyleClassName="text-panda-text/10"
+      />
+      <FaqSection />
 
       <ContactMe />
     </>

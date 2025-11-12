@@ -1,8 +1,9 @@
+import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
 import { PROJECTS } from "@/constants/projects";
 import HEAD from "@/constants/seo/head";
 import { getBaseUrl } from "@/lib/utils";
-import { AndroidApp, HeadType, ProjectItemType, WebProject } from "@/types";
+import { HeadType, ProjectItemType } from "@/types";
 import type { Metadata } from "next";
 
 // Validate SEO configuration to ensure all required fields are present
@@ -35,13 +36,17 @@ export const metadata: Metadata = {
 export default function AppsPage() {
   return (
     <div className="bg-panda-background mx-auto w-full max-w-7xl border-t border-gray-200">
+      <Heading
+        title="ANDROID APPS"
+        textStyleClassName="text-3xl font-bold sm:text-4xl"
+        backgroundStyleClassName="bg-panda-background"
+        borderStyleClassName="border-b border-gray-200"
+        gridStyleClassName="text-gray-200"
+      />
       <section
         aria-label="Android Apps"
         className="bg-panda-background mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 md:py-10 lg:px-8"
       >
-        <h1 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-8 sm:text-4xl">
-          ANDROID APPS
-        </h1>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {PROJECTS.filter(
             (project: ProjectItemType) => project.category === "Android",
@@ -63,13 +68,17 @@ export default function AppsPage() {
           ))}
         </div>
       </section>
+      <Heading
+        title="WEB APPS"
+        textStyleClassName="text-3xl font-bold sm:text-4xl"
+        backgroundStyleClassName="bg-panda-prune"
+        borderStyleClassName="border-b border-panda-text/10"
+        gridStyleClassName="text-panda-text/10"
+      />
       <section
         aria-label="Web Apps"
         className="bg-panda-prune mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 md:py-10 lg:px-8"
       >
-        <h1 className="text-panda-text decoration-panda-orange mx-auto mb-10 text-center text-3xl font-bold tracking-tight underline underline-offset-8 sm:text-4xl">
-          WEB APPS
-        </h1>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {PROJECTS.filter(
             (project: ProjectItemType) => project.category === "Web",

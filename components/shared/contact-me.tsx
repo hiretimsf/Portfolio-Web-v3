@@ -20,7 +20,7 @@ const ContactMe = ({
 }: ContactMeProps) => {
   return (
     <section
-      className={`bg-panda-background mx-auto flex max-w-2xl flex-col px-6 pt-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:pt-0 ${className}`}
+      className={`bg-panda-background mx-auto flex max-w-2xl flex-col border-t border-gray-200 px-6 pt-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:pt-0 ${className}`}
       aria-labelledby="contact-heading"
     >
       <div className="w-full flex-auto px-6 text-center sm:text-left">

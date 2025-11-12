@@ -23,6 +23,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import "react-photo-view/dist/react-photo-view.css";
+import Heading from "@/components/shared/heading";
 import Marathon from "@/components/shared/marathon";
 import Playlist from "@/components/shared/playlist";
 import currentProjects from "@/constants/projects/current-projects";
@@ -61,8 +62,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto flex flex-col gap-y-8" role="main">
-      <section aria-labelledby="about-heading" className="space-y-6">
+    <main className="mx-auto flex flex-col" role="main">
+      <section aria-labelledby="about-heading">
         <div className="relative">
           <Image
             alt="Professional headshot of Tim, an Android Developer with 5 years of experience"
@@ -74,15 +75,11 @@ export default function AboutPage() {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1000px"
           />
         </div>
-
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-4 lg:px-6">
-          <h1
-            id="about-heading"
-            className="text-panda-text mb-2 text-center text-4xl font-semibold tracking-tight md:mb-6 md:text-5xl"
-          >
-            Hello, I'm Tim
-          </h1>
-
+        <Heading
+          title="Hello, I'm Tim"
+          textStyleClassName="text-4xl font-semibold md:text-5xl"
+        />
+        <div className="mx-auto max-w-3xl border-x border-gray-200 px-6 py-6 text-center md:px-4 lg:px-6">
           <div className="space-y-6 text-center text-lg leading-relaxed sm:space-y-6 sm:text-left">
             <p className="text-panda-text text-lg leading-8 text-pretty">
               I'm an Android Developer with 5 years of experience in Kotlin and
