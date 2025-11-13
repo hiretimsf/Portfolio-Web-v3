@@ -157,6 +157,13 @@ export type ProjectItemType = {
   imageAlt: string;
   github?: string;
   liveDemo?: string;
+  video?: string;
+  videoAlt?: string;
+  embed?: string;
+  embedAlt?: string;
   skills?: string[];
   category?: string;
+  order?: number;
+  current?: boolean;
+  upcoming?: boolean;
 };

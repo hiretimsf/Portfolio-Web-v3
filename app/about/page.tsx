@@ -1,6 +1,9 @@
 import CheckOut from "@/components/shared/check-out";
 import ContactMe from "@/components/shared/contact-me";
+import Heading from "@/components/shared/heading";
+import Marathon from "@/components/shared/marathon";
 import PhotoGallery from "@/components/shared/photo-gallery";
+import Playlist from "@/components/shared/playlist";
 import SectionHeader from "@/components/shared/section-header";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,26 +15,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import personalPhotos from "@/constants/personal-photos";
-import earlyProjects from "@/constants/projects/early-projects";
-import webApps from "@/constants/projects/web-apps";
-import {
-  CurrentProject,
-  EarlyProject,
-  ModernProject,
-  WebProject,
-} from "@/types";
+import { PROJECTS } from "@/constants/projects";
+import HEAD from "@/constants/seo/head";
+import { getBaseUrl } from "@/lib/utils";
+import { HeadType, ProjectItemType } from "@/types";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import "react-photo-view/dist/react-photo-view.css";
-import Heading from "@/components/shared/heading";
-import Marathon from "@/components/shared/marathon";
-import Playlist from "@/components/shared/playlist";
-import currentProjects from "@/constants/projects/current-projects";
-import modernProjects from "@/constants/projects/modern-projects";
-import HEAD from "@/constants/seo/head";
-import { getBaseUrl } from "@/lib/utils";
-import { HeadType } from "@/types";
-import { Metadata } from "next";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -120,40 +111,40 @@ export default function AboutPage() {
               with Java, XML, Eclipse, and the Android SDK plugin.
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {earlyProjects.map((project: EarlyProject) => (
-                <Card
-                  key={project.title}
-                  className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-panda-text text-lg">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-panda-text text-base">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative aspect-video w-full">
-                      <iframe
-                        src={project.video}
-                        title={project.videoAlt}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="absolute inset-0 h-full w-full rounded-lg"
-                        loading="lazy"
-                      />
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex-col gap-2">
-                    <p className="text-panda-text text-sm">
-                      No download or code available
-                    </p>
-                  </CardFooter>
-                </Card>
-              ))}
+              {PROJECTS.filter(
+                (project: ProjectItemType) =>
+                  project.id === 12 || project.id === 11,
+              )
+                .sort((a, b) => b.id - a.id)
+                .map((project: ProjectItemType) => (
+                  <Card
+                    key={project.title}
+                    className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  >
+                    <CardHeader>
+                      <CardTitle className="text-panda-text text-lg">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-panda-text line-clamp-3 text-base">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="relative aspect-video w-full">
+                        <iframe
+                          src={project.embed || project.video}
+                          title={project.embedAlt || project.videoAlt}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                          className="absolute inset-0 h-full w-full rounded-lg"
+                          loading="lazy"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
             </div>
           </section>
 
@@ -183,61 +174,66 @@ export default function AboutPage() {
               .
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {modernProjects.map((project: ModernProject) => (
-                <Card
-                  key={project.title}
-                  className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-panda-text text-lg">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-panda-text text-base">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative aspect-video w-full">
-                      <iframe
-                        src={project.video}
-                        title={project.videoAlt}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="absolute inset-0 h-full w-full rounded-lg"
-                        loading="lazy"
-                      />
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex-col gap-2">
-                    {project.github && (
-                      <Button type="submit" className="w-full" asChild>
+              {PROJECTS.filter(
+                (project: ProjectItemType) =>
+                  project.id === 6 || project.id === 7,
+              )
+                .sort((a, b) => b.id - a.id)
+                .map((project: ProjectItemType) => (
+                  <Card
+                    key={project.title}
+                    className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  >
+                    <CardHeader>
+                      <CardTitle className="text-panda-text text-lg">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-panda-text text-base">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="relative aspect-video w-full">
+                        <iframe
+                          src={project.video}
+                          title={project.videoAlt}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                          className="absolute inset-0 h-full w-full rounded-lg"
+                          loading="lazy"
+                        />
+                      </div>
+                    </CardContent>
+                    <CardFooter className="flex-col gap-2">
+                      {project.github && (
+                        <Button type="submit" className="w-full" asChild>
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Github
+                          </Link>
+                        </Button>
+                      )}
+                      <Button
+                        type="submit"
+                        className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
+                        asChild
+                      >
                         <Link
-                          href={project.github}
+                          href={project.liveDemo || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Github
+                          Live Demo
                         </Link>
                       </Button>
-                    )}
-                    <Button
-                      type="submit"
-                      className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
-                      asChild
-                    >
-                      <Link
-                        href={project.liveDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
+                    </CardFooter>
+                  </Card>
+                ))}
             </div>
           </section>
 
@@ -284,61 +280,69 @@ export default function AboutPage() {
               .
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {webApps.slice(0, 2).map((project: WebProject) => (
-                <Card
-                  key={project.title}
-                  className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-panda-text text-lg">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-panda-text text-base">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative aspect-video w-full">
-                      <Image
-                        src={project.imageUrl}
-                        alt={project.imageAlt}
-                        className="h-full w-full rounded-lg object-cover"
-                        width={1000}
-                        height={500}
-                        loading="lazy"
-                      />
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex-col gap-2">
-                    {project.github && (
-                      <Button type="submit" className="w-full" asChild>
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
+              {PROJECTS.filter(
+                (project: ProjectItemType) =>
+                  project.id === 2 ||
+                  project.id === 3 ||
+                  project.id === 4 ||
+                  project.id === 5,
+              )
+                .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+                .map((project: ProjectItemType) => (
+                  <Card
+                    key={project.title}
+                    className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  >
+                    <CardHeader>
+                      <CardTitle className="text-panda-text text-lg">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-panda-text line-clamp-3 text-base">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={project.imageUrl}
+                          alt={project.imageAlt}
+                          className="h-full w-full rounded-lg object-cover"
+                          width={1000}
+                          height={500}
+                          loading="lazy"
+                        />
+                      </div>
+                    </CardContent>
+                    <CardFooter className="flex-col gap-2">
+                      {project.github && (
+                        <Button type="submit" className="w-full" asChild>
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Github
+                          </Link>
+                        </Button>
+                      )}
+                      {project.liveDemo && (
+                        <Button
+                          type="submit"
+                          className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
+                          asChild
                         >
-                          Github
-                        </Link>
-                      </Button>
-                    )}
-                    {project.liveDemo && (
-                      <Button
-                        type="submit"
-                        className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
-                        asChild
-                      >
-                        <Link
-                          href={project.liveDemo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Live Demo
-                        </Link>
-                      </Button>
-                    )}
-                  </CardFooter>
-                </Card>
-              ))}
+                          <Link
+                            href={project.liveDemo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Live Demo
+                          </Link>
+                        </Button>
+                      )}
+                    </CardFooter>
+                  </Card>
+                ))}
             </div>
           </section>
 
@@ -359,61 +363,65 @@ export default function AboutPage() {
               Android apps:
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {currentProjects.slice(0, 2).map((project: CurrentProject) => (
-                <Card
-                  key={project.title}
-                  className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-panda-text text-lg">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-panda-text text-base">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative aspect-video w-full">
-                      <Image
-                        src={project.imageUrl}
-                        alt={project.imageAlt}
-                        className="h-full w-full rounded-lg object-cover"
-                        width={1000}
-                        height={500}
-                        loading="lazy"
-                      />
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex-col gap-2">
-                    {project.githubLink && (
-                      <Button type="submit" className="w-full" asChild>
-                        <Link
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
+              {PROJECTS.filter(
+                (project: ProjectItemType) => project.current === true,
+              )
+                .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+                .map((project: ProjectItemType) => (
+                  <Card
+                    key={project.title}
+                    className="bg-panda-prune w-full rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  >
+                    <CardHeader>
+                      <CardTitle className="text-panda-text text-lg">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-panda-text text-base">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={project.imageUrl}
+                          alt={project.imageAlt}
+                          className="h-full w-full rounded-lg object-cover"
+                          width={1000}
+                          height={500}
+                          loading="lazy"
+                        />
+                      </div>
+                    </CardContent>
+                    <CardFooter className="flex-col gap-2">
+                      {project.github && (
+                        <Button type="submit" className="w-full" asChild>
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Github
+                          </Link>
+                        </Button>
+                      )}
+                      {project.liveDemo && (
+                        <Button
+                          type="submit"
+                          className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
+                          asChild
                         >
-                          Github
-                        </Link>
-                      </Button>
-                    )}
-                    {project.downloadLink && (
-                      <Button
-                        type="submit"
-                        className="bg-panda-green hover:bg-panda-dark-green w-full text-white"
-                        asChild
-                      >
-                        <Link
-                          href={project.downloadLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Download
-                        </Link>
-                      </Button>
-                    )}
-                  </CardFooter>
-                </Card>
-              ))}
+                          <Link
+                            href={project.liveDemo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Live Demo
+                          </Link>
+                        </Button>
+                      )}
+                    </CardFooter>
+                  </Card>
+                ))}
             </div>
           </section>
 

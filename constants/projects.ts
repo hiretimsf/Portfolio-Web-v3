@@ -26,6 +26,8 @@ export const PROJECTS: ProjectItemType[] = [
       "Material Design 3",
     ],
     category: "Android",
+    order: 1,
+    current: true,
   },
   {
     id: 2,
@@ -39,6 +41,7 @@ export const PROJECTS: ProjectItemType[] = [
     liveDemo: "https://hiretimsf.com",
     skills: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     category: "Web",
+    order: 2,
   },
   {
     id: 3,
@@ -50,6 +53,7 @@ export const PROJECTS: ProjectItemType[] = [
     imageAlt: "Portfolio Website",
     github: "https://github.com/timtbdev/Next.js-Portfolio-App",
     liveDemo: "https://tim-portfolio-web-v2.vercel.app/",
+    order: 3,
     skills: [
       "Next.js",
       "TypeScript",
@@ -75,6 +79,7 @@ export const PROJECTS: ProjectItemType[] = [
     imageAlt: "Blog App",
     github: "https://github.com/timtbdev/Next.js-Blog-App",
     liveDemo: "https://ubdotcafe.vercel.app",
+    order: 1,
     skills: [
       "Next.js",
       "TypeScript",
@@ -105,6 +110,7 @@ export const PROJECTS: ProjectItemType[] = [
     liveDemo: "https://tim-portfolio-web-v1.vercel.app/",
     skills: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     category: "Web",
+    order: 4,
   },
   {
     id: 6,
@@ -195,10 +201,12 @@ export const PROJECTS: ProjectItemType[] = [
     imageUrl: "/images/apps/android/tshirt-app.jpg",
     imageAlt: "T-shirt Design App",
     description:
-      "Developed a custom T-shirt design app featuring exclusive collections by renowned Mongolian designer @ido.dsnr, blending modern aesthetics with cultural inspiration.",
+      "A custom T-shirt design app featuring exclusive collections by Mongolian designer @ido.dsnr.",
     liveDemo: "https://www.youtube.com/watch?v=my5CPizUXEg",
     skills: ["Java", "XML", "Android SDK", "Eclipse IDE", "Android SDK Plugin"],
     category: "Android",
+    embed: "https://www.youtube.com/embed/my5CPizUXEg?si=QeXsL35jgWzEz7zH",
+    embedAlt: "T-shirt Design App demonstration video",
   },
   {
     id: 12,
@@ -207,10 +215,12 @@ export const PROJECTS: ProjectItemType[] = [
     imageUrl: "/images/apps/android/local-market-place-app.jpg",
     imageAlt: "Local Marketplace App",
     description:
-      "A local marketplace app for buying and selling items in your neighborhood.",
+      "A local marketplace app for buying and selling items in your neighborhood. Built with Java, XML, Eclipse, and the Android SDK plugin.",
     liveDemo: "https://www.youtube.com/watch?v=2TeqDGT7ATk",
     skills: ["Java", "XML", "Android SDK", "Eclipse IDE", "Android SDK Plugin"],
     category: "Android",
+    embed: "https://www.youtube.com/embed/2TeqDGT7ATk?si=33imIN81oiRLyFkD",
+    embedAlt: "Local Marketplace App demonstration video",
   },
   {
     id: 13,
@@ -224,5 +234,34 @@ export const PROJECTS: ProjectItemType[] = [
       "https://web.archive.org/web/20100907212810/http:/www.unitel.mn/blackberry/serv.html",
     skills: ["HTML", "CSS", "JavaScript", "Photo Impact"],
     category: "Web",
+  },
+  {
+    id: 14,
+    title: "RunMusic (Kotlin)",
+    date: "October 2025 - Present",
+    description: "Find and share battle tested running music and playlists.",
+    imageUrl: "/images/app-placeholder.jpg",
+    imageAlt: "RunMusic",
+    github: "https://github.com/hiretimsf",
+    liveDemo: "https://github.com/hiretimsf",
+    skills: [
+      "Android Development",
+      "Jetpack Compose",
+      "Navigation 3",
+      "DataStore",
+      "Kotlin Coroutines",
+      "Kotlin Flow",
+      "Ktor",
+      "Retrofit",
+      "OkHttp",
+      "Dagger Hilt",
+      "Hilt",
+      "Room DB",
+      "Material Design 3",
+    ],
+    category: "Android",
+    order: 2,
+    current: true,
+    upcoming: true,
   },
 ];
