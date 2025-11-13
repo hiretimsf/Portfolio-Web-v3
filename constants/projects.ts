@@ -122,6 +122,8 @@ export const PROJECTS: ProjectItemType[] = [
       "A Kotlin-based portfolio app using Jetpack Components, MVVM, Room, and Coroutines for seamless offline/online syncing.",
     liveDemo: "https://www.youtube.com/watch?v=YjVJyqcv5I8",
     github: "https://github.com/timtbdev/Android-Portfolio-App-Kotlin",
+    video: "https://www.youtube.com/embed/YjVJyqcv5I8?si=rLGU5MlcojDpsigP",
+    videoAlt: "Portfolio App 2.0 demonstration video",
     skills: [
       "Kotlin",
       "MVVM",
@@ -154,6 +156,8 @@ export const PROJECTS: ProjectItemType[] = [
       "A Java-based Android portfolio app showcasing my development skills, built with standard SDK APIs and MVC architecture.",
     liveDemo: "https://www.youtube.com/watch?v=j56fSGqF7Ho",
     github: "https://github.com/timtbdev/Android-Portfolio-App-Java",
+    video: "https://www.youtube.com/embed/j56fSGqF7Ho?si=KQSgguWxD5nPjAKv",
+    videoAlt: "Portfolio App 1.0 demonstration video",
     skills: ["Java", "XML", "MVC", "Material Design 2", "Retrofit", "OkHttp"],
     category: "Android",
   },
