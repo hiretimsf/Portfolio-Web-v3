@@ -29,3 +29,63 @@ export const projects = defineDocs({
     }),
   }),
 });
+
+export const experience = defineDocs({
+  dir: "content/experience",
+  docs: defineCollections({
+    type: "doc",
+    dir: "content/experience",
+    schema: frontmatterSchema.extend({
+      title: z.string().optional(),
+      companyName: z.string(),
+      companyWebsite: z.string().optional(),
+      companyLogo: z.string().optional(),
+      companyLogoAlt: z.string().optional(),
+      companyLocation: z.string().optional(),
+      country: z.string().optional(),
+      isCurrentEmployer: z.boolean().optional(),
+      positions: z.array(
+        z.object({
+          id: z.string(),
+          title: z.string(),
+          employmentPeriod: z.string(),
+          employmentDuration: z.string().optional(),
+          employmentType: z.string().optional(),
+          description: z.string().optional(),
+          skills: z.array(z.string()).optional(),
+          icon: z.string().optional(),
+        }),
+      ),
+      projectSlugs: z.array(z.string()).optional(),
+    }),
+  }),
+});
+
+export const education = defineDocs({
+  dir: "content/education",
+  docs: defineCollections({
+    type: "doc",
+    dir: "content/education",
+    schema: frontmatterSchema.extend({
+      title: z.string().optional(),
+      companyName: z.string(),
+      companyWebsite: z.string().optional(),
+      companyLogo: z.string().optional(),
+      companyLogoAlt: z.string().optional(),
+      companyLocation: z.string().optional(),
+      isCurrentEmployer: z.boolean().optional(),
+      positions: z.array(
+        z.object({
+          id: z.string(),
+          title: z.string(),
+          employmentPeriod: z.string(),
+          employmentDuration: z.string().optional(),
+          employmentType: z.string().optional(),
+          description: z.string().optional(),
+          skills: z.array(z.string()).optional(),
+        }),
+      ),
+      projectSlugs: z.array(z.string()).optional(),
+    }),
+  }),
+});
