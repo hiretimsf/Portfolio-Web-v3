@@ -168,7 +168,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
         suppressHydrationWarning={true}
       >
-        <RootProvider>
+        <RootProvider
+          theme={{
+            enabled: false,
+          }}
+        >
           <Header />
           <Main>{children}</Main>
           <Footer />
