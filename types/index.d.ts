@@ -29,60 +29,6 @@ export interface Project {
   imageUrlVertical: string;
   href: string;
 }
-
-export interface CurrentProject {
-  id: number;
-  title: string;
-  date?: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-  href: string;
-  githubLink?: string;
-  downloadLink?: string;
-}
-
-export interface EarlyProject {
-  id: number;
-  year: number;
-  status: string;
-  section: string;
-  type: string;
-  subType: string;
-  title: string;
-  description: string;
-  video: string;
-  videoAlt: string;
-}
-
-export interface WebProject {
-  id: number;
-  title: string;
-  date?: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-  github?: string;
-  liveDemo?: string;
-}
-
-export interface ModernProject {
-  id: number;
-  year: number;
-  status: string;
-  section: string;
-  type: string;
-  subType: string;
-  title: string;
-  description: string;
-  video: string;
-  videoAlt: string;
-  github: string;
-  download?: string;
-  liveDemo: string;
-  features: Feature[];
-}
-
 export interface Feature {
   feature: string;
 }
@@ -104,17 +50,6 @@ export interface CheckoutItem {
   description: string;
   image: string;
   link: string;
-}
-
-export interface AndroidApp {
-  id: number;
-  title: string;
-  date?: string;
-  image: string;
-  description: string;
-  liveDemo?: string;
-  github?: string;
-  download?: string;
 }
 
 export interface FaqItem {
@@ -166,4 +101,9 @@ export type ProjectItemType = {
   order?: number;
   current?: boolean;
   upcoming?: boolean;
+};
+
+export type Heading = {
+  level: number;
+  text: string;
 };

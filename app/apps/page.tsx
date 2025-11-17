@@ -1,8 +1,8 @@
 import DotsBackground from "@/components/shared/dots-background";
 import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
-import { PROJECTS } from "@/constants/projects";
 import HEAD from "@/constants/seo/head";
+import { projectsSource } from "@/lib/source";
 import { cn, getBaseUrl } from "@/lib/utils";
 import { HeadType, ProjectItemType } from "@/types";
 import type { Metadata } from "next";
@@ -39,6 +39,43 @@ const PROJECT_CATEGORIES = {
   ANDROID: "Android",
   WEB: "Web",
 } as const;
+
+// Build a flat list of projects from the content source
+type ProjectData = {
+  title?: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  github?: string;
+  liveDemo?: string;
+};
+
+const PROJECTS: ProjectItemType[] = projectsSource
+  .getPages()
+  .map(({ data }, index) => {
+    const d = (data ?? {}) as ProjectData;
+    return {
+      id: index,
+      title: d.title ?? "",
+      date: d.date,
+      description: d.description ?? "",
+      imageUrl: d.imageUrl ?? "/images/app-placeholder.jpg",
+      imageAlt: d.imageAlt ?? d.title ?? "Project",
+      github: d.github,
+      liveDemo: d.liveDemo,
+      category: d.category,
+    } satisfies ProjectItemType;
+  });
+
+// Parse the start date (e.g., "October 2025 - Present" -> Date("October 2025"))
+function parseStartDate(dateString?: string): number {
+  if (!dateString) return 0;
+  const start = dateString.split(" - ")[0]?.trim();
+  const time = Date.parse(start ?? "");
+  return Number.isNaN(time) ? 0 : time;
+}
 
 // Section configuration for different app categories
 interface SectionConfig {
@@ -81,7 +118,7 @@ const sections: SectionConfig[] = [
 function getProjectsByCategory(category: string): ProjectItemType[] {
   return PROJECTS.filter(
     (project: ProjectItemType) => project.category === category,
-  );
+  ).sort((a, b) => parseStartDate(b.date) - parseStartDate(a.date));
 }
 
 // Helper function to transform ProjectItemType to WebProject format

@@ -93,16 +93,15 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
     );
   }
 
-  const carouselClassName = isMobile ? "mx-auto w-full max-w-xs p-2" : "w-full";
   const itemClassName = isMobile ? "" : "pl-1 md:basis-1/2 lg:basis-1/3";
 
   return (
     <section
-      className="relative mx-auto my-6 flex max-w-2xl px-6 text-center align-middle sm:my-12"
+      className="relative flex max-w-2xl text-left"
       aria-label="Personal photos gallery"
     >
       <PhotoProvider>
-        <Carousel className={carouselClassName}>
+        <Carousel>
           <CarouselContent className={isMobile ? "" : "-ml-1"}>
             {photos.map((photo, index) => (
               <CarouselItem
@@ -129,8 +128,12 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          {photos.length > 3 && (
+            <>
+              <CarouselPrevious />
+              <CarouselNext />
+            </>
+          )}
           {isMobile && <CarouselIndicator totalSlides={photos.length} />}
         </Carousel>
       </PhotoProvider>

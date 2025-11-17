@@ -7,6 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
+    "ignore": ["styles/**/*.css", "**/*.css"],
     "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
   },
   "formatter": {

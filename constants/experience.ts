@@ -6,9 +6,41 @@ import GraduateIcon from "@/icons/graduate-icon";
 import MarketingIcon from "@/icons/marketing-icon";
 import ServerIcon from "@/icons/server-icon";
 import WorkerIcon from "@/icons/worker-icon";
-import type { ExperienceItemType } from "@/types";
+import { projectsSource } from "@/lib/source";
+import type { ExperienceItemType, ProjectItemType } from "@/types";
 import { DE, MN, US } from "country-flag-icons/react/3x2";
-import { PROJECTS } from "./projects";
+
+type ExperienceProject = ProjectItemType & { slug: string };
+
+const PROJECTS: ExperienceProject[] = projectsSource
+  .getPages()
+  .map(({ data, slugs }, index) => {
+    const d = (data ?? {}) as {
+      title?: string;
+      description?: string;
+      date?: string;
+      imageUrl?: string;
+      imageAlt?: string;
+      github?: string;
+      liveDemo?: string;
+      category?: string;
+    };
+
+    const slug = Array.isArray(slugs) ? slugs[slugs.length - 1] : "";
+
+    return {
+      id: index,
+      title: d.title ?? "",
+      date: d.date,
+      description: d.description ?? "",
+      imageUrl: d.imageUrl ?? "/images/app-placeholder.jpg",
+      imageAlt: d.imageAlt ?? d.title ?? "Project",
+      github: d.github,
+      liveDemo: d.liveDemo,
+      category: d.category,
+      slug,
+    } satisfies ExperienceProject;
+  });
 
 export const EXPERIENCE: ExperienceItemType[] = [
   {
@@ -34,7 +66,7 @@ export const EXPERIENCE: ExperienceItemType[] = [
     ],
     isCurrentEmployer: true,
     projects: (() => {
-      const project = PROJECTS.find((p) => p.id === 1);
+      const project = PROJECTS.find((p) => p.slug === "sign-language-kotlin");
       return project ? [project] : [];
     })(),
   },
@@ -65,7 +97,11 @@ Built an open-source portfolio apps with Next.js, TypeScript, Tailwind CSS, Shad
     ],
     isCurrentEmployer: false,
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 2 || p.id === 3);
+      return PROJECTS.filter(
+        (p) =>
+          p.slug === "portfolio-website-v3" ||
+          p.slug === "portfolio-website-v2",
+      );
     })(),
   },
   {
@@ -132,7 +168,10 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
       },
     ],
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 4 || p.id === 5);
+      return PROJECTS.filter(
+        (p) =>
+          p.slug === "full-stack-blog-app" || p.slug === "portfolio-website-v1",
+      );
     })(),
   },
   {
@@ -195,7 +234,12 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
     isCurrentEmployer: false,
 
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 6 || p.id === 7 || p.id === 8);
+      return PROJECTS.filter(
+        (p) =>
+          p.slug === "portfolio-app-kotlin" ||
+          p.slug === "portfolio-app-java" ||
+          p.slug === "portfolio-website-v0",
+      );
     })(),
   },
   {
@@ -279,7 +323,11 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
     ],
     isCurrentEmployer: false,
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 9 || p.id === 10);
+      return PROJECTS.filter(
+        (p) =>
+          p.slug === "renewable-energy-project" ||
+          p.slug === "project-marketing-materials",
+      );
     })(),
   },
   {
@@ -308,7 +356,10 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
     isCurrentEmployer: false,
 
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 11 || p.id === 12);
+      return PROJECTS.filter(
+        (p) =>
+          p.slug === "local-market-place-app" || p.slug === "tshirt-design-app",
+      );
     })(),
   },
   {
@@ -333,7 +384,7 @@ Built an open-source portfolio apps with Next.js 13, TypeScript, Tailwind CSS, S
       },
     ],
     projects: (() => {
-      return PROJECTS.filter((p) => p.id === 13);
+      return PROJECTS.filter((p) => p.slug === "product-landing-page");
     })(),
     isCurrentEmployer: false,
   },

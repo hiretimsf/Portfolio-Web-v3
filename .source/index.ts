@@ -1,0 +1,20 @@
+// @ts-nocheck -- skip type checking
+import * as d_projects_13 from "../content/projects/tshirt-design-app.mdx?collection=projects"
+import * as d_projects_12 from "../content/projects/sign-language-kotlin.mdx?collection=projects"
+import * as d_projects_11 from "../content/projects/runmusic-kotlin.mdx?collection=projects"
+import * as d_projects_10 from "../content/projects/renewable-energy-project.mdx?collection=projects"
+import * as d_projects_9 from "../content/projects/project-marketing-materials.mdx?collection=projects"
+import * as d_projects_8 from "../content/projects/product-landing-page.mdx?collection=projects"
+import * as d_projects_7 from "../content/projects/portfolio-website-v3.mdx?collection=projects"
+import * as d_projects_6 from "../content/projects/portfolio-website-v2.mdx?collection=projects"
+import * as d_projects_5 from "../content/projects/portfolio-website-v1.mdx?collection=projects"
+import * as d_projects_4 from "../content/projects/portfolio-website-v0.mdx?collection=projects"
+import * as d_projects_3 from "../content/projects/portfolio-app-kotlin.mdx?collection=projects"
+import * as d_projects_2 from "../content/projects/portfolio-app-java.mdx?collection=projects"
+import * as d_projects_1 from "../content/projects/local-market-place-app.mdx?collection=projects"
+import * as d_projects_0 from "../content/projects/full-stack-blog-app.mdx?collection=projects"
+import * as d_pages_0 from "../content/pages/about.mdx?collection=pages"
+import { _runtime } from "fumadocs-mdx/runtime/next"
+import * as _source from "../source.config"
+export const pages = _runtime.docs<typeof _source.pages>([{ info: {"path":"about.mdx","fullPath":"content/pages/about.mdx"}, data: d_pages_0 }], [])
+export const projects = _runtime.docs<typeof _source.projects>([{ info: {"path":"full-stack-blog-app.mdx","fullPath":"content/projects/full-stack-blog-app.mdx"}, data: d_projects_0 }, { info: {"path":"local-market-place-app.mdx","fullPath":"content/projects/local-market-place-app.mdx"}, data: d_projects_1 }, { info: {"path":"portfolio-app-java.mdx","fullPath":"content/projects/portfolio-app-java.mdx"}, data: d_projects_2 }, { info: {"path":"portfolio-app-kotlin.mdx","fullPath":"content/projects/portfolio-app-kotlin.mdx"}, data: d_projects_3 }, { info: {"path":"portfolio-website-v0.mdx","fullPath":"content/projects/portfolio-website-v0.mdx"}, data: d_projects_4 }, { info: {"path":"portfolio-website-v1.mdx","fullPath":"content/projects/portfolio-website-v1.mdx"}, data: d_projects_5 }, { info: {"path":"portfolio-website-v2.mdx","fullPath":"content/projects/portfolio-website-v2.mdx"}, data: d_projects_6 }, { info: {"path":"portfolio-website-v3.mdx","fullPath":"content/projects/portfolio-website-v3.mdx"}, data: d_projects_7 }, { info: {"path":"product-landing-page.mdx","fullPath":"content/projects/product-landing-page.mdx"}, data: d_projects_8 }, { info: {"path":"project-marketing-materials.mdx","fullPath":"content/projects/project-marketing-materials.mdx"}, data: d_projects_9 }, { info: {"path":"renewable-energy-project.mdx","fullPath":"content/projects/renewable-energy-project.mdx"}, data: d_projects_10 }, { info: {"path":"runmusic-kotlin.mdx","fullPath":"content/projects/runmusic-kotlin.mdx"}, data: d_projects_11 }, { info: {"path":"sign-language-kotlin.mdx","fullPath":"content/projects/sign-language-kotlin.mdx"}, data: d_projects_12 }, { info: {"path":"tshirt-design-app.mdx","fullPath":"content/projects/tshirt-design-app.mdx"}, data: d_projects_13 }], [])

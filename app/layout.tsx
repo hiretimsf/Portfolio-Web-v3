@@ -8,6 +8,7 @@ import { AUTHOR, FAVICONS, HEAD, KEYWORDS, OPEN_GRAPH } from "@/constants/seo";
 import { cn, getBaseUrl } from "@/lib/utils";
 import { HeadType } from "@/types";
 import { Analytics } from "@vercel/analytics/next";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata, Viewport } from "next";
 import { Roboto as FontSans } from "next/font/google";
 // Global styles
@@ -167,9 +168,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
         suppressHydrationWarning={true}
       >
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
+        <RootProvider>
+          <Header />
+          <Main>{children}</Main>
+          <Footer />
+        </RootProvider>
         <Analytics />
         <TailwindIndicator />
         <Toaster />

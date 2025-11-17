@@ -7,12 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CurrentProject, WebProject } from "@/types";
+import { ProjectItemType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
-  project: WebProject | CurrentProject;
+  project: ProjectItemType;
   index?: number;
 }
 
@@ -26,8 +26,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
-          alt={project.imageAlt}
-          src={project.imageUrl}
+          alt={project.imageAlt || project.title || "Project image"}
+          src={project.imageUrl || "/images/app-placeholder.jpg"}
           width={1000}
           height={500}
           className="h-full w-full rounded-none object-cover"
@@ -43,7 +43,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.title}
         </CardTitle>
         <CardDescription className="text-panda-text/80 text-sm/6">
-          {"date" in project && project.date ? project.date : null}
+          {project.date ?? null}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -52,55 +52,30 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </CardDescription>
       </CardContent>
       <CardFooter className="mt-6 mb-4 flex-col gap-2">
-        {/* Handle WebProject liveDemo */}
-        {"liveDemo" in project &&
-          project.liveDemo &&
-          project.liveDemo !== "#" && (
-            <Button
-              className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full transition-colors duration-200"
-              asChild
-            >
-              <Link
-                href={project.liveDemo}
-                aria-label={`View live demo of ${project.title}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </Link>
-            </Button>
-          )}
-        {/* Handle CurrentProject downloadLink */}
-        {"downloadLink" in project && project.downloadLink && (
+        {/* Live Demo */}
+        {project.liveDemo && project.liveDemo !== "#" ? (
           <Button
-            className="bg-panda-green hover:bg-panda-dark-green text-md w-full text-white transition-colors duration-200"
+            className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full transition-colors duration-200"
             asChild
           >
             <Link
-              href={project.downloadLink}
-              aria-label={`Download ${project.title}`}
+              href={project.liveDemo}
+              aria-label={`View live demo of ${project.title}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download
+              Live Demo
             </Link>
           </Button>
-        )}
-        {/* Handle GitHub links for both types */}
-        {("github" in project && project.github) ||
-        ("githubLink" in project && project.githubLink) ? (
+        ) : null}
+        {/* GitHub */}
+        {project.github ? (
           <Button
             className="bg-panda-blue hover:bg-panda-blue-dark text-md w-full text-white transition-colors duration-200"
             asChild
           >
             <Link
-              href={
-                "github" in project && project.github
-                  ? project.github
-                  : "githubLink" in project && project.githubLink
-                    ? project.githubLink
-                    : ""
-              }
+              href={project.github}
               aria-label={`View ${project.title} source code on GitHub`}
               target="_blank"
               rel="noopener noreferrer"
