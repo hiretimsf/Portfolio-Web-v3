@@ -6,9 +6,14 @@ interface DotsBackgroundProps {
   className?: string;
 }
 export default function DotsBackground({
+  gridId = "dots-default",
   className,
   fadeBottomMask,
 }: DotsBackgroundProps) {
+  const patternId = `dots-${gridId}`;
+  const gradientId = `fade-bottom-${gridId}`;
+  const maskId = `fade-bottom-mask-${gridId}`;
+
   return (
     <svg
       className={cn(
@@ -20,7 +25,7 @@ export default function DotsBackground({
     >
       <defs>
         <pattern
-          id="dots-_r_6i_"
+          id={patternId}
           x="-1"
           y="-1"
           width="12"
@@ -31,26 +36,30 @@ export default function DotsBackground({
         </pattern>
         {fadeBottomMask && (
           <>
-            <linearGradient id="fade-bottom" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="white" stopOpacity="1"></stop>
               <stop offset="75%" stopColor="white" stopOpacity="0.6"></stop>
               <stop offset="100%" stopColor="white" stopOpacity="0"></stop>
             </linearGradient>
             <mask
-              id="fade-bottom-mask"
+              id={maskId}
               maskUnits="userSpaceOnUse"
               maskContentUnits="userSpaceOnUse"
             >
-              <rect width="100%" height="100%" fill="url(#fade-bottom)"></rect>
+              <rect
+                width="100%"
+                height="100%"
+                fill={`url(#${gradientId})`}
+              ></rect>
             </mask>
           </>
         )}
       </defs>
       <rect
-        fill="url(#dots-_r_6i_)"
+        fill={`url(#${patternId})`}
         width="100%"
         height="100%"
-        {...(fadeBottomMask && { mask: "url(#fade-bottom-mask)" })}
+        {...(fadeBottomMask && { mask: `url(#${maskId})` })}
       ></rect>
     </svg>
   );

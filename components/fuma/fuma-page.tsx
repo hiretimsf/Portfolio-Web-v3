@@ -1,3 +1,4 @@
+import DotsBackground from "@/components/shared/dots-background";
 import { buttonVariants } from "@/components/ui/button";
 import type { TableOfContents } from "fumadocs-core/toc";
 import { AnchorProvider, type AnchorProviderProps } from "fumadocs-core/toc";

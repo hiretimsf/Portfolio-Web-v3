@@ -12,7 +12,7 @@ type FaqSectionProps = {
   className?: string;
 };
 
-const FaqSection = ({ className = "bg-panda-prune" }: FaqSectionProps) => {
+const FaqSection = ({ className = "" }: FaqSectionProps) => {
   return (
     <section
       className={cn(

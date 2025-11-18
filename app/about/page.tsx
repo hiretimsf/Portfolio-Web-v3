@@ -78,11 +78,16 @@ export default async function AboutMePage() {
         title={title ?? "Hello, I'm Tim"}
         textStyleClassName="text-4xl font-semibold md:text-5xl"
         borderStyleClassName="border-b border-gray-200"
-        gridStyleClassName="text-gray-200"
+        backgroundStyleClassName="bg-panda-prune"
+        gridStyleClassName="text-panda-text/10"
         gridId="grid-about"
       />
-      <div className="border-border bg-background relative min-h-52 max-w-full">
-        <DocsLayout tree={pagesSource.pageTree}>
+      <div className="border-border relative min-h-52 max-w-full">
+        <DocsLayout
+          tree={pagesSource.pageTree}
+          containerProps={{ className: "relative bg-transparent" }}
+        >
+          <DotsBackground gridId="about" className="text-gray-200/80" />
           <DocsPage toc={pageData.toc}>
             <DocsBody>
               <MDX code={MDX} components={getMDXComponents()} />

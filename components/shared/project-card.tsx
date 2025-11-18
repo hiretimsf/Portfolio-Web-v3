@@ -20,7 +20,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <Card
       key={`${project.title}-${index}`}
-      className="group h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 transition-all duration-300 hover:border-gray-300 hover:shadow-lg"
+      className="group h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 shadow-lg transition-all duration-300 hover:border-gray-300"
       role="article"
       aria-labelledby={`project-title-${index}`}
     >

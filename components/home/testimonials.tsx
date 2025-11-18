@@ -13,6 +13,7 @@ export default function Testimonials({ shoutouts }: TestimonialsProps) {
       {shoutouts.map((item: Shoutout, index: number) => (
         <ShoutoutItem key={`${item.type}-${index}`} item={item} index={index} />
       ))}
+      <DotsBackground gridId="testimonials" className="text-gray-200/80" />
     </MasonryGrid>
   );
 }
