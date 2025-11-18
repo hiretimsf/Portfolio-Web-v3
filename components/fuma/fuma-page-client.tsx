@@ -58,20 +58,20 @@ export function TocPopoverTrigger({
     <CollapsibleTrigger
       {...props}
       className={cn(
-        "text-fd-muted-foreground flex flex-row items-center gap-2.5 px-4 py-2.5 text-start text-sm focus-visible:outline-none md:px-6 [&_svg]:size-4 [&_svg]:shrink-0",
+        "text-panda-text flex flex-row items-center gap-2.5 px-4 py-2.5 text-start text-sm focus-visible:outline-none md:px-6 [&_svg]:size-4 [&_svg]:shrink-0",
         props.className,
       )}
     >
       <ProgressCircle
         value={(selected + 1) / items.length}
         max={1}
-        className={cn(open && "text-fd-primary")}
+        className="text-panda-orange"
       />
       <span className="grid flex-1 *:col-start-1 *:row-start-1 *:my-auto">
         <span
           className={cn(
             "truncate transition-all",
-            open && "text-fd-foreground",
+            open && "text-panda-text",
             showItem && "pointer-events-none -translate-y-full opacity-0",
           )}
         >

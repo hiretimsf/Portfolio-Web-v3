@@ -58,7 +58,7 @@ export function TocItemsEmpty() {
   const { text } = useI18n();
 
   return (
-    <div className="bg-fd-card text-fd-muted-foreground rounded-lg border p-3 text-xs">
+    <div className="bg-fd-card text-panda-text rounded-lg border border-gray-200 p-3 text-xs">
       {text.tocNoHeadings}
     </div>
   );
@@ -92,7 +92,7 @@ export function TOCItems({ items }: { items: TOCItemType[] }) {
     <>
       <TocThumb
         containerRef={containerRef}
-        className="bg-fd-primary absolute top-(--fd-top) h-(--fd-height) w-px transition-all"
+        className="bg-panda-orange absolute top-(--fd-top) h-(--fd-height) w-px transition-all"
       />
       <div
         ref={containerRef}
@@ -111,7 +111,7 @@ function TOCItem({ item }: { item: TOCItemType }) {
     <Primitive.TOCItem
       href={item.url}
       className={cn(
-        "prose text-fd-muted-foreground data-[active=true]:text-fd-primary py-1.5 text-sm [overflow-wrap:anywhere] transition-colors first:pt-0 last:pb-0",
+        "prose text-panda-text/60 data-[active=true]:text-panda-text py-1.5 text-sm [overflow-wrap:anywhere] transition-colors first:pt-0 last:pb-0",
         item.depth <= 2 && "ps-3",
         item.depth === 3 && "ps-6",
         item.depth >= 4 && "ps-8",
