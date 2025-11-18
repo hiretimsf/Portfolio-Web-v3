@@ -170,3 +170,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Override fumadocs Steps circle background color */
+.fd-step::before {
+  background-color: var(--panda-green) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}

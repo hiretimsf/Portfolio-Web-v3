@@ -47,7 +47,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-panda-text line-clamp-3 text-sm/6">
+        <CardDescription className="text-panda-text line-clamp-2 text-sm/6">
           {project.description}
         </CardDescription>
       </CardContent>
