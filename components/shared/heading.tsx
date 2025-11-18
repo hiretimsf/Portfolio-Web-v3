@@ -12,9 +12,9 @@ interface HeadingProps {
 export default function Heading({
   title,
   textStyleClassName = "text-3xl sm:text-4xl font-bold",
-  borderStyleClassName = "border-gray-200",
-  backgroundStyleClassName = "bg-panda-background",
-  gridStyleClassName = "text-gray-200",
+  borderStyleClassName = "border-b border-panda-text/10",
+  backgroundStyleClassName = "bg-panda-prune",
+  gridStyleClassName = "text-panda-text/10",
   gridId = "grid-default",
 }: HeadingProps) {
   return (

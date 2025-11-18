@@ -96,9 +96,9 @@ const sections: SectionConfig[] = [
     title: "ANDROID APPS",
     headingProps: {
       textStyleClassName: "text-3xl font-bold sm:text-4xl",
-      backgroundStyleClassName: "bg-panda-background",
-      borderStyleClassName: "border-b border-gray-200",
-      gridStyleClassName: "text-gray-200",
+      backgroundStyleClassName: "bg-panda-prune",
+      borderStyleClassName: "border-b border-panda-text/10",
+      gridStyleClassName: "text-panda-text/10",
     },
   },
   {
@@ -107,10 +107,9 @@ const sections: SectionConfig[] = [
     headingProps: {
       textStyleClassName: "text-3xl font-bold sm:text-4xl",
       backgroundStyleClassName: "bg-panda-prune",
-      borderStyleClassName: "border-gray-300",
-      gridStyleClassName: "text-gray-300",
+      borderStyleClassName: "border-b border-panda-text/10",
+      gridStyleClassName: "text-panda-text/10",
     },
-    sectionClassName: "bg-panda-prune",
   },
 ];
 
