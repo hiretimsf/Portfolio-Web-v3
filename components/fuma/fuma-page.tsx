@@ -1,4 +1,3 @@
-import DotsBackground from "@/components/shared/dots-background";
 import { buttonVariants } from "@/components/ui/button";
 import type { TableOfContents } from "fumadocs-core/toc";
 import { AnchorProvider, type AnchorProviderProps } from "fumadocs-core/toc";
@@ -18,7 +17,7 @@ import {
   type BreadcrumbProps,
   type FooterProps,
 } from "./fuma-page-client";
-import { Toc, TOCItems, TOCProps, TOCScrollArea } from "./fuma-toc";
+import { Toc, TOCItems, TOCScrollArea, type TOCProps } from "./fuma-toc";
 
 const ClerkTOCItems = lazy(
   () => import("fumadocs-ui/components/layout/toc-clerk"),
@@ -93,6 +92,13 @@ export interface DocsPageProps {
    */
   full?: boolean;
 
+  /**
+   * Enable prose styling
+   *
+   * @defaultValue true
+   */
+  prose?: boolean;
+
   tableOfContent?: Partial<TableOfContentOptions>;
   tableOfContentPopover?: Partial<TableOfContentPopoverOptions>;
 
@@ -117,6 +123,7 @@ export interface DocsPageProps {
 export function DocsPage({
   toc = [],
   full = false,
+  prose = true,
   editOnGithub,
   tableOfContentPopover: {
     enabled: tocPopoverEnabled,
@@ -168,7 +175,7 @@ export function DocsPage({
                 {tocPopoverOptions.style === "clerk" ? (
                   <ClerkTOCItems />
                 ) : (
-                  <TOCItems items={toc} />
+                  <TOCItems items={toc} prose={prose} />
                 )}
               </TOCScrollArea>
               {tocPopoverOptions.footer}
@@ -181,6 +188,7 @@ export function DocsPage({
         )}
         <PageArticle
           {...props.article}
+          prose={prose}
           className={cn(
             full || !tocEnabled ? "mx-auto max-w-7xl" : "mx-auto max-w-7xl",
             props.article?.className,
@@ -214,7 +222,7 @@ export function DocsPage({
             {tocOptions.style === "clerk" ? (
               <ClerkTOCItems />
             ) : (
-              <TOCItems items={toc} />
+              <TOCItems items={toc} prose={prose} />
             )}
           </TOCScrollArea>
           {tocOptions.footer}
@@ -256,13 +264,21 @@ export function EditOnGitHub(props: ComponentProps<"a">) {
 /**
  * Add typography styles
  */
-export const DocsBody = forwardRef<HTMLDivElement, ComponentProps<"div">>(
-  (props, ref) => (
-    <div ref={ref} {...props} className={cn("prose", props.className)}>
-      {props.children}
-    </div>
-  ),
-);
+export const DocsBody = forwardRef<
+  HTMLDivElement,
+  ComponentProps<"div"> & { prose?: boolean }
+>(({ prose = true, ...props }, ref) => (
+  <div
+    ref={ref}
+    {...props}
+    className={cn(
+      prose ? "prose" : "mx-auto w-full max-w-7xl",
+      props.className,
+    )}
+  >
+    {props.children}
+  </div>
+));
 
 DocsBody.displayName = "DocsBody";
 

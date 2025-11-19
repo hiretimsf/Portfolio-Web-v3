@@ -1,4 +1,4 @@
-import { BulletListItem } from "@/types";
+import type { BulletListItem } from "@/types";
 
 export const skills: BulletListItem[] = [
   { name: "Authorized", description: "to work in the United States" },

@@ -1,3 +1,7 @@
+import { Analytics } from "@vercel/analytics/next";
+import { RootProvider } from "fumadocs-ui/provider/next";
+import type { Metadata, Viewport } from "next";
+import { Roboto as FontSans } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
@@ -6,11 +10,7 @@ import TailwindIndicator from "@/components/ui/tailwind-indicator";
 // Constants and utilities
 import { AUTHOR, FAVICONS, HEAD, KEYWORDS, OPEN_GRAPH } from "@/constants/seo";
 import { cn, getBaseUrl } from "@/lib/utils";
-import { HeadType } from "@/types";
-import { Analytics } from "@vercel/analytics/next";
-import { RootProvider } from "fumadocs-ui/provider/next";
-import type { Metadata, Viewport } from "next";
-import { Roboto as FontSans } from "next/font/google";
+import type { HeadType } from "@/types";
 // Global styles
 import "@/styles/tailwind.css";
 
@@ -36,10 +36,10 @@ const validateSEOConfig = () => {
   if (!KEYWORDS || KEYWORDS.length === 0) {
     console.warn("🔍 No keywords defined for SEO");
   }
-  if (!(AUTHOR && AUTHOR.name)) {
+  if (!AUTHOR?.name) {
     console.error("❌ Author information is missing");
   }
-  if (!(FAVICONS && FAVICONS.icon) || FAVICONS.icon.length === 0) {
+  if (!FAVICONS?.icon || FAVICONS.icon.length === 0) {
     console.warn("🖼️ No favicons configured");
   }
   if (!OPEN_GRAPH) {
@@ -57,7 +57,9 @@ const fontSans = FontSans({
 });
 
 // Initialize SEO validation
-validateSEOConfig();
+if (process.env.NODE_ENV === "development") {
+  validateSEOConfig();
+}
 
 // Viewport configuration
 export const viewport: Viewport = {

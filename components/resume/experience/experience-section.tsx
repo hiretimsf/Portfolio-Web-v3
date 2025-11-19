@@ -1,3 +1,5 @@
+import { DocsLayout } from "@/components/fuma/fuma-layout";
+import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import AndroidIcon from "@/icons/android-icon";
 import DriverIcon from "@/icons/driver-icon";
 import ForkliftIcon from "@/icons/forklift-icon";
@@ -96,7 +98,7 @@ function parseDateFromPeriod(period: string): Date | null {
   const date = new Date(startDateStr);
 
   // Check if date is valid
-  if (isNaN(date.getTime())) return null;
+  if (Number.isNaN(date.getTime())) return null;
 
   return date;
 }
@@ -175,19 +177,35 @@ export default function WorkExperienceSection({
 }: WorkExperienceSectionProps) {
   return (
     <section className={className} aria-label="Work Experience">
-      {EXPERIENCE && EXPERIENCE.length > 0 ? (
-        EXPERIENCE.map((experience, index) => (
-          <ExperienceItem
-            key={experience.id}
-            experience={experience}
-            className={index % 2 === 0 ? undefined : "bg-panda-prune/40"}
-          />
-        ))
-      ) : (
-        <p className="text-muted-foreground px-4 py-8 text-center text-sm">
-          No work experience to display.
-        </p>
-      )}
+      <DocsLayout
+        tree={experienceSource.pageTree}
+        containerProps={{ className: "relative bg-transparent" }}
+      >
+        <DocsPage
+          toc={EXPERIENCE.map((experience) => ({
+            title: experience.companyName,
+            url: `#${experience.id}`,
+            depth: 2,
+          }))}
+          prose={false}
+        >
+          <DocsBody prose={false}>
+            {EXPERIENCE && EXPERIENCE.length > 0 ? (
+              EXPERIENCE.map((experience, index) => (
+                <ExperienceItem
+                  key={experience.id}
+                  experience={experience}
+                  className={index % 2 === 0 ? undefined : "bg-panda-prune/40"}
+                />
+              ))
+            ) : (
+              <p className="text-muted-foreground px-4 py-8 text-center text-sm">
+                No work experience to display.
+              </p>
+            )}
+          </DocsBody>
+        </DocsPage>
+      </DocsLayout>
     </section>
   );
 }

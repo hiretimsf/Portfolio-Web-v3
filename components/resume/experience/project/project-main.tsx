@@ -9,17 +9,20 @@ import { ProjectTitle } from "./project-title";
 type ProjectMainProps = {
   project: ProjectItemType;
   hasBorderTop?: boolean;
+  isLast?: boolean;
 };
 
 export function ProjectMain({
   project,
   hasBorderTop = false,
+  isLast = false,
 }: ProjectMainProps) {
   return (
     <div className="px-6 md:flex-row md:px-8">
       <div
         className={cn(
-          "flex w-full flex-row gap-4 border-x border-b border-gray-200 px-4 md:gap-4",
+          "flex w-full flex-row gap-4 border-x border-gray-200 px-4 md:gap-4",
+          !isLast && "border-b",
           hasBorderTop && "border-t",
         )}
       >

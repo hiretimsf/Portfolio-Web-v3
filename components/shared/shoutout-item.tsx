@@ -1,8 +1,8 @@
 "use client";
 
-import { Shoutout } from "@/types";
 import { memo, useState } from "react";
 import { Tweet } from "react-tweet";
+import type { Shoutout } from "@/types";
 
 // Type guard for Shoutout
 function isTweetShoutout(

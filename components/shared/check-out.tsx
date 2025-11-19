@@ -1,8 +1,8 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import checkout from "@/constants/checkout";
-import { CheckoutItem } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import checkout from "@/constants/checkout";
+import type { CheckoutItem } from "@/types";
 
 const CheckOut = () => {
   return (

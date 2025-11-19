@@ -1,6 +1,6 @@
-import { socialLinks } from "@/constants/social";
-import { SocialLink } from "@/types";
 import Link from "next/link";
+import { socialLinks } from "@/constants/social";
+import type { SocialLink } from "@/types";
 
 export default function Footer() {
   return (

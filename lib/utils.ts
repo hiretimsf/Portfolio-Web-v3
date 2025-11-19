@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx";
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -34,7 +34,7 @@ export function truncateText(text: string, maxLength = 40): string {
  */
 export function truncateTitle(title: string, maxLength = 60): string {
   return title.length > maxLength
-    ? title.slice(0, maxLength - 3) + "..."
+    ? `${title.slice(0, maxLength - 3)}...`
     : title;
 }
 
@@ -46,7 +46,7 @@ export function truncateDescription(
   maxLength = 160,
 ): string {
   return description.length > maxLength
-    ? description.slice(0, maxLength - 3) + "..."
+    ? `${description.slice(0, maxLength - 3)}...`
     : description;
 }
 

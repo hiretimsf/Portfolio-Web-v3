@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { faqItems } from "@/constants/faq";
 import { cn } from "@/lib/utils";
-import { FaqItem } from "@/types";
+import type { FaqItem } from "@/types";
 
 type FaqSectionProps = {
   className?: string;
@@ -23,6 +23,7 @@ const FaqSection = ({ className = "" }: FaqSectionProps) => {
     >
       <Accordion type="single" collapsible className="mx-auto max-w-xl">
         {faqItems.map((item: FaqItem, index: number) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: faq items are static
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger className="text-panda-text text-lg/6 font-semibold hover:no-underline sm:text-xl/8">
               {item.question}

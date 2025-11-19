@@ -1,5 +1,5 @@
-import { getBaseUrl } from "@/lib/utils";
 import type { MetadataRoute } from "next";
+import { getBaseUrl } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Define static pages with their configurations

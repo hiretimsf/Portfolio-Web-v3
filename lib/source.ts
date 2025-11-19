@@ -1,6 +1,6 @@
-import { education, experience, pages, projects } from "@/.source";
-import { loader } from "fumadocs-core/source";
 import type { Source, SourceConfig } from "fumadocs-core/source";
+import { loader } from "fumadocs-core/source";
+import { education, experience, pages, projects } from "@/.source";
 
 const pagesDocs = pages as unknown as { toFumadocsSource: () => unknown };
 const projectsDocs = projects as unknown as { toFumadocsSource: () => unknown };

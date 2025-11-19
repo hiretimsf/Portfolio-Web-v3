@@ -1,4 +1,4 @@
-import { Shoutout } from "@/types";
+import type { Shoutout } from "@/types";
 
 export const shoutouts: Shoutout[] = [
   {

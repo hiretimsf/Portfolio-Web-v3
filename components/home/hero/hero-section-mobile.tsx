@@ -1,5 +1,5 @@
-import DotsBackground from "@/components/shared/dots-background";
 import Image from "next/image";
+import DotsBackground from "@/components/shared/dots-background";
 import HeroContent from "./hero-content";
 
 type HeroSectionMobileProps = {

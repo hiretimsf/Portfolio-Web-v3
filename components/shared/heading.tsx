@@ -27,6 +27,7 @@ export default function Heading({
       )}
     >
       <svg
+        aria-hidden="true"
         className="absolute inset-0 z-0 h-full [mask-image:radial-gradient(circle_at_100%_0,black,transparent_80%)]"
         width="100%"
         height="100%"

@@ -1,6 +1,6 @@
+import Image from "next/image";
 import HeroContent from "@/components/home/hero/hero-content";
 import DotsBackground from "@/components/shared/dots-background";
-import Image from "next/image";
 
 type HeroSectionDesktopProps = {
   imageSrc: string;

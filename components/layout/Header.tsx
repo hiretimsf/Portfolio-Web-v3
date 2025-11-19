@@ -1,5 +1,10 @@
 "use client";
 
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { memo, useCallback, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,12 +22,7 @@ import {
 // Constants
 import { navigationLinks } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
-import { NavigationLink } from "@/types";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { memo, useCallback, useState } from "react";
+import type { NavigationLink } from "@/types";
 
 // Logo component with avatar and brand name
 const Logo = memo(({ className }: { className?: string }) => (

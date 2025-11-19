@@ -1,6 +1,6 @@
+import { DE, US } from "country-flag-icons/react/3x2";
 import GraduateIcon from "@/icons/graduate-icon";
 import type { ExperienceItemType } from "@/types";
-import { DE, US } from "country-flag-icons/react/3x2";
 
 export const EDUCATION: ExperienceItemType[] = [
   {

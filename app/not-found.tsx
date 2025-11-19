@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { Card } from "@/components/ui/card";
 
 export default function NotFoundPage() {
   const title = "404 - Page Not Found";

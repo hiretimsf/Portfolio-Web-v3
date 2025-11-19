@@ -1,11 +1,11 @@
+import type { Metadata } from "next";
 import DotsBackground from "@/components/shared/dots-background";
 import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
 import HEAD from "@/constants/seo/head";
 import { projectsSource } from "@/lib/source";
 import { cn, getBaseUrl } from "@/lib/utils";
-import { HeadType, ProjectItemType } from "@/types";
-import type { Metadata } from "next";
+import type { HeadType, ProjectItemType } from "@/types";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early

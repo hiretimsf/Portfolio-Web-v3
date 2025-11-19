@@ -1,5 +1,3 @@
-import DotsBackground from "./dots-background";
-
 export const Separator = () => {
   return (
     <div className="relative h-5 w-full border-b border-gray-200">

@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
-import React from "react";
+import type React from "react";
 import ReactMarkdown from "react-markdown";
+import { cn } from "@/lib/utils";
 
 type PositionDescriptionProps = {
   description?: string;

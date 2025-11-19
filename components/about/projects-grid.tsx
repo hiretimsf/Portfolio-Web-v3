@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,8 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { projectsSource } from "@/lib/source";
-import Image from "next/image";
-import Link from "next/link";
 
 type ProjectData = {
   title?: string;

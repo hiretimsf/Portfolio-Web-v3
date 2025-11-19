@@ -25,7 +25,7 @@ export default function CompanyMain({
   country,
 }: CompanyMainProps) {
   const showMeta = Boolean(companyLocation || companyWebsite);
-  const variant = "default" as const;
+  const _variant = "default" as const;
 
   return (
     <div className="relative flex flex-col items-center gap-3 border-b border-gray-200 px-6 py-6 md:flex-row md:px-8 md:py-4">

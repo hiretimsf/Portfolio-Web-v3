@@ -199,7 +199,7 @@ export function TocPopover(props: HTMLAttributes<HTMLDivElement>) {
             open,
             setOpen,
           }),
-          [setOpen, open],
+          [open],
         )}
       >
         <Collapsible open={open} onOpenChange={setOpen} asChild>
@@ -235,14 +235,18 @@ export function PageBody(props: HTMLAttributes<HTMLDivElement>) {
   );
 }
 
-export function PageArticle(props: HTMLAttributes<HTMLElement>) {
+export function PageArticle({
+  prose = true,
+  ...props
+}: HTMLAttributes<HTMLElement> & { prose?: boolean }) {
   const { article } = usePageStyles();
 
   return (
     <article
       {...props}
       className={cn(
-        "flex w-full flex-1 flex-col gap-6 px-4 pt-4 md:px-6 xl:mx-auto xl:px-12",
+        "flex w-full flex-1 flex-col gap-6 xl:mx-auto",
+        prose && "px-4 pt-4 md:px-6 xl:px-12",
         article,
         props.className,
       )}
@@ -386,6 +390,7 @@ export function Breadcrumb(options: BreadcrumbProps) {
         );
 
         return (
+          // biome-ignore lint/suspicious/noArrayIndexKey: breadcrumbs order is stable
           <Fragment key={i}>
             {i !== 0 && <span className="text-fd-foreground/30">/</span>}
             {item.url ? (

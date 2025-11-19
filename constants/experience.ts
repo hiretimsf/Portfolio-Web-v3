@@ -1,3 +1,4 @@
+import { DE, MN, US } from "country-flag-icons/react/3x2";
 import AndroidIcon from "@/icons/android-icon";
 import DriverIcon from "@/icons/driver-icon";
 import ForkliftIcon from "@/icons/forklift-icon";
@@ -8,7 +9,6 @@ import ServerIcon from "@/icons/server-icon";
 import WorkerIcon from "@/icons/worker-icon";
 import { projectsSource } from "@/lib/source";
 import type { ExperienceItemType, ProjectItemType } from "@/types";
-import { DE, MN, US } from "country-flag-icons/react/3x2";
 
 type ExperienceProject = ProjectItemType & { slug: string };
 

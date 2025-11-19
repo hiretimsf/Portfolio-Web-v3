@@ -1,7 +1,7 @@
 import DotsBackground from "@/components/shared/dots-background";
 import MasonryGrid from "@/components/shared/masonry-grid";
 import ShoutoutItem from "@/components/shared/shoutout-item";
-import { Shoutout } from "@/types";
+import type { Shoutout } from "@/types";
 
 type TestimonialsProps = {
   shoutouts: Shoutout[];

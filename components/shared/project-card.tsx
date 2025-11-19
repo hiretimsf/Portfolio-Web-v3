@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,9 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ProjectItemType } from "@/types";
-import Image from "next/image";
-import Link from "next/link";
+import type { ProjectItemType } from "@/types";
 
 interface ProjectCardProps {
   project: ProjectItemType;

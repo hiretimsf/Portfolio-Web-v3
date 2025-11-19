@@ -1,5 +1,7 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,8 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import dynamic from "next/dynamic";
-import * as React from "react";
 
 /**
  * Custom hook for media queries with proper SSR handling
@@ -81,8 +81,9 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
       >
         <div className="mx-auto w-full max-w-xs p-2 md:w-full md:max-w-2xl">
           <div className="flex gap-2">
-            {photos.slice(0, 3).map((photo, index) => (
+            {photos.slice(0, 3).map((_photo, index) => (
               <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: index is stable for placeholders
                 key={`placeholder-${index}`}
                 className="aspect-2/3 flex-1 animate-pulse rounded-xl bg-gray-200"
               />

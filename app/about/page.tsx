@@ -1,3 +1,8 @@
+import type { TableOfContents } from "fumadocs-core/toc";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import type { ComponentType } from "react";
 import { DocsLayout } from "@/components/fuma/fuma-layout";
 import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import DotsBackground from "@/components/shared/dots-background";
@@ -6,12 +11,7 @@ import HEAD from "@/constants/seo/head";
 import { pagesSource } from "@/lib/source";
 import { getBaseUrl } from "@/lib/utils";
 import { getMDXComponents } from "@/mdx-components";
-import { HeadType } from "@/types";
-import type { TableOfContents } from "fumadocs-core/toc";
-import { Metadata } from "next";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import type { ComponentType } from "react";
+import type { HeadType } from "@/types";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -62,7 +62,7 @@ export default async function AboutMePage() {
     "Professional headshot of Tim, an Android Developer with 5 years of experience";
 
   return (
-    <main className="mx-auto flex flex-col" role="main">
+    <main className="mx-auto flex flex-col">
       <div className="relative">
         <Image
           alt={imageAlt}

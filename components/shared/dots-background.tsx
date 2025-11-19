@@ -16,6 +16,7 @@ export default function DotsBackground({
 
   return (
     <svg
+      aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-0 z-[-1] h-full w-full pt-1 text-gray-200/80",
         className,

@@ -27,18 +27,13 @@ export default function HeroContent({ className }: { className?: string }) {
 
       <ul
         className="text-panda-text mt-6 mb-8 space-y-6"
-        role="list"
         aria-label="Skills and qualifications"
       >
         {skills.map((item: BulletListItem, index: number) => {
           const itemId = item.name ? `${item.name}-${index}` : `item-${index}`;
 
           return (
-            <li
-              key={itemId}
-              className="relative pl-9 last:mb-0"
-              role="listitem"
-            >
+            <li key={itemId} className="relative pl-9 last:mb-0">
               <CheckmarkIcon
                 aria-hidden="true"
                 className={cn(
