@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { GitHubStarsButton } from "@/components/shared/github-stars-button";
+import { LiveDemoButton } from "@/components/shared/live-demo-button";
 import {
   Card,
   CardContent,
@@ -10,13 +9,33 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { ProjectItemType } from "@/types";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: ProjectItemType;
   index?: number;
 }
 
+function getGitHubInfo(url: string) {
+  try {
+    const urlToParse = url.startsWith("http") ? url : `https://${url}`;
+    const { hostname, pathname } = new URL(urlToParse);
+
+    if (!hostname.includes("github.com")) return null;
+
+    const parts = pathname.split("/").filter(Boolean);
+    if (parts.length >= 2) {
+      return { username: parts[0], repo: parts[1] };
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const gitHubInfo = project.github ? getGitHubInfo(project.github) : null;
+
   return (
     <Card
       key={`${project.title}-${index}`}
@@ -54,35 +73,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <CardFooter className="mt-6 mb-4 flex-col gap-2">
         {/* Live Demo */}
         {project.liveDemo && project.liveDemo !== "#" ? (
-          <Button
-            className="bg-panda-yellow hover:bg-panda-yellow-dark text-panda-text text-md w-full transition-colors duration-200"
-            asChild
-          >
-            <Link
-              href={project.liveDemo}
-              aria-label={`View live demo of ${project.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </Link>
-          </Button>
+          <LiveDemoButton href={project.liveDemo} />
         ) : null}
         {/* GitHub */}
         {project.github ? (
-          <Button
-            className="bg-panda-blue hover:bg-panda-blue-dark text-md w-full text-white transition-colors duration-200"
-            asChild
-          >
-            <Link
-              href={project.github}
-              aria-label={`View ${project.title} source code on GitHub`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Link>
-          </Button>
+          <GitHubStarsButton
+            href={project.github}
+            username={gitHubInfo?.username}
+            repo={gitHubInfo?.repo}
+          />
         ) : null}
       </CardFooter>
     </Card>
