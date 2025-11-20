@@ -5,6 +5,7 @@ import DotsBackground from "@/components/shared/dots-background";
 import { FaqSection } from "@/components/shared/faq";
 import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
+import SeparatorHorizontal from "@/components/shared/separator-horizontal";
 import { shoutouts } from "@/constants/shoutouts";
 import { projectsSource } from "@/lib/source";
 
@@ -56,14 +57,15 @@ export default function HomePage() {
         imageSrcMobile="/images/horizontal-profile.jpg"
         imageAlt="Professional headshot of Tim, an Android Developer based in San Francisco Bay Area"
       />
+      <SeparatorHorizontal />
       {/* Featured Apps Section */}
       <Heading
         title="FEATURED APPS"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
         backgroundStyleClassName="bg-panda-prune"
-        borderStyleClassName="border-b border-panda-text/10"
         gridStyleClassName="text-panda-text/10"
       />
+      <SeparatorHorizontal />
       <div className="relative mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
         <DotsBackground gridId="featured-apps" className="text-gray-200/80" />
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -72,27 +74,26 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-
+      <SeparatorHorizontal />
       <Heading
         title="WHAT PEOPLE ARE SAYING"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
         backgroundStyleClassName="bg-panda-prune"
-        borderStyleClassName="border-gray-200"
         gridStyleClassName="text-panda-text/10"
       />
-
+      <SeparatorHorizontal />
       <Testimonials shoutouts={shoutouts} />
-
+      <SeparatorHorizontal />
       {/* FAQ Section */}
       <Heading
         title="FAQ"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
         backgroundStyleClassName="bg-panda-prune"
-        borderStyleClassName="border-b border-panda-text/10"
         gridStyleClassName="text-panda-text/10"
       />
+      <SeparatorHorizontal />
       <FaqSection />
-
+      <SeparatorHorizontal />
       <ContactMe />
     </>
   );

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import HeroContent from "@/components/home/hero/hero-content";
 import DotsBackground from "@/components/shared/dots-background";
+import Image from "next/image";
 
 type HeroSectionDesktopProps = {
   imageSrc: string;
@@ -12,7 +12,7 @@ export default function HeroSectionDesktop({
   imageAlt,
 }: HeroSectionDesktopProps) {
   return (
-    <div className="relative hidden grid-cols-2 items-start gap-x-8 border-b border-gray-200 p-8 lg:grid">
+    <div className="relative hidden grid-cols-2 items-start gap-x-8 p-8 lg:grid">
       <Image
         alt={imageAlt}
         src={imageSrc}

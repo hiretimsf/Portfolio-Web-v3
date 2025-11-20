@@ -1,5 +1,5 @@
-import Image from "next/image";
 import DotsBackground from "@/components/shared/dots-background";
+import Image from "next/image";
 import HeroContent from "./hero-content";
 
 type HeroSectionMobileProps = {
@@ -12,7 +12,7 @@ export default function HeroSectionMobile({
   imageAlt,
 }: HeroSectionMobileProps) {
   return (
-    <div className="relative mx-auto flex flex-col gap-y-5 border-b border-gray-200 pb-8 lg:hidden">
+    <div className="relative mx-auto flex flex-col gap-y-5 pb-8 lg:hidden">
       <Image
         alt={imageAlt}
         src={imageSrc}

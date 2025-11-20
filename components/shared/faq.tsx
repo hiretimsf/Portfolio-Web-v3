@@ -17,7 +17,6 @@ const FaqSection = ({ className = "" }: FaqSectionProps) => {
     <section
       className={cn(
         "mx-auto w-full justify-center px-6 py-8 md:py-10 lg:px-8",
-        "border-panda-text/10 border-b",
         className,
       )}
     >

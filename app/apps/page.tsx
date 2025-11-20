@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import DotsBackground from "@/components/shared/dots-background";
 import Heading from "@/components/shared/heading";
 import ProjectCard from "@/components/shared/project-card";
+import SeparatorHorizontal from "@/components/shared/separator-horizontal";
 import HEAD from "@/constants/seo/head";
 import { projectsSource } from "@/lib/source";
 import { cn, getBaseUrl } from "@/lib/utils";
 import type { HeadType, ProjectItemType } from "@/types";
+import type { Metadata } from "next";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -135,7 +136,13 @@ function transformProject(project: ProjectItemType) {
 }
 
 // Project section component
-function ProjectSection({ config }: { config: SectionConfig }) {
+function ProjectSection({
+  config,
+  isFirst,
+}: {
+  config: SectionConfig;
+  isFirst: boolean;
+}) {
   const projects = getProjectsByCategory(config.category);
 
   if (projects.length === 0) {
@@ -144,13 +151,14 @@ function ProjectSection({ config }: { config: SectionConfig }) {
 
   return (
     <>
+      {!isFirst && <SeparatorHorizontal />}
       <Heading
         title={config.title}
         textStyleClassName={config.headingProps.textStyleClassName}
         backgroundStyleClassName={config.headingProps.backgroundStyleClassName}
-        borderStyleClassName={config.headingProps.borderStyleClassName}
         gridStyleClassName={config.headingProps.gridStyleClassName}
       />
+      <SeparatorHorizontal />
       <section
         aria-label={`${config.category} Apps`}
         className={cn(
@@ -172,10 +180,18 @@ function ProjectSection({ config }: { config: SectionConfig }) {
 }
 
 export default function AppsPage() {
+  const visibleSections = sections.filter(
+    (section) => getProjectsByCategory(section.category).length > 0,
+  );
+
   return (
     <div className="mx-auto max-w-7xl">
-      {sections.map((section) => (
-        <ProjectSection key={section.category} config={section} />
+      {visibleSections.map((section, index) => (
+        <ProjectSection
+          key={section.category}
+          config={section}
+          isFirst={index === 0}
+        />
       ))}
     </div>
   );

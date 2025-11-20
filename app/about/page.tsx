@@ -1,17 +1,18 @@
-import type { TableOfContents } from "fumadocs-core/toc";
-import type { Metadata } from "next";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import type { ComponentType } from "react";
 import { DocsLayout } from "@/components/fuma/fuma-layout";
 import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import DotsBackground from "@/components/shared/dots-background";
 import Heading from "@/components/shared/heading";
+import SeparatorHorizontal from "@/components/shared/separator-horizontal";
 import HEAD from "@/constants/seo/head";
 import { pagesSource } from "@/lib/source";
 import { getBaseUrl } from "@/lib/utils";
 import { getMDXComponents } from "@/mdx-components";
 import type { HeadType } from "@/types";
+import type { TableOfContents } from "fumadocs-core/toc";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import type { ComponentType } from "react";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -74,14 +75,15 @@ export default async function AboutMePage() {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1000px"
         />
       </div>
+      <SeparatorHorizontal />
       <Heading
         title={title ?? "Hello, I'm Tim"}
         textStyleClassName="text-4xl font-semibold md:text-5xl"
-        borderStyleClassName="border-b border-gray-200"
         backgroundStyleClassName="bg-panda-prune"
         gridStyleClassName="text-panda-text/10"
         gridId="grid-about"
       />
+      <SeparatorHorizontal />
       <div className="border-border relative min-h-52 max-w-full">
         <DocsLayout
           tree={pagesSource.pageTree}

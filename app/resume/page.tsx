@@ -1,6 +1,7 @@
 import EducationSection from "@/components/resume/education/education-section";
 import WorkExperienceSection from "@/components/resume/experience/experience-section";
 import Heading from "@/components/shared/heading";
+import SeparatorHorizontal from "@/components/shared/separator-horizontal";
 import HEAD from "@/constants/seo/head";
 import { getBaseUrl } from "@/lib/utils";
 import type { HeadType } from "@/types";
@@ -38,11 +39,14 @@ export default function ResumePage() {
     <>
       <section className="bg-panda-background relative z-10 mx-auto max-w-7xl">
         <Heading title="WORK EXPERIENCE" />
+        <SeparatorHorizontal />
         <WorkExperienceSection className="w-full" />
       </section>
-      <section className="bg-panda-background relative z-10 mx-auto max-w-7xl border-t border-b border-gray-200">
+      <section className="bg-panda-background relative z-10 mx-auto max-w-7xl">
+        <SeparatorHorizontal />
         <Heading title="EDUCATION" />
-        <EducationSection className="mx-auto w-full max-w-2xl border-r border-l border-gray-200" />
+        <SeparatorHorizontal />
+        <EducationSection className="mx-auto w-full max-w-2xl" />
       </section>
     </>
   );
