@@ -70,6 +70,7 @@ var education = defineDocs({
       companyLogo: z.string().optional(),
       companyLogoAlt: z.string().optional(),
       companyLocation: z.string().optional(),
+      country: z.string().optional(),
       isCurrentEmployer: z.boolean().optional(),
       positions: z.array(
         z.object({

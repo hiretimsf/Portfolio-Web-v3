@@ -46,7 +46,7 @@ export default function ResumePage() {
         <SeparatorHorizontal />
         <Heading title="EDUCATION" />
         <SeparatorHorizontal />
-        <EducationSection className="mx-auto w-full max-w-2xl" />
+        <EducationSection className="w-full" />
       </section>
     </>
   );
