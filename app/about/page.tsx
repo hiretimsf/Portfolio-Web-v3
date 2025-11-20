@@ -79,8 +79,6 @@ export default async function AboutMePage() {
       <Heading
         title={title ?? "Hello, I'm Tim"}
         textStyleClassName="text-4xl font-semibold md:text-5xl"
-        backgroundStyleClassName="bg-panda-prune"
-        gridStyleClassName="text-panda-text/10"
         gridId="grid-about"
       />
       <SeparatorHorizontal />

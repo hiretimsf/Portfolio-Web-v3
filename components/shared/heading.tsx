@@ -3,24 +3,17 @@ import { cn } from "@/lib/utils";
 interface HeadingProps {
   title: string;
   textStyleClassName?: string;
-  backgroundStyleClassName?: string;
-  gridStyleClassName?: string;
-  gridColorClassName?: string;
   gridId?: string;
 }
 export default function Heading({
   title,
   textStyleClassName = "text-3xl sm:text-4xl font-bold",
-  backgroundStyleClassName = "bg-panda-prune",
-  gridStyleClassName = "text-panda-text/10",
   gridId = "grid-default",
 }: HeadingProps) {
   return (
     <div
       className={cn(
-        "relative mx-auto flex w-full justify-center px-6 py-8 md:py-10 lg:px-8",
-        gridStyleClassName,
-        backgroundStyleClassName,
+        "relative mx-auto flex w-full justify-center px-6 py-8 text-gray-200 md:py-10 lg:px-8",
       )}
     >
       <svg

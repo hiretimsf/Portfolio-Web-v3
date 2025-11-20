@@ -62,13 +62,11 @@ export default function HomePage() {
       <Heading
         title="FEATURED APPS"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
-        backgroundStyleClassName="bg-panda-prune"
-        gridStyleClassName="text-panda-text/10"
       />
       <SeparatorHorizontal />
       <div className="relative mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
         <DotsBackground gridId="featured-apps" className="text-gray-200/80" />
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="xl mx-auto grid max-w-2 grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {memoizedProjects.map((project, index: number) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -78,8 +76,6 @@ export default function HomePage() {
       <Heading
         title="WHAT PEOPLE ARE SAYING"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
-        backgroundStyleClassName="bg-panda-prune"
-        gridStyleClassName="text-panda-text/10"
       />
       <SeparatorHorizontal />
       <Testimonials shoutouts={shoutouts} />
@@ -88,8 +84,6 @@ export default function HomePage() {
       <Heading
         title="FAQ"
         textStyleClassName="text-3xl font-bold sm:text-4xl"
-        backgroundStyleClassName="bg-panda-prune"
-        gridStyleClassName="text-panda-text/10"
       />
       <SeparatorHorizontal />
       <FaqSection />

@@ -155,8 +155,6 @@ function ProjectSection({
       <Heading
         title={config.title}
         textStyleClassName={config.headingProps.textStyleClassName}
-        backgroundStyleClassName={config.headingProps.backgroundStyleClassName}
-        gridStyleClassName={config.headingProps.gridStyleClassName}
       />
       <SeparatorHorizontal />
       <section
