@@ -9,7 +9,7 @@ type TestimonialsProps = {
 
 export default function Testimonials({ shoutouts }: TestimonialsProps) {
   return (
-    <MasonryGrid className="relative mx-auto max-w-7xl border-b border-gray-200 px-6 py-8 lg:px-8">
+    <MasonryGrid className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8">
       {shoutouts.map((item: Shoutout, index: number) => (
         <ShoutoutItem key={`${item.type}-${index}`} item={item} index={index} />
       ))}
