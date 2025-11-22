@@ -23,28 +23,7 @@ import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo, useCallback, useState } from "react";
-
-// Logo component with avatar and brand name
-const Logo = memo(({ className }: { className?: string }) => (
-  <Link
-    className={cn(
-      "group flex items-center gap-2 transition-opacity hover:opacity-80",
-      className,
-    )}
-    href="/"
-    aria-label="Go to homepage"
-  >
-    <Avatar className="size-6">
-      <AvatarImage alt="HireTim logo" src="/images/logo.png" />
-      <AvatarFallback>
-        <MusicIcon className="size-6" />
-      </AvatarFallback>
-    </Avatar>
-    <span className="text-xl font-semibold text-white group-hover:underline md:text-lg">
-      HireTim
-    </span>
-  </Link>
-));
+import Logo from "./header/logo";
 
 // Mobile menu toggle with slide-out navigation
 const MobileMenuButton = memo(() => {

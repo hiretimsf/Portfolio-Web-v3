@@ -1,6 +1,6 @@
-import BackToTop from "./footer/back-to-top";
-import BottomNavigation from "./footer/bottom-navigation";
-import Copyright from "./footer/copyright";
+import BackToTop from "./back-to-top";
+import BottomNavigation from "./bottom-navigation";
+import Copyright from "./copyright";
 
 export default function Footer() {
   return (

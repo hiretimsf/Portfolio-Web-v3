@@ -4,7 +4,7 @@ export default function BackToTop() {
   return (
     <div className="mx-auto flex w-full">
       <div className="flex w-full">
-        <div className="hidden flex-1 border-b border-gray-200 md:flex" />
+        <div className="hidden flex-1 border-y border-gray-200 md:flex" />
         <Link
           href="#top"
           className="group bg-panda-blue hover:bg-panda-blue/95 flex w-full max-w-5xl items-center justify-center py-4 text-center transition-colors"
@@ -13,7 +13,7 @@ export default function BackToTop() {
             Back to top
           </p>
         </Link>
-        <div className="hidden flex-1 border-b border-gray-200 md:flex" />
+        <div className="hidden flex-1 border-y border-gray-200 md:flex" />
       </div>
     </div>
   );
