@@ -1,10 +1,5 @@
 "use client";
 
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { memo, useCallback, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +18,11 @@ import {
 import { navigationLinks } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 import type { NavigationLink } from "@/types";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { MailIcon, Menu, MusicIcon, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { memo, useCallback, useState } from "react";
 
 // Logo component with avatar and brand name
 const Logo = memo(({ className }: { className?: string }) => (
@@ -204,17 +204,6 @@ const Header = memo(({ className }: { className?: string }) => {
             <ContactButtonMobile />
           </div>
         </div>
-      </div>
-
-      {/* Banner */}
-      <div className="bg-panda-blue mx-auto flex max-w-5xl items-center justify-center gap-2 px-4 py-2 text-center text-base text-white/90">
-        <span className="bg-panda-light-green text-panda-dark-blue rounded-md px-1 py-0.5 text-sm font-semibold whitespace-nowrap">
-          New:
-        </span>
-        <span className="hidden md:block">
-          Seeking Android Developer Role (In-person or Remote)
-        </span>
-        <span className="block md:hidden">Seeking Android Developer Role</span>
       </div>
     </header>
   );

@@ -1,19 +1,7 @@
-import { cn } from "@/lib/utils";
-
-type SeparatorHorizontalProps = {
-  className?: string;
-};
-export default function SeparatorHorizontal({
-  className,
-}: SeparatorHorizontalProps) {
+export default function SeparatorHorizontal() {
   return (
-    <div
-      className={cn(
-        "relative flex h-4 w-full",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-4 before:w-[200vw]",
-        "before:border-y before:border-gray-200 before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-gray-200)]/56",
-        className,
-      )}
-    />
+    <div className="mx-auto flex h-4 w-full border-y border-gray-200 bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-gray-200)]/56">
+      <div className="mx-auto w-full max-w-5xl flex-shrink-0 border-x border-gray-200" />
+    </div>
   );
 }

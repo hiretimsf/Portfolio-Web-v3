@@ -1,16 +1,16 @@
-import { Analytics } from "@vercel/analytics/next";
-import { RootProvider } from "fumadocs-ui/provider/next";
-import type { Metadata, Viewport } from "next";
-import { Roboto as FontSans } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import Main from "@/components/layout/Main";
+import Main from "@/components/layout/Wrapper";
 import { Toaster } from "@/components/ui/sonner";
 import TailwindIndicator from "@/components/ui/tailwind-indicator";
 // Constants and utilities
 import { AUTHOR, FAVICONS, HEAD, KEYWORDS, OPEN_GRAPH } from "@/constants/seo";
 import { cn, getBaseUrl } from "@/lib/utils";
 import type { HeadType } from "@/types";
+import { Analytics } from "@vercel/analytics/next";
+import { RootProvider } from "fumadocs-ui/provider/next";
+import type { Metadata, Viewport } from "next";
+import { Roboto as FontSans } from "next/font/google";
 // Global styles
 import "@/styles/tailwind.css";
 
@@ -176,7 +176,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         >
           <Header />
-          <Main>{children}</Main>
+          {children}
           <Footer />
         </RootProvider>
         <Analytics />

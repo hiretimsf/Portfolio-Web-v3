@@ -1,6 +1,6 @@
+import DotsBackground from "@/components/shared/dots-background";
+import YellowButton from "@/components/shared/yellow-button";
 import Image from "next/image";
-import DotsBackground from "./dots-background";
-import YellowButton from "./yellow-button";
 
 interface ContactMeProps {
   className?: string;

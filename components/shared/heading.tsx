@@ -13,7 +13,7 @@ export default function Heading({
   return (
     <div
       className={cn(
-        "relative mx-auto flex w-full justify-center px-6 py-8 text-gray-200 md:py-10 lg:px-8",
+        "relative mx-auto flex w-full justify-center px-6 py-8 text-gray-200 md:py-4 lg:px-8",
       )}
     >
       <svg

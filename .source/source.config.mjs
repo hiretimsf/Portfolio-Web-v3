@@ -24,7 +24,9 @@ var projects = defineDocs({
       imageAlt: z.string().optional(),
       embedUrl: z.string().optional(),
       embedAlt: z.string().optional(),
-      github: z.string().optional()
+      github: z.string().optional(),
+      featured: z.boolean().optional(),
+      weight: z.number().optional()
     })
   })
 });

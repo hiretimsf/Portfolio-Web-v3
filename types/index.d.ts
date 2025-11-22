@@ -98,9 +98,10 @@ export type ProjectItemType = {
   embedAlt?: string;
   skills?: string[];
   category?: string;
-  order?: number;
   current?: boolean;
   upcoming?: boolean;
+  featured?: boolean;
+  weight?: number;
 };
 
 export type Heading = {

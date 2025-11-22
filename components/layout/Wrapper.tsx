@@ -1,8 +1,8 @@
-interface MainProps {
+interface WrapperProps {
   children: React.ReactNode;
 }
 
-const Main = ({ children }: MainProps) => {
+const Wrapper = ({ children }: WrapperProps) => {
   return (
     <div className="relative">
       <div className="mx-auto max-w-5xl border-x">{children}</div>
@@ -10,4 +10,4 @@ const Main = ({ children }: MainProps) => {
   );
 };
 
-export default Main;
+export default Wrapper;
